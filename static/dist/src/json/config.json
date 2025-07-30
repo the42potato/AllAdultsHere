@@ -1,0 +1,8 @@
+{
+    "PAGELINKS": {
+        "Home": "/",
+        "Recipes": "/recipes",
+        "Sex Positions": "/sex_positions"
+    },
+    "NAV_LINK_MAX": 6
+}

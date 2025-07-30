@@ -1,0 +1,207 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Recipe",
+    "type": "object",
+    "required": ["title", "meal_type", "prep_type", "total_prep_time_minutes", "servings", "ingredients", "instructions"],
+    "properties": {
+        "title": {
+        "type": "string"
+        },
+        "source": {
+            "type": "object",
+            "required": ["href", "displaytext"],
+            "properties": {
+                "href": {
+                    "type": "string",
+                    "format": "uri"
+                },
+                "displaytext": {
+                    "type": "string"
+                }
+            }
+        },
+        "meal_type": {
+            "oneOf": [
+                {
+                    "type": "string",
+                    "enum": ["breakfast", "lunch", "dinner", "dessert", "side"]
+                },
+                {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "enum": ["breakfast", "lunch", "dinner", "dessert", "side"]
+                    },
+                    "minItems": 1
+                }
+            ]
+        },
+        "prep_type": {
+            "oneOf": [
+                {
+                    "type": "string",
+                    "enum": ["stovetop", "oven", "grill", "crock-pot", "microwave", "no-cook"]
+                },
+                {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "enum": ["stovetop", "oven", "grill", "crock-pot", "microwave", "no-cook"]
+                    },
+                    "minItems": 1
+                }
+            ]
+        },
+        "total_prep_time_minutes": {
+            "oneOf": [
+                {
+                    "type": "integer",
+                    "minimum": 1
+                },
+                {
+                    "type": "array",
+                    "items": {
+                        "type": "integer",
+                        "minimum": 1
+                    },
+                    "minItems": 2,
+                    "maxItems": 2
+                }
+            ]
+        },
+        "ingredient_prep_time_minutes": {
+            "oneOf": [
+                {
+                    "type": "integer",
+                    "minimum": 1
+                },
+                {
+                    "type": "array",
+                    "items": {
+                        "type": "integer",
+                        "minimum": 1
+                    },
+                    "minItems": 2,
+                    "maxItems": 2
+                }
+            ]
+        },
+        "cook_time_minutes": {
+            "oneOf": [
+                {
+                    "type": "integer",
+                    "minimum": 1
+                },
+                {
+                    "type": "array",
+                    "items": {
+                        "type": "integer",
+                        "minimum": 1
+                    },
+                    "minItems": 2,
+                    "maxItems": 2
+                }
+            ]
+        },
+        "tags": {
+            "oneOf": [
+                {
+                    "type": "string",
+                    "enum": ["minimal-dishes"]
+                },
+                {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "enum": ["minimal-dishes"]
+                    },
+                    "minItems": 1
+                }
+            ]
+        },
+        "goes_with": {
+            "oneOf": [
+                {
+                    "type": "object",
+                    "required": ["displaytext", "json_filename"],
+                    "properties": {
+                        "displaytext": { "type": "string" },
+                        "json_filename": {
+                            "type": "string",
+                            "pattern": "^[a-z_]+$"
+                        }
+                    },
+                    "additionalProperties": false
+                },
+                {
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {
+                        "type": "object",
+                        "required": ["displaytext", "json_filename"],
+                        "properties": {
+                            "displaytext": { "type": "string" },
+                            "json_filename": {
+                                "type": "string",
+                                "pattern": "^[a-z_]+$"
+                            }
+                        },
+                        "additionalProperties": false
+                    }
+                }
+            ]
+        },
+        "servings": {
+            "oneOf": [
+                {
+                    "type": "integer",
+                    "minimum": 1
+                },
+                {
+                    "type": "array",
+                    "items": {
+                        "type": "integer",
+                        "minimum": 1
+                    },
+                    "minItems": 2,
+                    "maxItems": 2
+                }
+            ]
+        },
+        "ingredients": {
+        "type": "array",
+        "items": { "type": "string" }
+        },
+        "equipment": {
+        "type": "array",
+        "items": { "type": "string" }
+        },
+        "instructions": {
+            "type": "array",
+            "items": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "required": ["text"],
+                    "properties": {
+                        "text": { "type": "string" },
+                        "bold": { "type": "boolean", "default": false },
+                        "italic": { "type": "boolean", "default": false },
+                        "measurement": { "type": "boolean", "default": false },
+                        "timescale": { "type": "boolean", "default": false },
+                        "temperature": { "type": "boolean", "default": false },
+                        "href": {
+                            "type": "string",
+                            "format": "uri",
+                            "default": null
+                        }
+                    }
+                }
+            }
+        },
+        "notes": {
+            "type": "array",
+            "items": { "type": "string" }
+        }
+    }
+}

@@ -1,0 +1,42 @@
+{
+    "title": "Garden Rotini Pasta Salad",
+    "meal_type": ["lunch", "dinner"],
+    "prep_type": "no-cook",
+    "total_prep_time_minutes": [25, 40],
+    "ingredient_prep_time_minutes": [15, 25],
+    "cook_time_minutes": [10, 15],
+    "servings": [4, 6],
+    "ingredients": [
+        "1 12 ounce box tri-color rotini pasta",
+        "1/2 block Colby Jack Cheese",
+        "1/2 block Munster cheese",
+        "1 5-6 ounce can black olives",
+        "1/2 pack turkey pepperoni",
+        "1 red bell pepper",
+        "1 15 ounce can canellini beans",
+        "1/2 large seedless cucumber or 3 mini ones",
+        "1 bottle italian dressing"
+    ],
+    "equipment": [
+        "Pot",
+        "Knife",
+        "Spoon",
+        "Colander",
+        "Cutting board",
+        "Large mixing bowl"
+    ],
+    "instructions": [
+        [
+            {"text": "Boil water and cook pasta according to package instructions. Drain and rinse with cold water to cool (otherwise the cheese will melt)."}
+        ],
+        [
+            {"text": "Cut cheese into small cubes. Cut pepperoni into halves. Dice bell pepper and cucumber. Drain and rinse beans."}
+        ],
+        [
+            {"text": "Mix pasta, cheese, pepperoni, olives, bell pepper, cucumber, and at least half the can of beans in a large bowl."}
+        ],
+        [
+            {"text": "Add italian dressing to taste (start with about 1/3 of bottle) and stir. Refrigerate at least a half hour before serving."}
+        ]
+    ]
+}

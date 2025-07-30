@@ -1,0 +1,32 @@
+{
+    "title": "Caramelized Onion Pasta",
+    "meal_type": ["lunch", "dinner"],
+    "prep_type": "no-cook",
+    "total_prep_time_minutes": [25, 40],
+    "ingredient_prep_time_minutes": [15, 25],
+    "cook_time_minutes": [10, 15],
+    "servings": [4, 6],
+    "ingredients": [
+        "2 vidalia onions",
+        "2 tablespoons butter",
+        "8 ounces pasta",
+        "3 cloves garlic",
+        "1-2 springs fresh basil",
+        "",
+        "",
+        "",
+        ""
+    ],
+    "equipment": [
+        "Skillet",
+        ""
+    ],
+    "instructions": [
+        [
+            {"text": "Boil water and cook pasta according to package instructions. Drain and rinse with cold water to cool (otherwise the cheese will melt)."}
+        ]
+    ],
+    "notes": [
+        "The original recipe contained tomatoes. I wasn't a fan in this dish, so some adjustments were made."
+    ]
+}

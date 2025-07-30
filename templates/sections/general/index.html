@@ -1,0 +1,24 @@
+{% macro get_offset(index) %}
+    {% set mod = index % 4 %}
+    {% if mod == 0 %}
+        transform translate-y-1 rotate-[5deg] solid-text-shadow-br-rose-500
+    {% elif mod == 1 %}
+        transform -translate-y-1 rotate-[-3deg] solid-text-shadow-br-emerald-500
+    {% elif mod == 2 %}
+        transform translate-y-0.5 rotate-[4deg] solid-text-shadow-br-amber-500
+    {% else %}
+        transform -translate-y-0.5 rotate-[-2deg] solid-text-shadow-br-teal-500
+    {% endif %}
+{% endmacro %}
+
+{% extends 'structure/base.html'%}
+{% block content %}
+    <div class="focus_center">
+        <div class="flex mb-2">
+            {% for char in "We're All Adults Here".split(" ") %}
+                <h1 class="p-0 mx-2 dotted_underline {{ get_offset(loop.index)|trim }}">{{ char }}</h1>
+            {% endfor %}
+        </div>
+        {% include 'component/navbar.html' %}
+    </div>
+{% endblock %}

@@ -1,0 +1,5 @@
+# these directories contain generated content.
+# In node_modules' case we can just run `npm install`
+node_modules/
+.dist/
+__pycache__/

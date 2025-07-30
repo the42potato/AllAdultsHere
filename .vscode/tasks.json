@@ -1,0 +1,23 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build Tailwind",
+            "type": "shell",
+            "command": "npx @tailwindcss/cli -i ./static/dist/src/css/input.css -o ./static/dist/src/css/output.css",
+            "problemMatcher": []
+        },
+        {
+            "label": "Build Tailwind - Watch",
+            "type": "shell",
+            "command": "npx @tailwindcss/cli -i ./static/dist/src/css/input.css -o ./static/dist/src/css/output.css --watch",
+            "problemMatcher": []
+        },
+        {
+            "label": "Boot Flask Server",
+            "type": "shell",
+            "command": "python main.py",
+            "problemMatcher": []
+        }
+    ]
+}

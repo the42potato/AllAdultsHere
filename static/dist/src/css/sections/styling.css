@@ -1,0 +1,13 @@
+/* classes used for positioning, formatting, etc, not looks */
+
+.focus_center {
+  @apply flex flex-1 flex-col items-center justify-center;
+}
+
+p.clear_formatting {
+    @apply indent-0 mx-2 my-0.5;
+}
+
+.page_border {
+    @apply mx-4 md:mx-6;
+}

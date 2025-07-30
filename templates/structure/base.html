@@ -1,0 +1,20 @@
+<html>
+    <head>
+        {% block styles %}
+            <link rel="stylesheet" href="{{ url_for('static', filename='dist/src/css/output.css') }}">
+        {% endblock %}
+        <meta charset="UTF-8">
+        <meta name="author" content="Noah Matlik">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        {% include 'component/google_fonts.html' %}
+        <title>{{ page_title | default('We\'re All Adults Here') }}</title>
+    </head>
+    <body>
+        <div class="flex flex-col h-full">
+            {% block layout %}
+                    {% block content %}
+                    {% endblock %}
+            {% endblock %}
+        </div>
+    </body>
+</html>

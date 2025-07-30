@@ -1,0 +1,169 @@
+{% extends 'structure/navigation.html'%}
+
+{% macro print_scale(scale) %}
+    {% if not scale %}
+        N/A
+    {% elif scale is integer %}
+        {{ scale }}
+        {% elif scale is sequence %}
+            {{ scale[0] }}-{{ scale[1] }}
+    {% endif %}
+{% endmacro %}
+
+{% macro print_list(list) %}
+    {% if not list %}
+        N/A
+    {% elif list is string %}
+        {{ list }}
+    {% else %}
+        {{ list | join(', ') }}
+    {% endif %}
+{% endmacro %}
+
+{% macro print_link_list(list) %}
+    {% if not list %}
+        N/A
+    {% elif list is mapping %}
+        <a class="info_content" href="{{ url_for('recipe_detail', recipe_name=list.json_filename) }}">{{ list.displaytext }}</a>
+    {% else %}
+        {% for item in list %}
+            <a class="info_content" href="{{ url_for('recipe_detail', recipe_name=item.json_filename) }}">{{ item.displaytext }}{% if not loop.last %},{% endif %}</a>
+        {% endfor %}
+    {% endif %}
+{% endmacro %}
+
+{% macro format(part) %}
+    {% set text = part.text if part is mapping and 'text' in part else part %}
+    {% if part is mapping %}
+        {% if part.bold %}
+            {% set text = "<b>" ~ text ~ "</b>" %}
+        {% endif %}
+        {% if part.italic %}
+            {% set text = "<i>" ~ text ~ "</i>" %}
+        {% endif %}
+        {% if part.href is string and part.href.startswith('http') %}
+            {% set text = "<a href='" ~ part.href ~ "'>" ~ text ~ "</a>" %}
+        {% endif %}
+
+        {% if part.temperature %}
+            {% if styling is defined and styling %}
+                {% set styling = styling ~ ' recipe_temperature' %}
+            {% else %}
+                {% set styling = 'recipe_temperature' %}
+            {% endif %}
+        {% endif %}
+        {% if part.timescale %}
+            {% if styling is defined and styling %}
+                {% set styling = styling ~ ' recipe_timescale' %}
+            {% else %}
+                {% set styling = 'recipe_timescale' %}
+            {% endif %}
+        {% endif %}
+        {% if part.measurement %}
+            {% if styling is defined and styling %}
+                {% set styling = styling ~ ' recipe_measurement' %}
+            {% else %}
+                {% set styling = 'recipe_measurement' %}
+            {% endif %}
+        {% endif %}
+
+        {% if styling is not none and styling != '' %}
+            {% set text = "<span class ='" ~ styling ~ "''>" ~ text ~ "</span>" %}
+        {% endif %}
+    {% endif %}
+    {{ text|safe }}
+{% endmacro %}
+
+{% block content %}
+    <div class="text-center md:flex-initial min-w-2/5 w-fit bookmark_header solid-text-shadow-b-red-300 mb-3">
+        <div class="bookmark_shape">
+            <h2 class="py-0 dotted_underline">{{ data.title }}</h2>
+            <p class="mt-0 font-permanent-marker">
+                {{ data.meal_type | join(', ') }}
+            </p>
+        </div>
+    </div>
+    <div class="flex flex-col mx-3 lg:flex-row items-start gap-3 pb-4">
+        <div class="w-full lg:w-fit flex-initial lg:min-w-1/3 index_card index_card_teal">
+            <h3 class="text-center underline underline-offset-4 pb-2">You Will Need</h3>
+            <h5>Ingredients</h5>
+            <ul class="my-0">
+                {% for ingredient in data.ingredients %}
+                    <li>{{ ingredient }}</li>
+                {% endfor %}
+            </ul>
+            {% if data.equipment %}
+                <hr class="border-t-3">
+                <h5>Equipment</h5>
+                <ul class="my-0">
+                    {% for item in data.equipment %}
+                        <li>{{ item }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </div>
+        <div class="flex flex-1 flex-col gap-3">
+            <div class="flex flex-row flex-wrap gap-2">
+                <div class="widget_container mx-auto">
+                    <div class="grid grid-cols-3 place-items-center w-fit mx-auto gap-0">
+                        <div class="styled_info_container bg-teal-200 border-r-1 rounded-tl-md">
+                            <p class="info_label">Total Prep</p>
+                            <p class="info_content">{{ print_scale(data.total_prep_time_minutes) }} mins</p>
+                        </div>
+                        <div class="styled_info_container bg-lime-200 border-x-1">
+                            <p class="info_label">Ingredients</p>
+                            <p class="info_content">{{ print_scale(data.ingredient_prep_time_minutes) }} mins</p>
+                        </div>
+                        <div class="styled_info_container bg-orange-200 border-l-1 rounded-tr-md">
+                            <p class="info_label">Cooking</p>
+                            <p class="info_content">{{ print_scale(data.cook_time_minutes) }} mins</p>
+                        </div>
+                    </div>
+                    <div class="py-0.5 pt-1">
+                        <p class="info_label text-sm">Makes {{ print_scale(data.servings) }} servings</p>
+                    </div>
+                </div>
+                <div class="flex-1 lg:max-w-1/2 widget_container mx-auto flex flex-row">
+                    <div class="info_container">
+                        <p class="info_label">Prep Type:</p>
+                        <p class="info_content">{{ print_list(data.prep_type) }}</p>
+                    </div>
+                    <div class="info_container border-l-2 border-gray-500">
+                        <p class="info_label">Based On:</p>
+                        {% if data.source %}
+                            <a href="{{data.source.href}}" class="info_content">{{ data.source.displaytext }}</a>
+                        {% else %}
+                            <p class="info_content">N/A</p>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            <div class="flex flex-row flex-wrap gap-2">
+                <div class="flex-1 widget_container">
+                    <div class="info_container">
+                        <p class="info_label">Pairs Well With:</p>
+                        <p class="info_content">{{ print_link_list(data.goes_with) }}</p>
+                    </div>
+                </div>
+                <div class="widget_container mx-auto flex flex-row min-w-1/5">
+                    <div class="info_container">
+                        <p class="info_label">Tags:</p>
+                        <p class="info_content">{{ print_list(data.tags) }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="index_card index_card_gray">
+                <h3 class="text-center underline underline-offset-4">Instructions</h3>
+                <ol>
+                    {% for step in data.instructions %}
+                        <li>
+                            {% for part in step %}
+                                {{ format(part)|trim }}
+                            {% endfor %}
+                        </li>
+                    {% endfor %}
+                </ol>
+            </div>
+        </div>
+    </div>
+{% endblock %}

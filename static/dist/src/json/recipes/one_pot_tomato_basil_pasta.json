@@ -1,0 +1,52 @@
+{
+    "title": "One-Pot Tomato Basil Pasta",
+    "meal_type": ["lunch", "dinner"],
+    "prep_type": "stovetop",
+    "total_prep_time_minutes": [25, 35],
+    "ingredient_prep_time_minutes": [10, 15],
+    "cook_time_minutes": [15, 20],
+    "servings": [4, 6],
+    "tags": ["minimal-dishes"],
+    "ingredients": [
+        "16oz linguine pasta",
+        "1 can (14.5oz) diced tomatoes, undrained",
+        "1 large vidalia onion",
+        "4 cloves garlic",
+        "1/2-1 teaspoon red pepper flakes",
+        "2 teaspoons dried oregano",
+        "2 large springs of basil",
+        "4.5 cups vegetable broth",
+        "2 tablespoons olive oil",
+        "Parmesan cheese for garnish"
+    ],
+    "equipment": [
+        "Large stock pot",
+        "Large spoon or ladle",
+        "Knife and cutting board",
+        "Measuring cups and spoons"
+    ],
+    "instructions": [
+        [
+            {"text": "Peel onion and cut into julienne strips, mince garlic, and chop basil."}
+        ],
+        [
+            {"text": "Place pasta, tomatoes, onion, garlic, basil, in a large stock pot. Optionally, cut the pasta in half first."}
+        ],
+        [
+            {"text": "Pour in vegetable broth. Sprinkle on top the pepper flakes and oregano. Drizzle top with oil."}
+        ],
+        [
+            {"text": "Cover pot and bring to a boil. Reduce to a low simmer and keep covered and cook for about"},
+            {"text": "10 minutes", "timescale": true},
+            {"text": "and stirring every"},
+            {"text": "2 minutes", "timescale": true},
+            {"text": "or so. Cook until almost all liquid has evaporated"},
+            {"text": "(around", "italic": true},
+            {"text": "1 inch", "measurement": true, "italic": true},
+            {"text": "remaining at bottom of pot).", "italic": true}
+        ],
+        [
+            {"text": "Season to taste with salt and pepper , stirring pasta several times to distribute the liquid in the bottom of the pot. Serve garnished with parmesan cheese."}
+        ]
+    ]
+}

@@ -1,0 +1,82 @@
+@utility font-permanent-marker {
+    font-family: 'Permanent Marker', cursive;
+}
+@utility font-engagement {
+    font-family: 'Engagement', cursive;
+}
+@utility font-oleo {
+    font-family: 'Oleo Script Swash Caps', cursive;
+}
+@utility font-merienda {
+    font-family: 'Merienda', cursive;
+}
+
+@utility rotate-random {
+    transform: rotate(var(--random-rotation, 0deg));
+}
+
+@utility solid-shadow-blank {
+    box-shadow: 0 0 0 0 #00000000;
+}
+@utility solid-shadow-sm-b-* {
+    box-shadow: 0 2.5px 0 0 --value(--color-*)
+}
+@utility solid-shadow-sm-t-* {
+    box-shadow: 0 -2.5px 0 0 --value(--color-*)
+}
+@utility solid-shadow-sm-l-* {
+    box-shadow: -2.5px 0 0 0 --value(--color-*)
+}
+@utility solid-shadow-sm-r-* {
+    box-shadow: 2.5px 0 0 0 --value(--color-*)
+}
+@utility solid-shadow-sm-br-* {
+    box-shadow: 2.5px 2.5px 0 0 --value(--color-*)
+}
+@utility solid-shadow-sm-tl-* {
+    box-shadow: -2.5px -2.5px 0 0 --value(--color-*)
+}
+@utility solid-shadow-sm-bl-* {
+    box-shadow: -2.5px 2.5px 0 0 --value(--color-*)
+}
+@utility solid-shadow-sm-tr-* {
+    box-shadow: 2.5px -2.5px 0 0 --value(--color-*)
+}
+
+@utility subtle-text-highlight-* {
+    text-shadow: -1px -1px 0 --value(--color-*)
+}
+@utility solid-text-shadow-t-* {
+    text-shadow: 0 -2.5px 0px --value(--color-*)
+}
+@utility solid-text-shadow-b-* {
+    text-shadow: 0 2.5px 0px --value(--color-*)
+}
+@utility solid-text-shadow-l-* {
+    text-shadow: -2.5px 0 0px --value(--color-*)
+}
+@utility solid-text-shadow-r-* {
+    text-shadow: 2.5px 0 0px --value(--color-*)
+}
+@utility solid-text-shadow-tl-* {
+    text-shadow: -2.5px -2.5px 0px --value(--color-*)
+}
+@utility solid-text-shadow-bl-* {
+    text-shadow: -2.5px 2.5px 0px --value(--color-*)
+}
+@utility solid-text-shadow-tr-* {
+    text-shadow: 2.5px -2.5px 0px --value(--color-*)
+}
+@utility solid-text-shadow-br-* {
+    text-shadow: 2.5px 2.5px 0px --value(--color-*)
+}
+
+@utility striped-background-* {
+    background-image: repeating-linear-gradient(
+        0deg,
+        --value(--color-*) 0px,
+        --value(--color-*) 20px,
+        var(--color-neutral-300) 20px,
+        var(--color-neutral-300) 21px
+    )
+}

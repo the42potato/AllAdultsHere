@@ -1,0 +1,189 @@
+/* components used for borders, colors, pseudoelements, and other look-focused changes */
+.navbar, .navbar_dropdown_content {
+    @apply relative flex items-center rounded-sm justify-center gap-6 bg-gray-200 w-fit border-2 border-gray-300;
+}
+.navbar {
+    @apply flex-row mb-6 mt-2 mx-auto py-2 px-6;
+    background-image: linear-gradient(
+        to right, 
+        var(--color-zinc-100) 0%, 
+        var(--color-gray-200) 40%, 
+        var(--color-gray-200) 60%, 
+        var(--color-zinc-100) 100%
+    );
+    transition: box-shadow 0.2s ease-in-out, border-color 0.15s ease-in-out;
+}
+.navbar_dropdown {
+    @apply relative inline-block h-full;
+}
+.navbar_dropdown_container {
+    @apply absolute -top-2.5 -left-4 solid-shadow-blank max-h-0 overflow-hidden;
+    transition: max-height 0.65s ease-in-out, box-shadow 0.1s ease-in-out;
+}
+.navbar_dropdown:hover .navbar_dropdown_container {
+    @apply solid-shadow-sm-br-gray-400 rounded-sm border-gray-400;
+    max-height: 5000px;
+}
+.navbar_dropdown_content {
+    @apply flex-col py-2 px-4;
+}
+.navbar::before, .navbar::after {
+    @apply absolute w-3/5 h-6/11 -bottom-0.5 -z-10 bg-gray-400 rounded-sm;
+    content: '';
+    transition: all 0.1s ease-in-out;
+}
+.navbar::before {
+    @apply left-0.5;
+    transform: skew(-3deg) rotate(-3deg);
+}
+.navbar::after {
+    @apply right-0.5;
+    transform: skew(3deg) rotate(3deg);
+}
+.navbar:hover {
+    @apply bg-gray-200 border-gray-400;
+    background-image: none;
+}
+.navbar:hover::before, .navbar:hover::after {
+    @apply -bottom-1;
+    transform: skew(0deg) rotate(0deg);
+}
+.navbar:hover::before {
+    @apply left-0;
+}
+.navbar:hover::after {
+    @apply right-0;
+}
+.navlink {
+    @apply bg-transparent px-1 decoration-black border-t-2 border-b-2 border-transparent;
+    transition: background-color 0.1s ease-in-out, border-color 0.3s ease-in-out, text-decoration 0.3s ease-in-out;
+}
+.navlink:hover {
+    @apply border-teal-700 subtle-text-highlight-teal-600 no-underline decoration-transparent;
+}
+.nav_img {
+    @apply border-0 my-0 h-6;
+    filter: drop-shadow(0 0 1px var(--color-teal-300));
+    transition: filter 0.2s ease-in-out;
+}
+.nav_img:hover {
+    filter: drop-shadow(0px 1px 3px var(--color-teal-400));
+}
+
+.buttonlink {
+    @apply bg-teal-300 p-2 px-2.5 border-2 border-teal-600 solid-shadow-sm-br-teal-700 rounded-sm decoration-black;
+    transition: box-shadow 0.1s ease-in-out, text-shadow 0.1s ease-in-out, transform 0.1s ease-in-out, background-color 0.2s ease-in-out, text-decoration 0.3s ease-in-out;
+}
+.buttonlink:hover {
+    @apply bg-lime-300 border-lime-500 solid-shadow-sm-b-green-700 subtle-text-highlight-lime-600 decoration-transparent;
+}
+.buttonlink:active {
+    box-shadow: 0 0.5px 0px 1.5px var(--color-lime-700), 2px 2px 0px var(--color-green-50) inset, -1px -1px 0px var(--color-green-400) inset;
+    transform: translateY(2.5px)
+}
+
+h1.dotted_underline, h2.dotted_underline, h3.dotted_underline, h4.dotted_underline, h5.dotted_underline, h6.dotted_underline {
+    @apply underline decoration-dotted underline-offset-6 decoration-5
+}
+
+/* Example: Assign random rotation in JS */
+.index_card {
+    @apply relative border-2 rounded-sm p-4 z-0 solid-shadow-sm-br-gray-400;
+}
+.index_card h1, .index_card h2, .index_card h3, .index_card h4, .index_card h5, .index_card h6 {
+    @apply m-0 pt-1;
+}
+.index_card_red {
+    @apply bg-red-100 border-red-200 striped-background-red-100;
+}
+.index_card_teal {
+    @apply bg-teal-100 border-teal-200 striped-background-teal-100;
+}
+.index_card_amber {
+    @apply bg-amber-100 border-amber-200 striped-background-amber-100;
+}
+.index_card_lime {
+    @apply bg-lime-100 border-lime-200 striped-background-lime-100;
+}
+.index_card_sky {
+    @apply bg-sky-100 border-sky-200 striped-background-sky-100;
+}
+.index_card_violet {
+    @apply bg-violet-100 border-violet-200 striped-background-violet-100;
+}
+.index_card_fuchsia {
+    @apply bg-fuchsia-100 border-fuchsia-200 striped-background-fuchsia-100;
+}
+.index_card_rose {
+    @apply bg-rose-100 border-rose-200 striped-background-rose-100;
+}
+.index_card_gray {
+    @apply bg-stone-100 border-gray-200 striped-background-gray-100;
+}
+
+.tabs {
+    @apply relative mb-8;
+}
+.tabs::before {
+    @apply absolute w-[110%] h-3 -bottom-3 -left-[5%] bg-white;
+    content: '';
+    box-shadow: 0 -5px 8px -2px var(--color-gray-600);
+}
+.tabs::after {
+    @apply absolute w-[150%] h-5 -bottom-5 -left-[25%] bg-white;
+    content: '';
+}
+.tabs_shadow {
+    box-shadow: 1px -0.5px 6px -1.5px var(--color-gray-600);
+}
+
+.bookmark_header {
+    @apply w-5/6 md:w-fit lg:w-3/5 xl:w-fit;
+    filter: drop-shadow(0 3px 0px var(--color-red-900));
+}
+.bookmark_header div.bookmark_shape {
+    @apply bg-red-400 text-black pr-10 md:pr-14 py-2 pt-3;
+    clip-path: polygon(
+        0 0,
+        100% 0,
+        90% 50%,
+        100% 100%,
+        0 100%
+    );
+}
+.bookmark_header p {
+    @apply indent-0 mx-2 my-0.5;
+}
+
+div.info_container, div.styled_info_container {
+    @apply flex flex-col w-full px-1 pt-0.5 items-center justify-center py-1;
+}
+div.styled_info_container {
+    @apply border-b-2 border-gray-500 rounded-b-md solid-shadow-sm-b-slate-300;
+}
+p.info_label {
+    @apply indent-0 m-0 p-0 px-2 text-center font-permanent-marker;
+}
+p.info_content {
+    @apply indent-0 m-0 p-0 px-2 text-center text-sm;
+}
+a.info_content, a.info_content:visited {
+    @apply bg-transparent font-bold text-sm text-teal-800;
+}
+a.info_content:hover {
+    @apply subtle-text-highlight-teal-400;
+}
+
+.recipe_temperature {
+    @apply font-bold subtle-text-highlight-red-300;
+}
+.recipe_timescale {
+    @apply font-bold subtle-text-highlight-teal-300;
+}
+.recipe_measurement {
+    @apply font-bold subtle-text-highlight-lime-300;
+}
+
+.widget_container {
+    @apply w-fit border-2 border-gray-500 bg-gray-100 rounded-md solid-shadow-sm-b-gray-400;
+}

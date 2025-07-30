@@ -1,0 +1,38 @@
+{
+    "title": "Oven-Roasted Broccoli",
+    "meal_type": ["lunch", "dinner"],
+    "prep_type": "oven",
+    "total_prep_time_minutes": [15, 25],
+    "ingredient_prep_time_minutes": [10, 15],
+    "cook_time_minutes": [5, 10],
+    "servings": [4, 6],
+    "ingredients": [
+        "1 large bag broccoli florets, or a head of broccoli cut into florets",
+        "2 teaspoons olive oil",
+        "1 teaspoon garlic powder",
+        "Salt and pepper to taste",
+        "(Optional) 1 minced clove garlic"
+    ],
+    "equipment": [
+        "Baking sheet",
+        "Kitchen scissors or knife",
+        "Bowl"
+    ],
+    "instructions": [
+        [
+            {"text": "Preheat oven to"},
+            {"text": "400F", "temperature": true},
+            {"text": "("},
+            {"text": "200C", "temperature": true},
+            {"text": ")."}
+        ],
+        [
+            {"text": "Place broccoli florets in bowl. Add olive oil, garlic powder, and salt and pepper. Stir to coat evenly."}
+        ],
+        [
+            {"text": "Distribute broccoli in a single layer on a baking sheet. Cook for"},
+            {"text": "15-20 minutes", "timescale": true},
+            {"text": "and stirring halfway through, until broccoli is tender and tops are browned."}
+        ]
+    ]
+}

@@ -1,0 +1,48 @@
+{
+    "title": "Sweet Potato Fries",
+    "source": {
+        "href": "https://www.delish.com/cooking/recipe-ideas/a45105079/baked-sweet-potato-fries-recipe/",
+        "displaytext": "Delish"
+    },
+    "meal_type": ["side"],
+    "prep_type": "oven",
+    "total_prep_time_minutes": [50, 60],
+    "ingredient_prep_time_minutes": 10,
+    "cook_time_minutes": [40, 50],
+    "servings": [3, 5],
+    "ingredients": [
+        "1 3/4lbs (~6-8) sweet potatoes",
+        "1 tablespoon corn starch",
+        "3/5 teaspoon kosher salt",
+        "1/4 teaspoon freshly ground black pepper",
+        "1/4 teaspoon garlic powder",
+        "1/4 teaspoon onion powder",
+        "1/4 teaspoon paprika",
+        "2 tablespoon olive oil",
+        "Flaky sea salt"
+    ],
+    "equipment": [
+        "2 cooking sheets",
+        "Mixing bowl",
+        "Small bowl",
+        "Cooking spray",
+        "Spatula"
+    ],
+    "instructions": [
+        [
+            {"text": "Arrange the racks in the upper and lower thirds of the oven. Preheat to 425F."}
+        ],
+        [
+            {"text": "Cut sweet potatoes lengthwise. Cut halves into 1/4-inch fries. Transfer to bowl."}
+        ],
+        [
+            {"text": "Mix corn starch, kosher salt, pepper, garlic powder, onion powder, and paprika in a small bowl. Mix and sprinkle over potatoes. Toss with hands until coated, then slowly add oil."}
+        ],
+        [
+            {"text": "Spray cooking sheets and arrange potatoes in a single layer. Leave space around each piece."}
+        ],
+        [
+            {"text": "Bake 25 minutes, flip, and bake 25 again until browned and fragrant. Sprinkle with sea salt after removing to ensure it sticks. Let cool 5 minutes."}
+        ]
+    ]
+}

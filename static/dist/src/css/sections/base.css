@@ -1,0 +1,75 @@
+html {
+    @apply min-h-screen h-full overflow-y-auto font-merienda;
+}
+
+body {
+    @apply min-h-full h-auto overflow-y-auto z-0 bg-zinc-50
+}
+
+nav {
+    @apply relative z-10;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    @apply mx-2 md:mx-4 lg:mx-8 xl:mx-12;
+}
+h1, h2, h3, h4, h5, h6 {
+    @apply py-4 pb-0 leading-none font-bold font-oleo;
+}
+h1 {
+    @apply text-5xl md:text-6xl;
+}
+h2 {
+    @apply text-4xl md:text-5xl;
+} 
+h3 {
+    @apply text-3xl md:text-4xl;
+} 
+h4 {
+    @apply text-2xl md:text-3xl;
+} 
+h5 {
+    @apply text-xl md:text-2xl;
+} 
+h6 {
+    @apply text-lg md:text-xl;
+} 
+
+p {
+    @apply indent-6 mt-3 break-words
+}
+q {
+    @apply italic;
+}
+
+a, a:visited {
+    @apply bg-teal-300 text-black font-normal underline px-0.5 -mx-0.5 decoration-black;
+    box-shadow: inset 0 0 0 0 var(--color-red-500);
+    transition: background-color 0.2s ease-in-out, text-decoration 0.3s ease-in-out, text-shadow 0.15s ease-in-out;
+}
+a:hover {
+    @apply bg-lime-300 font-medium no-underline decoration-transparent;
+}
+
+ol,
+ul {
+    @apply w-fit px-4 pl-7 py-1 my-2 list-inside;
+    list-style: revert;
+}
+ul {
+    @apply list-disc
+}
+ol {
+    @apply list-decimal
+}
+li {
+    @apply py-0.5
+}
+
+img {
+    @apply border-2 rounded-sm my-1 border-gray-500;
+}
+
+hr {
+    @apply py-1;
+}

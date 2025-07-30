@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+@theme {
+    @import "./sections/theme.css";
+}
+@layer base {
+    @import "./sections/base.css";
+}
+
+
+@import "./sections/utilities.css";
+@import "./sections/styling.css";
+@import "./sections/components.css";

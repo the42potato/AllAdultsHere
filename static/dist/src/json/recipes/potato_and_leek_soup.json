@@ -1,0 +1,67 @@
+{
+    "title": "Potato and Leek Soup",
+    "source": {
+        "href": "http://www.sweetsugarbean.com/2011/10/#:~:text=Cheesy%20Bacon%2C%20Potato%20and%20Leek%20Soup",
+        "displaytext": "Renee Kohlman"
+    },
+    "meal_type": ["lunch", "dinner"],
+    "prep_type": "stovetop",
+    "total_prep_time_minutes": [40, 60],
+    "ingredient_prep_time_minutes": [10, 20],
+    "cook_time_minutes": [30, 40],
+    "servings": [4, 6],
+    "ingredients": [
+        "2 tablespoons butter",
+        "3 leeks, white part only, washed thoroughly and sliced",
+        "2 cloves garlic, minced",
+        "8 medium potatoes, Yukon Golds, or other white",
+        "5 cups of veggie stock",
+        "2 teaspoons Dijon mustard",
+        "Dash of cayenne pepper",
+        "Salt and pepper",
+        "1 cup grated cheese, such as old cheddar or Gouda",
+        "1/2 cup whipping cream",
+        "1/2 cup milk"
+    ],
+    "equipment": [
+        "Large pot",
+        "Immersion blender",
+        "Large spoon or ladle",
+        "Knife and cutting board",
+        "Measuring cups and spoons"
+    ],
+    "instructions": [
+        [
+            {"text": "Melt"},
+            {"text": "2tbsp", "measurement": true},
+            {"text": "of butter in pot. Add the leeks, and cook until a little bit soft, about"},
+            {"text": "3 minutes.", "timescale": true}
+        ],
+        [
+            {"text": "Add the garlic, cook a minute longer."}
+        ],
+        [
+            {"text": "Add the potatoes and stock, and stir in the Dijon mustard and cayenne. You want the potatoes to be covered with about"},
+            {"text": "an inch or so", "measurement": true},
+            {"text": "of broth (this takes"},
+            {"text": "~4-5 cups", "measurement": true},
+            {"text": "of broth)."}
+        ],
+        [
+            {"text": "Cover, bring to a boil, reduce heat to a simmer and cook until potatoes are soft and falling apart, about"},
+            {"text": "20 minutes.", "timescale": true}
+        ],
+        [
+            {"text": "Remove from heat. Using an immersion blender, puree until smooth."}
+        ],
+        [
+            {"text": "Put back on low heat, stir in the cheese until melted."}
+        ],
+        [
+            {"text": "Stir in milk and cream. Adjust seasonings with more salt, pepper, cheese and if too thick, thin out with more milk or stock."}
+        ],
+        [
+            {"text": "Garnish with more cheese, chives, and crumbled bacon."}
+        ]
+    ]
+}
