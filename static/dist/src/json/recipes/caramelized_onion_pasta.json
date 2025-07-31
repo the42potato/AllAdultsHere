@@ -1,32 +1,52 @@
 {
     "title": "Caramelized Onion Pasta",
+    "source": {
+        "href": "https://www.howsweeteats.com/2020/09/caramelized-onion-tomato-pasta/",
+        "displaytext": "HowSweetEats"
+    },
     "meal_type": ["lunch", "dinner"],
-    "prep_type": "no-cook",
-    "total_prep_time_minutes": [25, 40],
+    "prep_type": "stovetop",
+    "total_prep_time_minutes": [45, 70],
     "ingredient_prep_time_minutes": [15, 25],
-    "cook_time_minutes": [10, 15],
-    "servings": [4, 6],
+    "cook_time_minutes": [30, 45],
+    "servings": [2, 4],
+    "tags": ["minimal-dishes"],
     "ingredients": [
         "2 vidalia onions",
         "2 tablespoons butter",
-        "8 ounces pasta",
+        "1 red pepper",
+        "8 ounces cavatappi pasta",
         "3 cloves garlic",
         "1-2 springs fresh basil",
-        "",
-        "",
-        "",
-        ""
+        "1/4 pound parmesan cheese"
     ],
     "equipment": [
         "Skillet",
-        ""
+        "Pot",
+        "Colander",
+        "Spoon"
     ],
     "instructions": [
         [
-            {"text": "Boil water and cook pasta according to package instructions. Drain and rinse with cold water to cool (otherwise the cheese will melt)."}
+            {"text": "Cut onion into julienne strips. Dice garlic. Chop basil. Cut pepper."}
+        ],
+        [
+            {"text": "Melt butter on skillet and add onion. Cook on medium heat with salt and pepper for 25-35 minutes until onions are golden and caramely."}
+        ],
+        [
+            {"text": "Near end of onion cooking, bring a pot of salted water to boil. Cook pasta and drain."}
+        ],
+        [
+            {"text": "Add garlic and peppers to skillet with onion. Cook until peppers brown slightly (5-10 minutes)."}
+        ],
+        [
+            {"text": "Add pasta, basil, and parmesan to skillet. Cook until cheese melted, than another couple minutes."}
+        ],
+        [
+            {"text": "Top with more basil and parmesan, and serve."}
         ]
     ],
     "notes": [
-        "The original recipe contained tomatoes. I wasn't a fan in this dish, so some adjustments were made."
+        "The original recipe contained tomatoes. I wasn't a fan in this dish, but peppers are pretty good!"
     ]
 }

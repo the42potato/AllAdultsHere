@@ -67,7 +67,7 @@ li {
 }
 
 img {
-    @apply border-2 rounded-sm my-1 border-gray-500;
+    @apply border-2 rounded-sm my-1 border-gray-500 solid-shadow-sm-bl-gray-400;
 }
 
 hr {

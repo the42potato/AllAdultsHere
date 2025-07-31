@@ -1,4 +1,5 @@
 {% extends 'structure/navigation.html'%}
+{% set page_title = data.title %}
 
 {% macro gen_index_card_color(index_card_index) %} 
     {% if index_card_index == 0 %} 

@@ -1,4 +1,5 @@
 {% extends 'structure/navigation.html'%}
+{% set page_title = data.title %}
 
 {% macro print_scale(scale) %}
     {% if not scale %}
@@ -30,6 +31,27 @@
             <a class="info_content" href="{{ url_for('recipe_detail', recipe_name=item.json_filename) }}">{{ item.displaytext }}{% if not loop.last %},{% endif %}</a>
         {% endfor %}
     {% endif %}
+{% endmacro %}
+
+{% macro print_prep_image(prep) %}
+    <img class="prep_image" src="{{ url_for('static', filename='dist/src/icons/recipes/' ~ prep ~ '.ico') }}">
+{% endmacro %}
+
+{% macro get_prep_coloring(prep) %}
+    {% if prep == "oven" or prep == "grill" or prep == "crock-pot" %}
+        widget_pastel_orange
+    {% elif prep == "stovetop" or prep == "microwave" %}
+        widget_pastel_yellow
+    {% elif prep == "no-cook" %}
+        widget_pastel_green
+    {% endif %}
+{% endmacro %}
+
+{% macro print_prep(prep) %}
+    <div class="flex flex-row items-center justify-center flex-wrap widget_container px-1 py-0.5 {{ get_prep_coloring(prep)|trim }}">
+        {{ print_prep_image(prep)|trim }}
+        <p class="info_content">{{ prep }}</p>
+    </div>
 {% endmacro %}
 
 {% macro format(part) %}
@@ -103,7 +125,7 @@
             {% endif %}
         </div>
         <div class="flex flex-1 flex-col gap-3">
-            <div class="flex flex-row flex-wrap gap-2">
+            <div class="flex flex-row flex-wrap gap-2 lg:max-w-4/5 items-center mx-auto">
                 <div class="widget_container mx-auto">
                     <div class="grid grid-cols-3 place-items-center w-fit mx-auto gap-0">
                         <div class="styled_info_container bg-teal-200 border-r-1 rounded-tl-md">
@@ -123,12 +145,19 @@
                         <p class="info_label text-sm">Makes {{ print_scale(data.servings) }} servings</p>
                     </div>
                 </div>
-                <div class="flex-1 lg:max-w-1/2 widget_container mx-auto flex flex-row">
+                <div class="flex flex-col items-center justify-center gap-0.5">
+                    {% if data.prep_type is iterable and data.prep_type is not string %}
+                        {% for item in data.prep_type %}
+                            {{ print_prep(item) }}
+                        {% endfor %}
+                    {% elif data.prep_type is string %}
+                        {{ print_prep(data.prep_type) }}
+                    {% else %}
+                        <p class="info_content">???</p>
+                    {% endif %}
+                </div>
+                <div class="widget_container px-4 py-1 flex-1">
                     <div class="info_container">
-                        <p class="info_label">Prep Type:</p>
-                        <p class="info_content">{{ print_list(data.prep_type) }}</p>
-                    </div>
-                    <div class="info_container border-l-2 border-gray-500">
                         <p class="info_label">Based On:</p>
                         {% if data.source %}
                             <a href="{{data.source.href}}" class="info_content">{{ data.source.displaytext }}</a>
@@ -138,7 +167,7 @@
                     </div>
                 </div>
             </div>
-            <div class="flex flex-row flex-wrap gap-2">
+            <div class="flex flex-row flex-wrap gap-2 md:w-3/4 md:mx-auto">
                 <div class="flex-1 widget_container">
                     <div class="info_container">
                         <p class="info_label">Pairs Well With:</p>
