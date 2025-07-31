@@ -14,7 +14,7 @@
 {% extends 'structure/base.html'%}
 {% block content %}
     <div class="focus_center">
-        <div class="flex mb-2">
+        <div class="flex flex-wrap items-center justify-center mb-2">
             {% for char in "We're All Adults Here".split(" ") %}
                 <h1 class="p-0 mx-2 dotted_underline {{ get_offset(loop.index)|trim }}">{{ char }}</h1>
             {% endfor %}

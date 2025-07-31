@@ -72,11 +72,12 @@
 }
 
 @utility striped-background-* {
+    background-color: --value(--color-*);
     background-image: repeating-linear-gradient(
         0deg,
         --value(--color-*) 0px,
         --value(--color-*) 20px,
-        var(--color-neutral-300) 20px,
-        var(--color-neutral-300) 21px
+        #dddddd77 20px,
+        #dddddd77 23px
     )
 }

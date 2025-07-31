@@ -70,6 +70,10 @@
     filter: drop-shadow(0px 1px 3px var(--color-teal-400));
 }
 
+.footer {
+    @apply bg-gray-900 text-white py-4 border-t-5 border-t-teal-800
+}
+
 .buttonlink {
     @apply bg-teal-300 p-2 px-2.5 border-2 border-teal-600 solid-shadow-sm-br-teal-700 rounded-sm decoration-black;
     transition: box-shadow 0.1s ease-in-out, text-shadow 0.1s ease-in-out, transform 0.1s ease-in-out, background-color 0.2s ease-in-out, text-decoration 0.3s ease-in-out;
@@ -94,31 +98,31 @@ h1.dotted_underline, h2.dotted_underline, h3.dotted_underline, h4.dotted_underli
     @apply m-0 pt-1;
 }
 .index_card_red {
-    @apply bg-red-100 border-red-200 striped-background-red-100;
+    @apply border-red-300 striped-background-red-100;
 }
 .index_card_teal {
-    @apply bg-teal-100 border-teal-200 striped-background-teal-100;
+    @apply border-teal-300 striped-background-teal-100;
 }
 .index_card_amber {
-    @apply bg-amber-100 border-amber-200 striped-background-amber-100;
+    @apply border-amber-300 striped-background-amber-100;
 }
 .index_card_lime {
-    @apply bg-lime-100 border-lime-200 striped-background-lime-100;
+    @apply border-lime-300 striped-background-lime-100;
 }
 .index_card_sky {
-    @apply bg-sky-100 border-sky-200 striped-background-sky-100;
+    @apply border-sky-300 striped-background-sky-100;
 }
 .index_card_violet {
-    @apply bg-violet-100 border-violet-200 striped-background-violet-100;
+    @apply border-violet-300 striped-background-violet-100;
 }
 .index_card_fuchsia {
-    @apply bg-fuchsia-100 border-fuchsia-200 striped-background-fuchsia-100;
+    @apply border-fuchsia-300 striped-background-fuchsia-100;
 }
 .index_card_rose {
-    @apply bg-rose-100 border-rose-200 striped-background-rose-100;
+    @apply border-rose-300 striped-background-rose-100;
 }
 .index_card_gray {
-    @apply bg-stone-100 border-gray-200 striped-background-gray-100;
+    @apply border-gray-300 striped-background-gray-100;
 }
 
 .tabs {

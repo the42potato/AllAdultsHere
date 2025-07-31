@@ -1,9 +1,9 @@
 html {
-    @apply min-h-screen h-full overflow-y-auto font-merienda;
+    @apply min-h-full font-merienda;
 }
 
 body {
-    @apply min-h-full h-auto overflow-y-auto z-0 bg-zinc-50
+    @apply min-h-screen z-0 bg-zinc-50
 }
 
 nav {
