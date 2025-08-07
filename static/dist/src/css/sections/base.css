@@ -56,14 +56,22 @@ ul {
     @apply w-fit px-4 pl-7 py-1 my-2 list-inside;
     list-style: revert;
 }
-ul {
-    @apply list-disc
-}
 ol {
     @apply list-decimal
 }
 li {
     @apply py-0.5
+}
+li::marker {
+    @apply text-emerald-800 solid-text-shadow-bl-lime-500;
+}
+ul li::marker {
+    @apply text-sm;
+    content: "✱ ";
+}
+ol li::marker {
+    @apply font-black;
+    content: counter(list-item) " : ";
 }
 
 img {

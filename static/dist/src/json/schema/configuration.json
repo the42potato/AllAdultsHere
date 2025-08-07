@@ -2,7 +2,7 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "title": "Site Configuration",
     "type": "object",
-    "required": ["PAGELINKS", "NAV_LINK_MAX"],
+    "required": ["PAGELINKS", "NAV_LINK_MAX", "ERRORS"],
     "properties": {
         "PAGELINKS": {
             "type": "object",
@@ -15,6 +15,66 @@
             "type": "integer",
             "minimum": 3,
             "maximum": 10
+        },
+        "ERRORS": {
+            "type": "object",
+            "required": ["codes"],
+            "properties": {
+                "codes": {
+                    "type": "object",
+                    "required": ["400", "401", "403", "404", "500", "501", "503", "418"],
+                    "properties": {
+                        "400": {
+                            "$ref": "#/$defs/errorObject"
+                        },
+                        "401": {
+                            "$ref": "#/$defs/errorObject"
+                        },
+                        "403": {
+                            "$ref": "#/$defs/errorObject"
+                        },
+                        "404": {
+                            "$ref": "#/$defs/errorObject"
+                        },
+                        "500": {
+                            "$ref": "#/$defs/errorObject"
+                        },
+                        "501": {
+                            "$ref": "#/$defs/errorObject"
+                        },
+                        "503": {
+                            "$ref": "#/$defs/errorObject"
+                        },
+                        "418": {
+                            "$ref": "#/$defs/errorObject"
+                        }
+                    }
+                },
+                "messages": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                }
+            }
+        }
+    },
+    "$defs": {
+        "errorObject": {
+            "type": "object",
+            "required": ["image", "splashes"],
+            "properties": {
+                "image": {
+                    "type": "string"
+                },
+                "splashes": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "additionalProperties": false
         }
     }
 }

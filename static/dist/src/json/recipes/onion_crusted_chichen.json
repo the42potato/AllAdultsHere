@@ -1,0 +1,55 @@
+{
+    "title": "Onion-Crusted Chicken",
+    "source": {
+        "href": "https://www.allrecipes.com/recipe/269078/french-fried-onions/",
+        "displaytext": "AllRecipes"
+    },
+    "meal_type": ["lunch", "dinner"],
+    "prep_type": ["stovetop", "oven"],
+    "total_prep_time_minutes": [40, 60],
+    "ingredient_prep_time_minutes": [20, 30],
+    "cook_time_minutes": [20, 30],
+    "servings": [2, 4],
+    "tags": ["minimal-dishes"],
+    "ingredients": [
+        "6 chicken breast halves (about 1.5 lbs)",
+        "1 cup dry bread crumbs.",
+        "2 cups milk",
+        "2 large eggs",
+        "2 large yellow onions",
+        "2 cups all-purpose flour",
+        "Vegetable oil for frying",
+        "Garlic powder to taste",
+        "Onion powder to taste"
+    ],
+    "equipment": [
+        "Large Skillet",
+        "Knife",
+        "Cutting board",
+        "Spoon",
+        "Whisk",
+        "Mixing bowl",
+        "Flat bowl or container",
+        "Baking sheet"
+    ],
+    "instructions": [
+        [
+            {"text": "Cut onion into think julienne strips. Soak in milk for 5 minutes."}
+        ],
+        [
+            {"text": "Combine flour, garlic powder, onion powder, black pepper, and salt in a bowl. Add some onions and toss to coat. Remove and repeat with remaining onions."}
+        ],
+        [
+            {"text": "Heat oil in a large skillet or deep fryer. Fry onions in batches, stirring as needed, until browned (~2-3 minutes). Drain on paper towels and optionally season with salt."}
+        ],
+        [
+            {"text": "Beat eggs in a bowl. Combine bread crumbs and at least 1/3 of onions in a small, flat container for coating. Remaining onions make a great snack."}
+        ],
+        [
+            {"text": "Dip chicken breast in eggs, then press into bread crumb and onion mixture to coat it. Arrange on baking sheet and bake 20 minutes or until chicken is fully cooked."}
+        ]
+    ],
+    "notes": [
+        "I saw a lot of breaded chicken recipes involving pre-made french onions. But homemade is always so much better."
+    ]
+}

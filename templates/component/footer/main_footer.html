@@ -1,0 +1,34 @@
+<div class="footer">
+    <div class="footer_container">
+        <div class="footer_content">
+            <div class="flex flex-col justify-center items-center">
+                <div class="flex flex-row items-center">
+                    <img class="w-8 m-0 border-0 solid-shadow-blank" src="{{ url_for('static', filename='/dist/src/icons/site_icon.ico') }}">
+                    <p class="font-oleo text-lg">We're All Adults Here</p>
+                </div>
+                <p class="text-teal-200 text-sm">Last restart: <span class="text-white italic">{{ LAST_REBOOT.strftime("%Y/%m/%d at %I:%M:%S %p (%Z)") }}</span></p>
+            </div>
+            <div>
+                <h6 class="pt-0 mb-1">Recipe of the Day:</h6>
+                {% if RECIPE_OF_THE_DAY is none %}
+                    <p>None</p>
+                {% else %}
+                    <a class="bg-transparent text-sm decoration-teal-200 text-teal-200" href="{{ url_for('recipe_detail', recipe_name=RECIPE_OF_THE_DAY.link) }}">{{ RECIPE_OF_THE_DAY.display_text }}</a>
+                {% endif %}
+            </div>
+            <div class="flex flex-col items-center justify-center">
+                {% set qr_rand = range(1, 101) | random %}
+                {% if qr_rand == 1 %}
+                    <img class="w-20 solid-shadow-sm-bl-teal-500" src="{{ url_for('static', filename='dist/src/images/qr_codes/site_link_alt.svg') }}">
+                {% else %}
+                <!-- TODO need actual site link QR code -->
+                    <img class="w-20 solid-shadow-sm-bl-teal-500" src="{{ url_for('static', filename='dist/src/images/qr_codes/site_link.svg') }}">
+                {% endif %}
+                <p class="font-black text-sm">Site Link</p>
+            </div>
+        </div>
+        {% if page_footer and page_footer != self._TemplateReference__context.name.split('/')[-1].rsplit('.', 1)[0] %}
+            {% include 'component/footer/' ~ page_footer ~ '.html' %}
+        {% endif %}
+    </div>
+</div>

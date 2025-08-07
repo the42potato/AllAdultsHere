@@ -70,12 +70,28 @@
     filter: drop-shadow(0px 1px 3px var(--color-teal-400));
 }
 
+a.subtle_link {
+    @apply bg-transparent solid-text-shadow-tr-teal-200 font-bold;
+}
+a.subtle_link:hover {
+    @apply solid-text-shadow-br-amber-300
+}
+
 .footer {
-    @apply bg-gray-900 text-white py-4 border-t-5 border-t-teal-800
+    @apply mt-4 bg-gray-900 text-white py-4 border-t-5 border-t-teal-800
+}
+.footer_container {
+    @apply mx-4 py-2 bg-gray-800 border-2 border-gray-950 rounded-md;
+}
+.footer_content {
+    @apply flex flex-row flex-wrap justify-center items-center text-center gap-3;
+}
+.footer_content p {
+    @apply indent-0 mx-2 my-0;
 }
 
 .buttonlink {
-    @apply bg-teal-300 p-2 px-2.5 border-2 border-teal-600 solid-shadow-sm-br-teal-700 rounded-sm decoration-black;
+    @apply bg-teal-300 p-2 px-2.5 text-sm md:text-base border-2 border-teal-600 solid-shadow-sm-br-teal-700 rounded-sm decoration-black;
     transition: box-shadow 0.1s ease-in-out, text-shadow 0.1s ease-in-out, transform 0.1s ease-in-out, background-color 0.2s ease-in-out, text-decoration 0.3s ease-in-out;
 }
 .buttonlink:hover {
@@ -159,6 +175,10 @@ h1.dotted_underline, h2.dotted_underline, h3.dotted_underline, h4.dotted_underli
     @apply indent-0 mx-2 my-0.5;
 }
 
+.flex p {
+    @apply m-0 indent-0;
+}
+
 div.info_container, div.styled_info_container {
     @apply flex flex-col w-full px-1 items-center justify-center py-1;
 }
@@ -166,10 +186,10 @@ div.styled_info_container {
     @apply border-b-2 border-gray-500 rounded-b-md solid-shadow-sm-b-slate-300;
 }
 p.info_label {
-    @apply indent-0 m-0 p-0 px-2 text-center font-permanent-marker;
+    @apply m-0 p-0 px-2 text-center font-permanent-marker;
 }
 p.info_content {
-    @apply indent-0 m-0 p-0 px-1 text-center text-sm;
+    @apply m-0 p-0 px-1 text-center text-sm;
 }
 a.info_content, a.info_content:visited {
     @apply bg-transparent font-bold text-sm text-teal-800;

@@ -4,5 +4,66 @@
         "Recipes": "/recipes",
         "Sex Positions": "/sex_positions"
     },
-    "NAV_LINK_MAX": 6
+    "NAV_LINK_MAX": 6,
+    "ERRORS": {
+        "codes": {
+            "400": {
+                "image": "error.webp",
+                "splashes": [
+                    "How dare you?"
+                ]
+            },
+            "401": {
+                "image": "error.webp",
+                "splashes": [
+                    "Get out."
+                ]
+            },
+            "403": {
+                "image": "error.webp",
+                "splashes": [
+                    "Does not open from this side.",
+                    "You don't belong here."
+                ]
+            },
+            "404": {
+                "image": "error.webp",
+                "splashes": [
+                    "We lost it.",
+                    "It's somewhere around here...",
+                    "I hope we didn't put it with the donations..."
+                ]
+            },
+            "500": {
+                "image": "error.webp",
+                "splashes": [
+                    "We messed up.",
+                    "Those responsible have been fired.",
+                    "The server's re-education will commence shortly."
+                ]
+            },
+            "501": {
+                "image": "error.webp",
+                "splashes": [
+                    "Under construction."
+                ]
+            },
+            "503": {
+                "image": "error.webp",
+                "splashes": [
+                    "Try again later."
+                ]
+            },
+            "418": {
+                "image": "error.webp",
+                "splashes": [
+                    "This server is a teapot and cannot brew coffee."
+                ]
+            }
+        },
+        "messages": {
+            "recipe_not_found": "The requested recipe was not found on the server.",
+            "invalid_json_schema": "The specified source content is invalid."
+        }
+    }
 }

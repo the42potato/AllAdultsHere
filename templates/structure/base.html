@@ -4,6 +4,7 @@
             <link rel="stylesheet" href="{{ url_for('static', filename='dist/src/css/output.css') }}">
         {% endblock %}
         <meta charset="UTF-8">
+        <link rel="icon" href="{{ url_for('static', filename='dist/src/icons/site_icon.ico') }}", type="image/vnd.microsoft.icon">
         <meta name="author" content="Noah Matlik">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         {% include 'component/google_fonts.html' %}
@@ -16,6 +17,6 @@
                     {% endblock %}
             {% endblock %}
         </div>
-        {% include 'component/main_footer.html' %}
+        {% include 'component/footer/main_footer.html' %}
     </body>
 </html>

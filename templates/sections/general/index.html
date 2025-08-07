@@ -13,12 +13,22 @@
 
 {% extends 'structure/base.html'%}
 {% block content %}
-    <div class="focus_center">
+    <div class="focus_center min-h-screen">
         <div class="flex flex-wrap items-center justify-center mb-2">
             {% for char in "We're All Adults Here".split(" ") %}
                 <h1 class="p-0 mx-2 dotted_underline {{ get_offset(loop.index)|trim }}">{{ char }}</h1>
             {% endfor %}
         </div>
         {% include 'component/navbar.html' %}
+    </div>
+    <div class="border-t-2 text-center py-5">
+        <div class="widget_container widget_pastel_green mx-auto min-w-1/3 pb-3">
+            <h2 class="mb-2">Recipe of the Day</h2>
+            {% if RECIPE_OF_THE_DAY is none %}
+                <p>None</p>
+            {% else %}
+                <a class="subtle_link" href="{{ url_for('recipe_detail', recipe_name=RECIPE_OF_THE_DAY.link) }}">{{ RECIPE_OF_THE_DAY.display_text }}</a>
+            {% endif %}
+        </div>
     </div>
 {% endblock %}
