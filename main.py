@@ -6,7 +6,8 @@ import random
 from datetime import datetime, timezone
 from werkzeug.exceptions import HTTPException
 from util import validate_json_schema, get_json_file_based_on_date
-from renders import render_validated_json_template
+from errors import raise_joke_http_error, JokeError
+from renders import render_validated_json_template, render_http_error, render_recipe_page
 
 
 app = Flask(__name__)
@@ -91,37 +92,30 @@ def recipe_substitutions():
 
 @app.route('/recipes/<path:recipe_name>')
 def recipe_detail(recipe_name):
-    recipes_folder_path = os.path.join(app.static_folder, 'dist', 'src', 'json', 'recipes', recipe_name + '.json')
-    print(recipes_folder_path)
+    return render_recipe_page(recipe_name, recipe_schema)
 
-    if not os.path.exists(recipes_folder_path):
-        abort(404, app.global_config["ERRORS"]["messages"]["recipe_not_found"])
-    
-    with open(recipes_folder_path, 'r') as file:
-        recipe = json.load(file)
-    
-    if recipe:
-        return render_validated_json_template('/sections/recipes/view.html', recipe, recipe_schema)
-    else:
-        abort(404, app.global_config["ERRORS"]["messages"]["recipe_not_found"])
+@app.route('/recipes/review/<path:recipe_name>')
+def recipe_review(recipe_name):
+    return render_recipe_page(recipe_name, recipe_schema, True)
+
+@app.route('/recipes/submitreview/<path:recipe_name>')
+def submit_recipe_review(recipe_name):
+    return raise_joke_http_error("advice_ignored", "Your opinion has been acknowledged, but we still don't care.")
 
 @app.route('/sex_positions')
 def sex_positions():
     sex_positions_file = os.path.join(app.static_folder, 'dist', 'src', 'json', 'static', 'sex_positions.json')
     return render_validated_json_template('/sections/general/index_card_list.html', sex_positions_file, cardlist_schema)
 
+@app.errorhandler(JokeError)
+def handle_joke_error(e):
+    print(418)
+    return render_http_error(e, True)
+
 @app.errorhandler(HTTPException)
 def handle_http_exception(e):
-    filter_index = e.description.find('.')
-    if filter_index != -1:
-        filtered_description = e.description[:filter_index + 1]
-    else:
-        filtered_description = e.description
-
-    if app.global_config is not None:
-        error_data = app.global_config["ERRORS"]["codes"][str(e.code)]
-    err = {"code": e.code, "description":filtered_description, "splash": random.choice(error_data["splashes"]), "image": f"{error_data['image']}"}
-    return render_template("sections/general/error.html", error = err), e.code
+    print("def")
+    return render_http_error(e)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=1212, debug=True)

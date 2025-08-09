@@ -1,0 +1,40 @@
+{% extends 'structure/navigation.html'%}
+
+{% macro build_rating(start_id, radio_name, legend) %}
+    <fieldset class="text-center widget_container py-1 pb-2 px-3">
+        <legend class="bg-gray-100 font-bold border-2 border-b-0 border-gray-500 pt-1 px-2 mb-0.5 rounded-t-md">{{ legend }}</legend>
+        <label class="italic pl-1" for="star{{start_id}}" title="Low Rating">Awful</label>
+        <input required type="radio" id="star{{start_id}}" name="{{radio_name}}" value="{{start_id}}" />
+        <input type="radio" id="star{{start_id + 1}}" name="{{radio_name}}" value="{{start_id + 1}}" />
+        <input type="radio" id="star{{start_id + 2}}" name="{{radio_name}}" value="{{start_id + 2}}" />
+        <input type="radio" id="star{{start_id + 3}}" name="{{radio_name}}" value="{{start_id + 3}}" />
+        <input type="radio" id="star{{start_id + 4}}" name="{{radio_name}}" value="{{start_id + 4}}" />
+        <label class="italic pr-1" for="star{{start_id + 4}}" title="High Rating">Perfect</label>
+    </fieldset>
+{% endmacro %}
+
+{% macro section_style() %}
+    flex flex-row flex-wrap index_card py-4 items-center justify-center md:max-w-2/3 mx-3 sm:mx-4 md:mx-6 gap-4
+{% endmacro %}
+
+{% block content %}
+    <div class="focus_center">
+        <h1 class="solid-text-shadow-br-teal-300">Review</h1>
+        <p class="font-black">{{ data.title }}</p>
+        <p class="pt-4 italic text-sm">Thank you for choosing to review this recipe!</p>
+        <form action="/recipes/submitreview/{{additional_data.recipe_name}}" class="flex flex-col items-center gap-4 mt-6">
+            <section class="{{ section_style() }} index_card_amber">
+                {{ build_rating(1, "overall", "Overall Rating")|trim }}
+                {{ build_rating(6, "prep", "Ease of Prep")|trim }}
+                {{ build_rating(11, "cost", "Affordability")|trim }}
+                {{ build_rating(16, "recommend", "Would Recommend")|trim }}
+            </section>
+            <section class="{{ section_style() }} index_card_lime">
+                {{ build_rating(21, "taco_bell", "Avoidance of a Taco Bell Incident")|trim }}
+                {{ build_rating(26, "sprite", "Pairability with McDonald's Sprite")|trim }}
+                {{ build_rating(31, "dave", "Rating Compared to The Dave's Single at Wendy's")|trim }}
+            </section>
+            <input class="bg-teal-300 rounded-md border-2 border-teal-600 py-0.5 px-2 solid-shadow-sm-br-teal-600 hover:solid-shadow-sm-b-teal-600 active:solid-shadow-blank" type="submit", value="Submit Review">
+        </form>
+    </div>
+{% endblock %}

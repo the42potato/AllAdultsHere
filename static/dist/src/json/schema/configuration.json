@@ -22,7 +22,7 @@
             "properties": {
                 "codes": {
                     "type": "object",
-                    "required": ["400", "401", "403", "404", "500", "501", "503", "418"],
+                    "required": ["400", "401", "403", "404", "500", "501", "503"],
                     "properties": {
                         "400": {
                             "$ref": "#/$defs/errorObject"
@@ -54,6 +54,12 @@
                     "type": "object",
                     "additionalProperties": {
                         "type": "string"
+                    }
+                },
+                "custom_codes": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "$ref": "#/$defs/errorObject"
                     }
                 }
             }

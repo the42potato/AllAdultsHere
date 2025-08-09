@@ -10,32 +10,34 @@
             "400": {
                 "image": "error.webp",
                 "splashes": [
-                    "How dare you?"
+                    "How dare you?",
+                    "Either we're illiterate, or your request was bad"
                 ]
             },
             "401": {
-                "image": "error.webp",
+                "image": "unauthorized.webp",
                 "splashes": [
                     "Get out."
                 ]
             },
             "403": {
-                "image": "error.webp",
+                "image": "cat_stuck.webp",
                 "splashes": [
                     "Does not open from this side.",
                     "You don't belong here."
                 ]
             },
             "404": {
-                "image": "error.webp",
+                "image": "wyoming.webp",
                 "splashes": [
                     "We lost it.",
                     "It's somewhere around here...",
-                    "I hope we didn't put it with the donations..."
+                    "I hope we didn't put it with the donations...",
+                    "It doesn't exist. Just like Wyoming."
                 ]
             },
             "500": {
-                "image": "error.webp",
+                "image": "lizard.gif",
                 "splashes": [
                     "We messed up.",
                     "Those responsible have been fired.",
@@ -53,11 +55,15 @@
                 "splashes": [
                     "Try again later."
                 ]
-            },
-            "418": {
-                "image": "error.webp",
+            }
+        },
+        "custom_codes": {
+            "advice_ignored": {
+                "image": "trash.webp",
                 "splashes": [
-                    "This server is a teapot and cannot brew coffee."
+                    "We did (kind of) ask...",
+                    "Which of you assholes wanted a suggestion box? -Brandon",
+                    "Yes, we made all that just for this joke."
                 ]
             }
         },

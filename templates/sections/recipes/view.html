@@ -49,7 +49,11 @@
 {% endmacro %}
 
 {% macro print_prep(prep) %}
-    <div class="flex flex-row items-center justify-center flex-wrap widget_container px-1 py-0.5 {{ get_prep_coloring(prep)|trim }}">
+    <div
+        {% if prep == 'oven' %}
+            title="why do they call it oven when you ove-in the cold food ove-out hot eat the food??"
+        {% endif %}
+        class="flex flex-row items-center justify-center flex-wrap widget_container px-1 py-0.5 {{ get_prep_coloring(prep)|trim }}">
         {{ print_prep_image(prep)|trim }}
         <p class="info_content">{{ prep }}</p>
     </div>
@@ -194,6 +198,11 @@
                     {% endfor %}
                 </ol>
             </div>
+        </div>
+    </div>
+    <div class="flex flex-1 flex-row items-center justify-center pt-6 pb-4">
+        <div class="widget_container">
+            <a class="buttonlink" href="{{ url_for('recipe_review', recipe_name=additional_data.recipe_name) }}">Rate this Recipe!</a>
         </div>
     </div>
 {% endblock %}
