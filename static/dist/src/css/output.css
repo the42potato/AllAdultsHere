@@ -1154,11 +1154,6 @@ a.subtle_link:hover {
   text-decoration-color: transparent;
   box-shadow: -2.5px 2.5px 0 0 var(--color-lime-400);
 }
-.buttonlink:active {
-  border-color: var(--color-teal-200);
-  background-color: var(--color-teal-100);
-  box-shadow: 2.5px 2.5px 0 0 var(--color-teal-200);
-}
 h1.dotted_underline, h2.dotted_underline, h3.dotted_underline, h4.dotted_underline, h5.dotted_underline, h6.dotted_underline {
   text-decoration-line: underline;
   text-decoration-style: dotted;

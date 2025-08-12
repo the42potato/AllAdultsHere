@@ -97,9 +97,6 @@ a.subtle_link:hover {
 .buttonlink:hover {
     @apply bg-lime-300 border-lime-500 solid-shadow-sm-bl-lime-400 decoration-transparent;
 }
-.buttonlink:active {
-    @apply bg-teal-100 border-teal-200 solid-shadow-sm-br-teal-200;
-}
 
 h1.dotted_underline, h2.dotted_underline, h3.dotted_underline, h4.dotted_underline, h5.dotted_underline, h6.dotted_underline {
     @apply underline decoration-dotted underline-offset-6 decoration-5
