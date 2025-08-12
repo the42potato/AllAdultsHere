@@ -21,7 +21,7 @@
             <label><input type="number" name="preptime" value="preptime" min="1" step="1"
                 {% if 'preptime' in request.args.getlist('meal') %}checked{% endif %}> Max Preptime</label>
             
-            <button class="" type="submit">Search</button>
+            <button type="submit">Search</button>
         </form>
         <a class="buttonlink" href="/recipe_substitutions">Substitutions Guide</a>
     </div>

@@ -16,11 +16,14 @@ boot_date = datetime.now(timezone.utc)
 
 # create global config data on boot
 with app.app_context():
+    # open and load the json schema
     config_path = os.path.join(app.static_folder, 'dist', 'src', 'json', 'config.json')
     config_schema_path = os.path.join(app.static_folder, 'dist', 'src', 'json', 'schema', 'configuration.json')
     with open(config_path) as d, open(config_schema_path) as s:
         config = json.load(d)
         config_schema = json.load(s)
+    
+    # if config is valid, validate contained data and add variable data
     if validate_json_schema(config, config_schema):
         # inject generated information into config
         config["RECIPE_OF_THE_DAY"] = get_json_file_based_on_date("recipes")
@@ -40,11 +43,13 @@ with app.app_context():
 
 @app.context_processor
 def inject_global_data():
+    # If config doesn't exist, raise an exception
     if app.global_config != None:
         return app.global_config
     else:
         raise FileNotFoundError("Invalid Schema")
 
+# open and load recipe and cardlist schema to avoid loading them every time either is needed
 recipes_schema_path = os.path.join(app.static_folder, 'dist', 'src', 'json', 'schema', 'recipes.json')
 cardlist_schema_path = os.path.join(app.static_folder, 'dist', 'src', 'json', 'schema', 'cardlist.json')
 with open(recipes_schema_path) as r, open(cardlist_schema_path) as c:
@@ -63,17 +68,18 @@ def static_files(filename):
 def recipes():
     recipes_folder_path = os.path.join(app.static_folder, 'dist', 'src', 'json', 'recipes')
 
+    # get query from request, otherwise it is ""
     search_query = request.args.get("query", "").lower()
     selected_meals = request.args.getlist("meal")
 
     recipes_data = []
     invalid_file_cnt = 0
-    recipe_files = glob.glob(os.path.join(recipes_folder_path, '*.json'))
+    recipe_files = glob.glob(os.path.join(recipes_folder_path, '*.json')) # get full paths to all JSON files in the recipes folder
     for recipe_file in recipe_files:
-        recipe_link = os.path.splitext(os.path.basename(recipe_file))[0]
+        recipe_link = os.path.splitext(os.path.basename(recipe_file))[0] # link used within site
         with open(recipe_file) as f:
             recipe = json.load(f)
-            if validate_json_schema(recipe, recipe_schema):
+            if validate_json_schema(recipe, recipe_schema): # if recipe matches schema, build data for use on page
                 title = recipe.get("title", "").lower()
                 recipe_meals = recipe.get("meal_type", [])
                 if isinstance(recipe_meals, str):
