@@ -8,6 +8,7 @@
     "IMPORT_JS": [
         "page_utility"
     ],
+    "ACTIVE_FOOTERS": [],
     "ERRORS": {
         "codes": {
             "400": {

@@ -23,6 +23,12 @@
                 "pattern": "^[A-Za-z_/]+$"
             }
         },
+        "ACTIVE_FOOTERS": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
         "ERRORS": {
             "type": "object",
             "required": ["codes"],
