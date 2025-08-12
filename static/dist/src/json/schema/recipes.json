@@ -170,7 +170,18 @@
         },
         "ingredients": {
         "type": "array",
-        "items": { "type": "string" }
+        "items": {
+            "type": "object",
+            "required": ["item"],
+            "properties": {
+                "amount": { "type": "string" },
+                "item": { "type": "string" },
+                "notes": {
+                    "type": "array",
+                    "items": {"type": "string"}
+                }
+            }
+        }
         },
         "equipment": {
         "type": "array",

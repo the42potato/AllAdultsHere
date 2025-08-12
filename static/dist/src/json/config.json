@@ -5,6 +5,9 @@
         "Sex Positions": "/sex_positions"
     },
     "NAV_LINK_MAX": 6,
+    "IMPORT_JS": [
+        "page_utility"
+    ],
     "ERRORS": {
         "codes": {
             "400": {
@@ -64,7 +67,8 @@
                     "We did (kind of) ask...",
                     "Which of you assholes wanted a suggestion box? -Brandon",
                     "Yes, we made all that just for this joke."
-                ]
+                ],
+                "description": "Your opinion has been acknowledged, but we still don't care."
             }
         },
         "messages": {

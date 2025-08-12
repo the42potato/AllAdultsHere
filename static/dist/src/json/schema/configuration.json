@@ -2,7 +2,7 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "title": "Site Configuration",
     "type": "object",
-    "required": ["PAGELINKS", "NAV_LINK_MAX", "ERRORS"],
+    "required": ["PAGELINKS", "NAV_LINK_MAX", "ERRORS", "IMPORT_JS"],
     "properties": {
         "PAGELINKS": {
             "type": "object",
@@ -15,6 +15,13 @@
             "type": "integer",
             "minimum": 3,
             "maximum": 10
+        },
+        "IMPORT_JS": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "pattern": "^[A-Za-z_/]+$"
+            }
         },
         "ERRORS": {
             "type": "object",
@@ -78,9 +85,11 @@
                     "items": {
                         "type": "string"
                     }
+                },
+                "description": {
+                    "type": "string"
                 }
-            },
-            "additionalProperties": false
+            }
         }
     }
 }

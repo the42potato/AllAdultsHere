@@ -25,6 +25,15 @@ with app.app_context():
         # inject generated information into config
         config["RECIPE_OF_THE_DAY"] = get_json_file_based_on_date("recipes")
         config["LAST_REBOOT"] = boot_date
+        js_path = os.path.join(app.static_folder, 'dist', 'src', 'js')
+
+        # find all valid JS files and remove invalid IMPORT_JS contents
+        valid_js = []
+        for file in os.listdir(js_path):
+            if file.endswith("js"):
+                file_name = os.path.splitext(os.path.basename(file))[0]
+                valid_js.append(file_name)
+        config["IMPORT_JS"] = set(valid_js) & set(config["IMPORT_JS"])
     else:
         config = None
     app.global_config = config
@@ -100,7 +109,7 @@ def recipe_review(recipe_name):
 
 @app.route('/recipes/submitreview/<path:recipe_name>')
 def submit_recipe_review(recipe_name):
-    return raise_joke_http_error("advice_ignored", "Your opinion has been acknowledged, but we still don't care.")
+    return raise_joke_http_error("advice_ignored", app.global_config["ERRORS"]["custom_codes"]["advice_ignored"]["description"])
 
 @app.route('/sex_positions')
 def sex_positions():

@@ -1,4 +1,6 @@
 {% extends 'structure/navigation.html'%}
+{% set page_title = "Review: " ~ data.title %}
+{% set page_footer = "recipe_footer" %}
 
 {% macro build_rating(start_id, radio_name, legend) %}
     <fieldset class="text-center widget_container py-1 pb-2 px-3">

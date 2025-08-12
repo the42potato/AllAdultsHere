@@ -11,17 +11,56 @@
     "cook_time_minutes": [30, 40],
     "servings": [4, 6],
     "ingredients": [
-        "2 tablespoons butter",
-        "3 leeks, white part only, washed thoroughly and sliced",
-        "2 cloves garlic, minced",
-        "8 medium potatoes, Yukon Golds, or other white",
-        "5 cups of veggie stock",
-        "2 teaspoons Dijon mustard",
-        "Dash of cayenne pepper",
-        "Salt and pepper",
-        "1 cup grated cheese, such as old cheddar or Gouda",
-        "1/2 cup whipping cream",
-        "1/2 cup milk"
+        {
+            "amount": "2 tablespoons",
+            "item": "butter"
+        },
+        {
+            "amount": "3",
+            "item": "leeks",
+            "notes": [
+                "white part only"
+            ]
+        },
+        {
+            "amount": "2 cloves",
+            "item": "garlic"
+        },
+        {
+            "amount": "8",
+            "item": "potatoes",
+            "notes": [
+                "Yukon Golds, or other white"
+            ]
+        },
+        {
+            "amount": "5 cups",
+            "item": "vegetable stock"
+        },
+        {
+            "amount": "2 tablespoons",
+            "item": "Dijon mustard"
+        },
+        {
+            "item": "Cayenne pepper"
+        },
+        {
+            "item": "Salt and pepper"
+        },
+        {
+            "item": "1 cup cheese",
+            "notes": [
+                "such as old cheddar or Gouda"
+            ]
+        },
+        {
+            "amount": "1/2 cup",
+            "item": "whipping cream"
+        },
+        {
+            "amount": "1/2 cup",
+            "item": "milk"
+        }
     ],
     "equipment": [
         "Large pot",
@@ -32,6 +71,9 @@
     ],
     "instructions": [
         [
+            {"text": "Wash and slice the leeks. Mince garlic. Grate cheese."}
+        ],
+        [
             {"text": "Melt"},
             {"text": "2tbsp", "measurement": true},
             {"text": "of butter in pot. Add the leeks, and cook until a little bit soft, about"},
@@ -41,7 +83,7 @@
             {"text": "Add the garlic, cook a minute longer."}
         ],
         [
-            {"text": "Add the potatoes and stock, and stir in the Dijon mustard and cayenne. You want the potatoes to be covered with about"},
+            {"text": "Add the potatoes and stock, and stir in the Dijon mustard and a dash of cayenne. You want the potatoes to be covered with about"},
             {"text": "an inch or so", "measurement": true},
             {"text": "of broth (this takes"},
             {"text": "~4-5 cups", "measurement": true},

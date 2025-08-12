@@ -101,6 +101,20 @@
     {{ text|safe }}
 {% endmacro %}
 
+{% macro build_ingredient(id, ingredient) %}
+    {% set rendered_text = ingredient.item %}
+    {% if ingredient.amount %}
+        {% set rendered_text = ingredient.amount ~ " " ~ rendered_text %}
+    {% endif %}
+    {% if ingredient.notes %}
+        {% set rendered_text = rendered_text ~ " (" ~ ingredient.notes|join(", ") ~ ")" %}
+    {% endif %}
+    <div>
+        <input type="checkbox" name="{{ id }}" id="{{ id }}">
+        <label for="{{ id }}" >{{ rendered_text }}</label>
+    </div>
+{% endmacro %}
+
 {% block content %}
     <div class="text-center md:flex-initial min-w-2/5 w-fit bookmark_header solid-text-shadow-b-red-300">
         <div class="bookmark_shape">
@@ -114,13 +128,16 @@
         <div class="w-full lg:w-fit flex-initial lg:min-w-1/3 index_card index_card_teal">
             <h3 class="text-center underline underline-offset-4 pb-2">You Will Need</h3>
             <h5>Ingredients</h5>
-            <ul class="my-0">
+            <form class="px-3 mt-1">
                 {% for ingredient in data.ingredients %}
-                    <li>{{ ingredient }}</li>
+                    {{ build_ingredient(loop.index, ingredient) }}
                 {% endfor %}
-            </ul>
+                <div class="flex justify-end items-center pr-3">
+                    <div class="flex-1 border-t-2 mr-2"></div>
+                    <input type="button" class="mb-2" data-click-action="copy-form" value="Copy Ingredients">
+                </div>
+            </form>
             {% if data.equipment %}
-                <hr class="border-t-3">
                 <h5>Equipment</h5>
                 <ul class="my-0">
                     {% for item in data.equipment %}

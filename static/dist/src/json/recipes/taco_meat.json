@@ -11,14 +11,62 @@
     "cook_time_minutes": 15,
     "servings": 16,
     "ingredients": [
-        "1 pound lean ground beef",
-        "1 white onion",
-        "1 28 ounce can diced tomatoes",
-        "1 15-16 ounce can refried beans",
-        "3 cloves garlic",
-        "1.5 teaspoons chili powder",
-        "1.5 teaspoons cumin",
-        "1 teaspoon salt"
+        {
+            "amount": "1 pound",
+            "item": "lean ground beef",
+            "notes": [
+                
+            ]
+        },
+        {
+            "amount": "1",
+            "item": "white onion",
+            "notes": [
+                
+            ]
+        },
+        {
+            "amount": "28 ounces",
+            "item": "diced tomatoes",
+            "notes": [
+                
+            ]
+        },
+        {
+            "amount": "15-16 ounces",
+            "item": "refried beans",
+            "notes": [
+                
+            ]
+        },
+        {
+            "amount": "3 cloves",
+            "item": "garlic",
+            "notes": [
+                
+            ]
+        },
+        {
+            "amount": "1.5 teaspoons",
+            "item": "chili powder",
+            "notes": [
+                
+            ]
+        },
+        {
+            "amount": "1.5 teaspoons",
+            "item": "cumin",
+            "notes": [
+                
+            ]
+        },
+        {
+            "amount": "1 teaspoon",
+            "item": "salt",
+            "notes": [
+                
+            ]
+        }
     ],
     "equipment": [
         "Skillet",

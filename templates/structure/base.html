@@ -18,5 +18,8 @@
             {% endblock %}
         </div>
         {% include 'component/footer/main_footer.html' %}
+        {% for file in IMPORT_JS | unique %}
+            <script src="{{ url_for('static', filename='dist/src/js/' ~ file ~ '.js' ) }}"></script>
+        {% endfor %}
     </body>
 </html>

@@ -8,16 +8,52 @@
     "servings": [4, 6],
     "tags": ["minimal-dishes"],
     "ingredients": [
-        "16oz linguine pasta",
-        "1 can (14.5oz) diced tomatoes, undrained",
-        "1 large vidalia onion",
-        "4 cloves garlic",
-        "1/2-1 teaspoon red pepper flakes",
-        "2 teaspoons dried oregano",
-        "2 large springs of basil",
-        "4.5 cups vegetable broth",
-        "2 tablespoons olive oil",
-        "Parmesan cheese for garnish"
+        {
+            "amount": "16 ounces",
+            "item": "linguine pasta"
+        },
+        {
+            "amount": "14.5oz",
+            "item": "diced tomatoes",
+            "notes": [
+                "rougly one can",
+                "undrained"
+            ]
+        },
+        {
+            "amount": "1",
+            "item": "large vidalia onion"
+        },
+        {
+            "amount": "4 cloves",
+            "item": "garlic"
+        },
+        {
+            "item": "red pepper flakes",
+            "amount": "1/2-1 teaspoon"
+        },
+        {
+            "item": "dried oregano",
+            "amount": "2 teaspoons"
+        },
+        {
+            "amount": "2 large springs",
+            "item": "basil"
+        },
+        {
+            "amount": "4.5 cups",
+            "item": "vegetable broth"
+        },
+        {
+            "amount": "2 tablespoons",
+            "item": "olive oil"
+        },
+        {
+            "item": "Parmesan cheese",
+            "notes": [
+                "for garnish"
+            ]
+        }
     ],
     "equipment": [
         "Large stock pot",

@@ -21,16 +21,16 @@
             <label><input type="number" name="preptime" value="preptime" min="1" step="1"
                 {% if 'preptime' in request.args.getlist('meal') %}checked{% endif %}> Max Preptime</label>
             
-            <button class="bg-gray-400 border-l-2" type="submit">Search</button>
+            <button class="" type="submit">Search</button>
         </form>
         <a class="buttonlink" href="/recipe_substitutions">Substitutions Guide</a>
     </div>
     <div class="focus_center">
         <h2 class="text-center dotted_underline mb-2">Recipes</h2>
         <div class="flex flex-row gap-3 py-0.5 text-sm">
-            <p>{{ recipes|length }} recipes loaded.</p>
+            <p class="text-green-950">{{ recipes|length }} recipes loaded.</p>
             {% if invalid_count > 0 %}
-                <p>{{ invalid_count }} invalid recipes.</p>
+                <p class="text-red-950">{{ invalid_count }} recipe(s) invalid.</p>
             {% endif %}
         </div>
         <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 w-fit mx-auto place-items-center gap-8 p-4">

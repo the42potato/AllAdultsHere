@@ -12,13 +12,34 @@
     "servings": [2, 4],
     "tags": ["minimal-dishes"],
     "ingredients": [
-        "2 vidalia onions",
-        "2 tablespoons butter",
-        "1 red pepper",
-        "8 ounces cavatappi pasta",
-        "3 cloves garlic",
-        "1-2 springs fresh basil",
-        "1/4 pound parmesan cheese"
+        {
+            "amount": "2",
+            "item": "vidalia onions"
+        },
+        {
+            "amount": "2 tablespoons",
+            "item": "butter"
+        },
+        {
+            "amount": "red pepper",
+            "item": "1"
+        },
+        {
+            "amount": "8 ounces",
+            "item": "cavatappi pasta"
+        },
+        {
+            "amount": "3 cloves",
+            "item": "garlic"
+        },
+        {
+            "amount": "1-2 springs",
+            "item": "fresh basil"
+        },
+        {
+            "amount": "1/4 pound",
+            "item": "parmesan cheese"
+        }
     ],
     "equipment": [
         "Skillet",

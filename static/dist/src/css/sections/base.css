@@ -63,7 +63,7 @@ li {
     @apply py-0.5
 }
 li::marker {
-    @apply text-emerald-800 solid-text-shadow-bl-lime-500;
+    @apply text-emerald-700 solid-text-shadow-t-lime-500;
 }
 ul li::marker {
     @apply text-sm;
@@ -80,4 +80,16 @@ img {
 
 hr {
     @apply py-1;
+}
+
+button, input[type=button] {
+    @apply border-2 border-gray-600 rounded-sm px-2 my-0.5 bg-teal-50 solid-shadow-sm-b-gray-300;
+    transition: background-color 0.12s ease-in-out;
+}
+button:hover, input[type=button]:hover {
+    @apply bg-lime-50;
+}
+button:active, input[type=button]:active {
+    @apply solid-shadow-blank;
+    transform: translateY(1px);
 }

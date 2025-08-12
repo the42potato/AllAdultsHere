@@ -12,15 +12,51 @@
     "servings": [2, 4],
     "tags": ["minimal-dishes"],
     "ingredients": [
-        "6 chicken breast halves (about 1.5 lbs)",
-        "1 cup dry bread crumbs.",
-        "2 cups milk",
-        "2 large eggs",
-        "2 large yellow onions",
-        "2 cups all-purpose flour",
-        "Vegetable oil for frying",
-        "Garlic powder to taste",
-        "Onion powder to taste"
+        {
+            "amount": "6",
+            "item": "chicken breast halves",
+            "notes": [
+                "about 1.5 pounds"
+            ]
+        },
+        {
+            "amount": "1 cup",
+            "item": "dry bread crumbs"
+        },
+        {
+            "amount": "2 cups",
+            "item": "milk"
+        },
+        {
+            "amount": "2",
+            "item": "large eggs"
+        },
+        {
+            "amount": "2",
+            "item": "large yellow onions"
+        },
+        {
+            "amount": "2 cups",
+            "item": "all-purpose flour"
+        },
+        {
+            "item": "Vegetable oil",
+            "notes": [
+                "for frying"
+            ]
+        },
+        {
+            "item": "Garlic powder",
+            "notes": [
+                "to taste"
+            ]
+        },
+        {
+            "item": "Onion powder",
+            "notes": [
+                "to taste"
+            ]
+        }
     ],
     "equipment": [
         "Large Skillet",

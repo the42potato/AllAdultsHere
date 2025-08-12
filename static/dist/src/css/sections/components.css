@@ -81,10 +81,10 @@ a.subtle_link:hover {
     @apply mt-4 bg-gray-900 text-white py-4 border-t-5 border-t-teal-800
 }
 .footer_container {
-    @apply mx-4 py-2 bg-gray-800 border-2 border-gray-950 rounded-md;
+    @apply mx-4 py-3 bg-gray-800 border-2 border-gray-950 rounded-md;
 }
 .footer_content {
-    @apply flex flex-row flex-wrap justify-center items-center text-center gap-3;
+    @apply flex flex-row flex-wrap justify-center items-center text-center gap-5;
 }
 .footer_content p {
     @apply indent-0 mx-2 my-0;

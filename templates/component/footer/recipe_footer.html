@@ -1,3 +1,19 @@
-<div class="footer_content">
-    <p>Recipe Footer</p>
+<div class="footer_container mt-2">
+    <div class="footer_content">
+        <div>
+            <h6 class="pt-0 mb-1">Recipe of the Day:</h6>
+            {% if RECIPE_OF_THE_DAY is none %}
+                <p>None</p>
+            {% else %}
+                <a class="bg-transparent text-sm decoration-teal-200 text-teal-200" href="{{ url_for('recipe_detail', recipe_name=RECIPE_OF_THE_DAY.link) }}">{{ RECIPE_OF_THE_DAY.display_text }}</a>
+            {% endif %}
+        </div>
+        <div class="flex flex-col justify-center items-center md:max-w-1/2 lg:max-w-1/3">
+            <h6 class="pt-0">Disclaimers:</h6>
+            <ul class="my-0 list-inside text-sm">
+                <li>Practical recipe prep time is dependant upon skill.</li>
+                <li>Those who set off the fire alarm when using a microwave should not attempt any recipe listed.</li>
+            </ul>
+        </div>
+    </div>
 </div>

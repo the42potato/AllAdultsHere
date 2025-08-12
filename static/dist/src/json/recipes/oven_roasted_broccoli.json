@@ -7,11 +7,34 @@
     "cook_time_minutes": [5, 10],
     "servings": [4, 6],
     "ingredients": [
-        "1 large bag broccoli florets, or a head of broccoli cut into florets",
-        "2 teaspoons olive oil",
-        "1 teaspoon garlic powder",
-        "Salt and pepper to taste",
-        "(Optional) 1 minced clove garlic"
+        {
+            "amount": "1 large bag",
+            "item": "broccoli florets",
+            "notes": [
+                "or a head of broccoli cut into florets"
+            ]
+        },
+        {
+            "amount": "2 teaspoons",
+            "item": "olive oil"
+        },
+        {
+            "amount": "1 teaspoon",
+            "item": "garlic powder"
+        },
+        {
+            "item": "Salt and pepper",
+            "notes": [
+                "to taste"
+            ]
+        },
+        {
+            "amount": "1",
+            "item": "minced garlic clove",
+            "notes": [
+                "optional"
+            ]
+        }
     ],
     "equipment": [
         "Baking sheet",
@@ -27,7 +50,7 @@
             {"text": ")."}
         ],
         [
-            {"text": "Place broccoli florets in bowl. Add olive oil, garlic powder, and salt and pepper. Stir to coat evenly."}
+            {"text": "Place broccoli florets in bowl. Add olive oil, garlic powder (and minced garlic if desired), and salt and pepper. Stir to coat evenly."}
         ],
         [
             {"text": "Distribute broccoli in a single layer on a baking sheet. Cook for"},
