@@ -50,6 +50,9 @@ a, a:visited {
 a:hover {
     @apply bg-lime-300 font-medium no-underline decoration-transparent;
 }
+a:focus, input:focus {
+    @apply outline-none outline-2 outline-offset-0;
+}
 
 ol,
 ul {
@@ -75,11 +78,19 @@ ol li::marker {
 }
 
 img {
-    @apply border-2 rounded-sm my-1 border-gray-500 solid-shadow-sm-bl-gray-400;
+    @apply border-2 rounded-sm my-1 border-gray-500;
 }
 
 hr {
     @apply py-1;
+}
+
+input::placeholder {
+    @apply opacity-65;
+    transition: opacity 0.1s ease-in-out;
+}
+input:focus::placeholder {
+    @apply opacity-0;
 }
 
 button, input[type=button] {
@@ -92,4 +103,11 @@ button:hover, input[type=button]:hover {
 button:active, input[type=button]:active {
     @apply solid-shadow-blank;
     transform: translateY(1px);
+}
+input[type=text], input[type=number] {
+    @apply border-2 m-1 mb-1.5 py-0.5 px-1 rounded-sm bg-gray-50 border-gray-400 solid-shadow-sm-b-gray-300 text-teal-900 caret-teal-600;
+    transition: background-color 0.25s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+input[type=number]:hover, input[type=number]:focus, input[type=text]:hover, input[type=text]:focus {
+    @apply bg-teal-50 border-teal-500 solid-shadow-sm-b-teal-400;
 }

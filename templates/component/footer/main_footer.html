@@ -1,22 +1,51 @@
 <div class="footer">
-    <div class="footer_container">
-        <div class="footer_content">
-            <div class="flex flex-col justify-center items-center">
-                <div class="flex flex-row items-center mb-1">
-                    <img class="w-8 m-0 mr-1 border-0 solid-shadow-blank" src="{{ url_for('static', filename='/dist/src/icons/site_icon.ico') }}">
-                    <p class="font-oleo text-lg">We're All Adults Here</p>
-                </div>
-                <p class="text-teal-200 text-sm">Last restart: <span class="text-white italic">{{ LAST_REBOOT.strftime("%Y/%m/%d at %I:%M:%S %p (%Z)") }}</span></p>
+    <div class="flex flex-col md:flex-row justify-center">
+        <div class="footer_container flex-initial">
+            <div class="footer_label">
+                <p>WAAH</p>
             </div>
-            <div class="flex flex-col items-center justify-center">
+            <div class="footer_content">
+                <img class="w-12 m-0 mr-1 border-0 solid-shadow-blank" src="{{ url_for('static', filename='/dist/src/icons/site_icon.ico') }}">
+                <div class="flex flex-col justify-center items-start border-b-1 border-teal-100 pb-0.5">
+                    <p class="font-oleo text-lg">We're All Adults Here</p>
+                    <p class="text-teal-200 text-sm">Uptime: <span class="text-white italic">{{ LAST_REBOOT.days ~ " days, " ~ LAST_REBOOT.hours ~ " hours." }}</span></p>
+                </div>
+            </div>
+        </div>
+        <div class="flex flex-col flex-1 mt-3 md:mt-0 md:ml-2">
+            <div class="footer_container flex-1">
+                <div class="footer_label">
+                    <p>WAAH</p>
+                </div>
+                <div class="footer_content">
+                    <div class="flex flex-col justify-center items-center">
+                        <p>hello!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer_container flex-1 mt-2">
+                <div class="footer_label">
+                    <p>WAAH</p>
+                </div>
+                <div class="footer_content">
+                    <div class="flex flex-col justify-center items-center">
+                        <p>hello!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer_container mt-2 md:mt-0 md:ml-2 md:min-w-1/7">
+            <div class="footer_label">
+                <p>Site Link</p>
+            </div>
+            <div class="footer_content">
                 {% set qr_rand = range(1, 101) | random %}
                 {% if qr_rand == 1 %}
-                    <img class="w-20 solid-shadow-sm-bl-teal-500" src="{{ url_for('static', filename='dist/src/images/qr_codes/site_link_alt.svg') }}">
+                    <img class="w-35 md:w-30 solid-shadow-sm-bl-teal-500" src="{{ url_for('static', filename='dist/src/images/qr_codes/site_link_alt.svg') }}">
                 {% else %}
                 <!-- TODO need actual site link QR code -->
-                    <img class="w-20 solid-shadow-sm-bl-teal-500" src="{{ url_for('static', filename='dist/src/images/qr_codes/site_link.svg') }}">
+                    <img class="w-35 md:w-30 solid-shadow-sm-bl-teal-500" src="{{ url_for('static', filename='dist/src/images/qr_codes/site_link.svg') }}">
                 {% endif %}
-                <p class="font-black text-sm">Site Link</p>
             </div>
         </div>
     </div>

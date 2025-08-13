@@ -2,7 +2,8 @@
     "PAGELINKS": {
         "Home": "/",
         "Recipes": "/recipes",
-        "Sex Positions": "/sex_positions"
+        "Sex Positions": "/sex_positions",
+        "Password Tester": "/password_strength"
     },
     "NAV_LINK_MAX": 6,
     "IMPORT_JS": [
@@ -37,7 +38,10 @@
                     "We lost it.",
                     "It's somewhere around here...",
                     "I hope we didn't put it with the donations...",
-                    "It doesn't exist. Just like Wyoming."
+                    "It doesn't exist. Just like Wyoming.",
+                    "I'll find it later.",
+                    "If I had a nickel...",
+                    "Oh here it is! Wait no, that's my jury summons."
                 ]
             },
             "500": {
@@ -45,13 +49,17 @@
                 "splashes": [
                     "We messed up.",
                     "Those responsible have been fired.",
-                    "The server's re-education will commence shortly."
+                    "The server's re-education will commence shortly.",
+                    "Everything is fine.",
+                    "The lemon powering our server is struggling today.",
+                    "Lizard Lizard Lizard Lizard Lizard Lizard Lizard..."
                 ]
             },
             "501": {
                 "image": "error.webp",
                 "splashes": [
-                    "Under construction."
+                    "Under construction.",
+                    "Coming soon!"
                 ]
             },
             "503": {

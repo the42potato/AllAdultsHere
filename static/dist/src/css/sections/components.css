@@ -6,18 +6,20 @@
     @apply flex-row mb-6 mt-2 mx-auto py-2 px-6;
     background-image: linear-gradient(
         to right, 
-        var(--color-zinc-100) 0%, 
-        var(--color-gray-200) 40%, 
-        var(--color-gray-200) 60%, 
-        var(--color-zinc-100) 100%
+        var(--color-zinc-50) 10%, 
+        var(--color-gray-100) 40%, 
+        var(--color-gray-100) 60%, 
+        var(--color-zinc-50) 90%
     );
-    transition: box-shadow 0.2s ease-in-out, border-color 0.15s ease-in-out;
+    transition: box-shadow 0.1s ease-in-out, border-color 0.15s ease-in-out;
 }
 .navbar_dropdown {
     @apply relative inline-block h-full;
+    filter: none;
+    box-shadow: none;
 }
 .navbar_dropdown_container {
-    @apply absolute -top-2.5 -left-4 solid-shadow-blank max-h-0 overflow-hidden;
+    @apply absolute top-7 -right-4 solid-shadow-blank max-h-0 overflow-hidden;
     transition: max-height 0.65s ease-in-out, box-shadow 0.1s ease-in-out;
 }
 .navbar_dropdown:hover .navbar_dropdown_container {
@@ -25,10 +27,10 @@
     max-height: 5000px;
 }
 .navbar_dropdown_content {
-    @apply flex-col py-2 px-4;
+    @apply flex-col py-2.5 md:py-2 px-4 w-44;
 }
 .navbar::before, .navbar::after {
-    @apply absolute w-3/5 h-6/11 -bottom-0.5 -z-10 bg-gray-400 rounded-sm;
+    @apply absolute w-3/5 h-6/11 -bottom-0.5 -z-10 bg-gray-300 rounded-sm;
     content: '';
     transition: all 0.1s ease-in-out;
 }
@@ -41,7 +43,7 @@
     transform: skew(3deg) rotate(3deg);
 }
 .navbar:hover {
-    @apply bg-gray-200 border-gray-400;
+    @apply bg-gray-100 border-gray-300;
     background-image: none;
 }
 .navbar:hover::before, .navbar:hover::after {
@@ -56,7 +58,7 @@
 }
 .navlink {
     @apply bg-transparent px-1 decoration-black border-t-2 border-b-2 border-transparent;
-    transition: background-color 0.1s ease-in-out, border-color 0.3s ease-in-out, text-decoration 0.3s ease-in-out;
+    transition: background-color 0.1s ease-in-out, border-color 0.2s ease-in-out, text-decoration 0.2s ease-in-out;
 }
 .navlink:hover {
     @apply border-teal-700 subtle-text-highlight-teal-600 no-underline decoration-transparent;
@@ -78,21 +80,28 @@ a.subtle_link:hover {
 }
 
 .footer {
-    @apply mt-4 bg-gray-900 text-white py-4 border-t-5 border-t-teal-800
+    @apply mt-4 p-4 bg-gray-900 text-white border-t-6 border-t-cyan-800;
 }
 .footer_container {
-    @apply mx-4 py-3 bg-gray-800 border-2 border-gray-950 rounded-md;
+    @apply relative bg-gray-800 border-2 border-gray-950 rounded-md flex flex-row justify-center pl-8 min-h-20 solid-shadow-sm-b-black;
 }
 .footer_content {
-    @apply flex flex-row flex-wrap justify-center items-center text-center gap-5;
+    @apply flex flex-row flex-wrap h-full justify-center items-center text-center h-fit gap-2 pl-2 pr-4 py-3;
 }
 .footer_content p {
     @apply indent-0 mx-2 my-0;
 }
+.footer_label {
+    @apply absolute text-center h-full bg-gray-700 rounded-l-sm border-r-2 border-gray-950 py-1 self-stretch left-0 font-bold;
+    writing-mode: sideways-lr;
+}
+.footer_label p {
+    @apply indent-0 m-0 p-0;
+}
 
 .buttonlink {
     @apply bg-teal-300 px-2.5 py-1.5 md:px-2 md:py-1 text-sm md:text-base border-2 border-teal-600 solid-shadow-sm-tr-teal-400 rounded-sm;
-    transition: box-shadow 0.2s ease-in-out, background-color 0.15s ease-in-out, transform 0.15s ease-in-out;
+    transition: box-shadow 0.1s ease-in-out, background-color 0.15s ease-in-out, transform 0.15s ease-in-out;
 }
 .buttonlink:hover {
     @apply bg-lime-300 border-lime-500 solid-shadow-sm-bl-lime-400 decoration-transparent;
@@ -219,4 +228,21 @@ a.info_content:hover {
 
 .prep_image {
     @apply w-8 m-0 p-0 border-0 solid-shadow-blank;
+}
+
+.blocky_container {
+    @apply relative md:max-w-4/5 -rotate-3 z-0;
+}
+.blocky_container img {
+    @apply solid-shadow-sm-bl-gray-400;
+}
+.blocky_container::before, .blocky_container::after {
+    @apply absolute -z-10 w-3/4 h-1/2 opacity-80;
+    content: "";
+}
+.blocky_container::before {
+    @apply top-0 left-0 bg-teal-200 -rotate-34 solid-shadow-sm-l-teal-400 border-2 border-teal-300;
+}
+.blocky_container::after {
+    @apply bottom-0 right-0 bg-lime-200 rotate-25 solid-shadow-sm-br-lime-400 border-2 border-lime-300;
 }

@@ -27,14 +27,14 @@ function copy_form_checks(elmt, copyUnchecked = false){
         }
     });
 
-    console.log("Labels in this form:", uncheckedLabels);
     copy_to_clipboard(uncheckedLabels.join("\n"))
 }
 
 // handle clicked elements, running a corresponding function based on
 // the element's `data-action` attribute
 document.addEventListener("click", e => {
-    const action = e.target.dataset.action; // contents of `data-action`
+    const action = e.target.dataset.clickAction; // contents of `data-action`
+    
     const element = e.target; // the HTML element itself
     if (action) {
         // if a valid action is found, run its corresponding function
