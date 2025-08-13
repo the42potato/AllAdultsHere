@@ -18,11 +18,9 @@ def get_json_file_based_on_date(dir):
     try:
         items = os.listdir(json_path)
         if items:
-            trunc = len(items) + 1
             dte = date.today()
             dt_midnight = datetime.combine(dte, datetime.min.time())
-            # need to fix modulo. often results in same number. perhaps moduloing by a large prime will help
-            selected_file = items[math.floor(dt_midnight.timestamp() % trunc)] 
+            selected_file = items[math.floor(dt_midnight.timestamp() % 6361 % len(items))] 
             file_path = os.path.join(json_path, selected_file)
             with open(file_path) as f:
                 file = json.load(f)

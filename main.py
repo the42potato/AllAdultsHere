@@ -119,8 +119,7 @@ def handle_http_exception(e):
         filtered_description = e.description
 
     if app.global_config is not None:
-        error_data = app.global_config["ERRORS"][str(e.code)]
-        print(error_data)
+        error_data = app.global_config["ERRORS"]["codes"][str(e.code)]
     err = {"code": e.code, "description":filtered_description, "splash": random.choice(error_data["splashes"]), "image": f"{error_data['image']}"}
     return render_template("sections/general/error.html", error = err), e.code
 
