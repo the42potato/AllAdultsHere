@@ -1,9 +1,9 @@
 <nav>
     <div class="navbar">
-        {% for label, link in PAGELINKS.items() %}
+        {% for item in PAGELINKS %}
             {% if loop.index <= NAV_LINK_MAX %}
-            <a class="navlink" href="{{link}}">{{ label }}</a>
-                {% if loop.index == 3 and loop.index < NAV_LINK_MAX and PAGELINKS.items()|length >= 4 %}
+            <a class="navlink" href="{{ item.link }}">{{ item.label }}</a>
+                {% if loop.index == 3 and loop.index < NAV_LINK_MAX and PAGELINKS|length >= 4 %}
                     <div class="navbar_dropdown">
                         <img class="nav_img" src="{{ url_for('static', filename='dist/src/icons/repeating_arrow.ico') }}">
                         <div class="navbar_dropdown_container">
@@ -11,7 +11,7 @@
                 {% endif %}
             {% endif %}
         {% endfor %}
-        {% if PAGELINKS.items()|length >= 4 %}
+        {% if PAGELINKS|length >= 4 %}
                     </div>
                 </div>
             </div>

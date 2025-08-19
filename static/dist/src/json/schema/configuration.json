@@ -5,16 +5,38 @@
     "required": ["PAGELINKS", "NAV_LINK_MAX", "ERRORS", "IMPORT_JS"],
     "properties": {
         "PAGELINKS": {
-            "type": "object",
-            "additionalProperties": {
-                "type": "string",
-                "pattern": "^[A-Za-z_/]+$"
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "link": {
+                        "type": "string",
+                        "pattern": "^[A-Za-z_/]+$"
+                    },
+                    "label": {
+                        "type": "string"
+                    },
+                    "shorthand": {
+                        "type": "string",
+                        "maxLength": 7
+                    }
+                }
             }
         },
         "NAV_LINK_MAX": {
             "type": "integer",
             "minimum": 3,
             "maximum": 10
+        },
+        "FOOTER_LINK_MAX": {
+            "type": "integer",
+            "minimum": 3,
+            "maximum": 16
+        },
+        "FOOTER_LINK_CUTOFF": {
+            "type": "integer",
+            "minimum": 3,
+            "maximum": 16
         },
         "IMPORT_JS": {
             "type": "array",

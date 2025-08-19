@@ -1,0 +1,61 @@
+{% extends 'structure/navigation.html'%}
+{% set page_title = "Styling" %}
+{% block content %}
+    <div class="flex flex-col justify-center items-center gap-2 mx-4 md:mx-6">
+        <p class="text-center">Welcome to the closest thing this site has to a dev page.</p>
+        <h2 class="text-center">Defaults</h2>
+        <div class="flex flex-row flex-wrap justify-center items-center gap-4">
+            <a class="w-fit" href="https://google.com" target="_blank">Link</a>
+            <ol>
+                <li>Organized List</li>
+                <li>Organized List</li>
+            </ol>
+            <ul>
+                <li>Unorganized List</li>
+                <li>Unorganized List</li>
+            </ul>
+            <button>Button</button>
+            <input type="button" value="Input Button">
+            <input type="text" placeholder="Text Input">
+            <input type="number" placeholder="Numeric Input">
+            <label for="radio_preview">Radio Input
+                <input type="radio" id="radio_preview" name="radio_preview">
+            </label>
+            <label for="check_preview">Checkbox Input
+                <input type="checkbox" id="check_preview" name="check_preview">
+            </label>
+            <img class="w-36 bg-teal-100" src="{{ url_for('static', filename='dist/src/icons/site_icon.ico') }}">
+        </div>
+        <h2 class="text-center">Containers</h2>
+        <div class="flex flex-row justify-center items-center gap-4">
+            <div class="widget_container widget_lime px-2 flex flex-row">
+                <p class="px-2 py-1">Widget container</p>
+                <div class="info_container border-l-2">
+                    <p class="info_label">Info Label</p>
+                    <p class="info_content">Info Content</p>
+                </div>
+                <div class="info_container border-l-2">
+                    <p class="info_label">Info Label</p>
+                    <a href="https://google.com" target="_blank" class="info_content">Info Link</a>
+                </div>
+            </div>
+            <div class="index_card index_card_fuchsia max-w-1/2">
+                <p>Index Card</p>
+                <p>Lorem Ipsum Dolar Set Amet Lorem Ipsum Dolar Set Amet Lorem Ipsum Dolar Set Amet Lorem Ipsum Dolar Set Amet Lorem Ipsum Dolar Set Amet Lorem Ipsum Dolar Set Amet</p>
+            </div>
+            <div class="blocky_container">
+                <img class="w-36 bg-teal-100" src="{{ url_for('static', filename='dist/src/icons/site_icon.ico') }}">
+            </div>
+            <div class="bookmark_header">
+                <div class="bookmark_shape">
+                    <h6>OOO Bookmark Header</h6>
+                </div>
+            </div>
+        </div>
+        <h2>Links</h2>
+        <div class="flex flex-row justify-center items-center gap-4">
+            <a href="https://google.com" target="_blank" class="subtle_link">Subtle link</a>
+            <a href="https://google.com" target="_blank" class="buttonlink">"Button" Link</a>
+        </div>
+    </div>
+{% endblock %}

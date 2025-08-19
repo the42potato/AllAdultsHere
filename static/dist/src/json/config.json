@@ -1,11 +1,29 @@
 {
-    "PAGELINKS": {
-        "Home": "/",
-        "Recipes": "/recipes",
-        "Sex Positions": "/sex_positions",
-        "Password Tester": "/password_strength"
-    },
-    "NAV_LINK_MAX": 6,
+    "PAGELINKS": [
+        {
+            "link": "/",
+            "label": "Home",
+            "shorthand": "Home"
+        },
+        {
+            "link": "/recipes",
+            "label": "Recipes",
+            "shorthand": "Recipes"
+        },
+        {
+            "link": "/sex_positions",
+            "label": "Sex Positions",
+            "shorthand": "Sex Ed"
+        },
+        {
+            "link": "/password_strength",
+            "label": "Password Tester",
+            "shorthand": "P5wrds"
+        }
+    ],
+    "NAV_LINK_MAX": 8,
+    "FOOTER_LINK_MAX": 10,
+    "FOOTER_LINK_CUTOFF": 6,
     "IMPORT_JS": [
         "page_utility"
     ],

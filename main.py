@@ -43,7 +43,7 @@ with app.app_context():
 def inject_global_data():
     # If config doesn't exist, raise an exception
     if app.global_config != None:
-        # build global dynamic data
+        # build dynamic global data
         date_diff = datetime.now() - boot_date
         print(date_diff)
         days = math.floor(date_diff.total_seconds() / 86400)
@@ -66,10 +66,6 @@ with open(recipes_schema_path) as r, open(cardlist_schema_path) as c:
 @app.route('/')
 def index():
     return render_template('/sections/general/index.html')
-
-@app.route('/password_strength')
-def password_strength():
-    return render_template('/sections/static/password_strength.html')
 
 @app.route('/static/<path:filename>')
 def static_files(filename):

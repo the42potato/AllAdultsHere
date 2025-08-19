@@ -72,31 +72,23 @@
     filter: drop-shadow(0px 1px 3px var(--color-teal-400));
 }
 
-a.subtle_link {
-    @apply bg-transparent solid-text-shadow-tr-teal-200 font-bold;
-}
-a.subtle_link:hover {
-    @apply solid-text-shadow-br-amber-300
-}
-
 .footer {
     @apply mt-4 p-4 bg-gray-900 text-white border-t-6 border-t-cyan-800;
 }
 .footer_container {
-    @apply relative bg-gray-800 border-2 border-gray-950 rounded-md flex flex-row justify-center pl-8 min-h-20 solid-shadow-sm-b-black;
+    @apply relative bg-gray-800 border-2 border-gray-950 rounded-md flex flex-col md:flex-row justify-center pl-8 min-h-20 solid-shadow-sm-b-black;
 }
 .footer_content {
-    @apply flex flex-row flex-wrap h-full justify-center items-center text-center h-fit gap-2 pl-2 pr-4 py-3;
+    @apply flex flex-row flex-wrap h-full justify-center items-center text-center gap-2 pl-2 pr-4 py-3;
 }
 .footer_content p {
-    @apply indent-0 mx-2 my-0;
+    @apply mx-2 my-0;
 }
 .footer_label {
-    @apply absolute text-center h-full bg-gray-700 rounded-l-sm border-r-2 border-gray-950 py-1 self-stretch left-0 font-bold;
-    writing-mode: sideways-lr;
+    @apply absolute text-center h-full bg-gray-700 rounded-l-sm border-r-2 border-gray-950 py-1 self-stretch left-0 font-bold text-vertical;
 }
 .footer_label p {
-    @apply indent-0 m-0 p-0;
+    @apply m-0 p-0;
 }
 
 .buttonlink {
@@ -105,6 +97,112 @@ a.subtle_link:hover {
 }
 .buttonlink:hover {
     @apply bg-lime-300 border-lime-500 solid-shadow-sm-bl-lime-400 decoration-transparent;
+}
+
+a.booklink {
+    @apply relative flex flex-col m-0 p-0 px-0.5 pb-1 pt-1.5 no-underline mb-1.5 rounded-t-xs;
+}
+a.booklink::before {
+    @apply absolute h-3 w-1.5 left-1.5 -top-0.5 bg-red-600;
+    content: "";
+    clip-path: polygon(100% 0, 100% 100%, 80% 100%, 50% 65%, 20% 100%, 0 100%, 0 0);
+    transition: height 0.25s ease-in-out, clip-path 0.25s ease-in-out, background-color 0.25s ease-in-out;
+}
+a.booklink::after {
+    @apply absolute h-1.5 -left-1 -bottom-1.5 w-[135%] bg-amber-900 border-t-2 border-amber-950;
+    content: "";
+}
+a.booklink p {
+    @apply text-xs text-vertical p-0 m-0 px-1 pt-1 my-0.5 rounded-sm;
+}
+a.booklink:hover::before {
+    @apply h-5 bg-red-400;
+    clip-path: polygon(100% 0, 100% 100%, 80% 100%, 50% 85%, 20% 100%, 0 100%, 0 0);
+}
+a.booklink:hover p {
+    @apply bg-white;
+}
+
+a.booklink_teal {
+    @apply bg-teal-400 border-teal-500;
+}
+a.booklink_teal:hover {
+    @apply bg-teal-300
+}
+a.booklink_teal p {
+    @apply bg-teal-100;
+}
+a.booklink_amber {
+    @apply bg-amber-400 border-amber-500;
+}
+a.booklink_amber:hover {
+    @apply bg-amber-300
+}
+a.booklink_amber p {
+    @apply bg-amber-100;
+}
+a.booklink_gray {
+    @apply bg-gray-400 border-gray-500;
+}
+a.booklink_gray:hover {
+    @apply bg-gray-300
+}
+a.booklink_gray p {
+    @apply bg-gray-100;
+}
+a.booklink_red {
+    @apply bg-red-400 border-red-500;
+}
+a.booklink_red:hover {
+    @apply bg-red-300
+}
+a.booklink_red p {
+    @apply bg-red-100;
+}
+a.booklink_sky {
+    @apply bg-sky-400 border-sky-500;
+}
+a.booklink_sky:hover {
+    @apply bg-sky-300
+}
+a.booklink_sky p {
+    @apply bg-sky-100;
+}
+a.booklink_violet {
+    @apply bg-violet-400 border-violet-500;
+}
+a.booklink_violet:hover {
+    @apply bg-violet-300
+}
+a.booklink_violet p {
+    @apply bg-violet-100;
+}
+a.booklink_lime {
+    @apply bg-lime-400 border-lime-500;
+}
+a.booklink_lime:hover {
+    @apply bg-lime-300
+}
+a.booklink_lime p {
+    @apply bg-lime-100;
+}
+a.booklink_rose {
+    @apply bg-rose-400 border-rose-500;
+}
+a.booklink_rose:hover {
+    @apply bg-rose-300
+}
+a.booklink_rose p {
+    @apply bg-rose-100;
+}
+a.booklink_fuchsia {
+    @apply bg-fuchsia-400 border-fuchsia-500;
+}
+a.booklink_fuchsia:hover {
+    @apply bg-fuchsia-300
+}
+a.booklink_fuchsia p {
+    @apply bg-fuchsia-100;
 }
 
 h1.dotted_underline, h2.dotted_underline, h3.dotted_underline, h4.dotted_underline, h5.dotted_underline, h6.dotted_underline {
@@ -167,7 +265,7 @@ h1.dotted_underline, h2.dotted_underline, h3.dotted_underline, h4.dotted_underli
     filter: drop-shadow(0 3px 0px var(--color-red-900));
 }
 .bookmark_header div.bookmark_shape {
-    @apply bg-red-400 text-black pr-10 md:pr-14 py-2 pt-3;
+    @apply text-center solid-text-shadow-b-red-300 bg-red-400 text-black pr-10 md:pr-14 py-2 pt-3;
     clip-path: polygon(
         0 0,
         100% 0,
@@ -177,18 +275,15 @@ h1.dotted_underline, h2.dotted_underline, h3.dotted_underline, h4.dotted_underli
     );
 }
 .bookmark_header p {
-    @apply indent-0 mx-2 my-0.5;
+    @apply mx-2 my-0.5;
 }
 
 .flex p {
-    @apply m-0 indent-0;
+    @apply m-0;
 }
 
-div.info_container, div.styled_info_container {
+div.info_container {
     @apply flex flex-col w-full px-1 items-center justify-center py-1;
-}
-div.styled_info_container {
-    @apply border-b-2 border-gray-500 rounded-b-md solid-shadow-sm-b-slate-300;
 }
 p.info_label {
     @apply m-0 p-0 px-2 text-center font-permanent-marker;
@@ -196,10 +291,13 @@ p.info_label {
 p.info_content {
     @apply m-0 p-0 px-1 text-center text-sm;
 }
-a.info_content, a.info_content:visited {
-    @apply bg-transparent font-bold text-sm text-teal-800;
+a.info_content {
+    @apply text-sm;
 }
-a.info_content:hover {
+a.info_content, a.info_content:visited, a.subtle_link, a.subtle_link:visited {
+    @apply bg-transparent font-bold text-teal-800;
+}
+a.info_content:hover, a.subtle_link:hover {
     @apply subtle-text-highlight-teal-400;
 }
 
@@ -225,6 +323,35 @@ a.info_content:hover {
 .widget_pastel_green {
     @apply bg-green-100 border-green-300 solid-shadow-sm-b-green-300
 }
+.widget_red {
+    @apply border-red-500 bg-red-100 solid-shadow-sm-b-red-400;
+}
+.widget_teal {
+    @apply border-teal-500 bg-teal-100 solid-shadow-sm-b-teal-400;
+}
+.widget_amber {
+    @apply border-amber-500 bg-amber-100 solid-shadow-sm-b-amber-400;
+}
+.widget_lime {
+    @apply border-lime-500 bg-lime-100 solid-shadow-sm-b-lime-400;
+}
+.widget_sky {
+    @apply border-sky-500 bg-sky-100 solid-shadow-sm-b-sky-400;
+}
+.widget_violet {
+    @apply border-violet-500 bg-violet-100 solid-shadow-sm-b-violet-400;
+}
+.widget_fuchsia {
+    @apply border-fuchsia-300 bg-fuchsia-100 solid-shadow-sm-b-fuchsia-300;
+}
+.widget_rose {
+    @apply border-rose-500 bg-rose-100 solid-shadow-sm-b-rose-400;
+}
+.widget_gray {
+    @apply border-gray-500 bg-gray-100 solid-shadow-sm-b-gray-400;
+}
+
+
 
 .prep_image {
     @apply w-8 m-0 p-0 border-0 solid-shadow-blank;

@@ -16,7 +16,7 @@ async function copy_to_clipboard(content) {
  * @param {EventTarget} elmt - the target element, contained within a <form>.
  * @param {Boolean} [copyUnchecked = false] - whether to copy labels tied to an unchecked checkbox <input>.
  */
-function copy_form_checks(elmt, copyUnchecked = false){
+function copyFormChecks(elmt, copyUnchecked = false){
     let form = elmt.closest("form"); // closest form will always be the one element is contained inside
     let uncheckedLabels = []
 
@@ -30,16 +30,43 @@ function copy_form_checks(elmt, copyUnchecked = false){
     copy_to_clipboard(uncheckedLabels.join("\n"))
 }
 
+/**
+ * Changes the data-timer-status of an element
+ * @param {EventTarget} element - the element to apply the change to
+ * @param {Number} value - the value to change the element's timer to
+ */
+function setElementTimer(element, value) {
+    element.dataset.timerStatus = value;
+}
+
+/**
+ * Drives the functionality of the footer character in the links section
+ */
+function updateFooterChar() {
+    let character = document.querySelector("[data-timer-status]");
+    if (character) {
+        character.dataset.timerStatus--;
+        timerStatus = parseInt(character.dataset.timerStatus)
+        if (timerStatus % 2 == 0) { // run change every other update (2 * timer interval)
+            switch(Math.floor(timerStatus / 2)) { 
+                case 0: 
+                    console.log("ping!");
+                    character.dataset.timerStatus = 10;
+            }
+        }
+    }
+}
+
 // handle clicked elements, running a corresponding function based on
 // the element's `data-action` attribute
 document.addEventListener("click", e => {
-    const action = e.target.dataset.clickAction; // contents of `data-action`
-    
     const element = e.target; // the HTML element itself
+    const action = element.dataset.clickAction; // contents of `data-action`
     if (action) {
         // if a valid action is found, run its corresponding function
         const action_map = new Map([
-            ["copy-form", () => copy_form_checks(element)]
+            ["copy-form", () => copyFormChecks(element)],
+            ["footer-character", () => setElementTimer(element, 20)]
         ])
         selected_action = action_map.get(action);
         if (selected_action) {
@@ -47,3 +74,8 @@ document.addEventListener("click", e => {
         }
     }
 });
+
+// Every half second, run updates to parts of the page
+const pageTimer = setInterval(() => {
+    updateFooterChar()
+}, 500)

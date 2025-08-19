@@ -1,3 +1,24 @@
+{% macro get_booklink_color(index) %}
+    {% if index == 0 %} 
+        {% set color = 'teal' %}
+    {% elif index == 1 %}
+        {% set color = 'amber' %}
+    {% elif index == 2 %} 
+        {% set color = 'fuchsia' %}
+    {% elif index == 3 %}
+        {% set color = 'red' %}
+    {% elif index == 4 %} 
+        {% set color = 'sky' %}
+    {% elif index == 5 %}
+        {% set color = 'violet' %}
+    {% elif index == 6 %}
+        {% set color = 'lime' %}
+    {% else %}
+        {% set color = 'rose' %}
+    {% endif %}
+    {{ "booklink_" ~ color }}
+{% endmacro %}
+
 <div class="footer">
     <div class="flex flex-col md:flex-row justify-center">
         <div class="footer_container flex-initial">
@@ -7,44 +28,68 @@
             <div class="footer_content">
                 <img class="w-12 m-0 mr-1 border-0 solid-shadow-blank" src="{{ url_for('static', filename='/dist/src/icons/site_icon.ico') }}">
                 <div class="flex flex-col justify-center items-start border-b-1 border-teal-100 pb-0.5">
-                    <p class="font-oleo text-lg">We're All Adults Here</p>
-                    <p class="text-teal-200 text-sm">Uptime: <span class="text-white italic">{{ LAST_REBOOT.days ~ " days, " ~ LAST_REBOOT.hours ~ " hours." }}</span></p>
+                    <p class="font-oleo lg:text-lg">We're All Adults Here</p>
+                    <p class="text-teal-200 text-xs lg:text-sm">Uptime: <span class="text-white italic">{{ LAST_REBOOT.days ~ " days, " ~ LAST_REBOOT.hours ~ " hours." }}</span></p>
                 </div>
             </div>
         </div>
         <div class="flex flex-col flex-1 mt-3 md:mt-0 md:ml-2">
             <div class="footer_container flex-1">
                 <div class="footer_label">
-                    <p>WAAH</p>
+                    <p>Recipes</p>
                 </div>
-                <div class="footer_content">
+                <div class="footer_content overflow-hidden">
                     <div class="flex flex-col justify-center items-center">
-                        <p>hello!</p>
+                        <h6 class="pt-0 mb-1">Recipe of the Day:</h6>
+                        {% if RECIPE_OF_THE_DAY is none %}
+                            <p>None</p>
+                        {% else %}
+                            <a class="bg-transparent text-sm decoration-teal-200 text-teal-200" href="{{ url_for('recipe_detail', recipe_name=RECIPE_OF_THE_DAY.link) }}">{{ RECIPE_OF_THE_DAY.display_text }}</a>
+                        {% endif %}
                     </div>
                 </div>
             </div>
-            <div class="footer_container flex-1 mt-2">
+            <div class="footer_container flex-1 mt-2 w-full">
                 <div class="footer_label">
-                    <p>WAAH</p>
+                    <p>Links</p>
                 </div>
-                <div class="footer_content">
-                    <div class="flex flex-col justify-center items-center">
-                        <p>hello!</p>
+                <div class="footer_content flex-1 w-full" style="padding: 0; justify-content: start; align-items: stretch;">
+                    <div class="flex flex-row px-2 flex-1 flex-wrap">
+                        {% for item in PAGELINKS %}
+                            {% if loop.index <= FOOTER_LINK_MAX %}
+                                {% if loop.index == FOOTER_LINK_CUTOFF and loop.index < FOOTER_LINK_MAX and PAGELINKS|length > FOOTER_LINK_CUTOFF %}
+                                    <div class='flex md:hidden lg:flex flex-row'>
+                                {% endif %}
+                                {% set color_index = (loop.index ) % 8 %}
+                                <div class="flex flex-col h-full items-center">
+                                    <div class="flex-1"></div>
+                                    <a href="{{ item.link }}" class="booklink {{ get_booklink_color(color_index)|trim }}">
+                                        <p>{{ item.shorthand }}</p>
+                                    </a>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                        {% if PAGELINKS|length > FOOTER_LINK_CUTOFF %}
+                                </div>
+                        {% endif %}
+                        <div class="flex flex-col flex-1 h-full justify-end items-center">
+                            <img data-click-action="footer-character" data-timer-status="10" class="h-16 mb-0.5" src="{{ url_for('static', filename='dist/src/images/qr_codes/site_link_alt.svg') }}">
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
         <div class="footer_container mt-2 md:mt-0 md:ml-2 md:min-w-1/7">
             <div class="footer_label">
-                <p>Site Link</p>
+                <p>Site URL</p>
             </div>
             <div class="footer_content">
                 {% set qr_rand = range(1, 101) | random %}
                 {% if qr_rand == 1 %}
-                    <img class="w-35 md:w-30 solid-shadow-sm-bl-teal-500" src="{{ url_for('static', filename='dist/src/images/qr_codes/site_link_alt.svg') }}">
+                    <img class="w-16 mx-2 md:w-30 solid-shadow-sm-bl-teal-500" src="{{ url_for('static', filename='dist/src/images/qr_codes/site_link_alt.svg') }}">
                 {% else %}
                 <!-- TODO need actual site link QR code -->
-                    <img class="w-35 md:w-30 solid-shadow-sm-bl-teal-500" src="{{ url_for('static', filename='dist/src/images/qr_codes/site_link.svg') }}">
+                    <img class="w-32 md:w-22 lg:w-30 mx-2 solid-shadow-sm-bl-teal-500" src="{{ url_for('static', filename='dist/src/images/qr_codes/site_link.svg') }}">
                 {% endif %}
             </div>
         </div>
