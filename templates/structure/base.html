@@ -12,13 +12,13 @@
     </head>
     <body>
         <div class="flex flex-col min-h-screen">
-            {% block layout %}
-                    {% block content %}
+            {% block layout %} {# used for page types (including the navbar, for example) #}
+                    {% block content %} {# content of page #}
                     {% endblock %}
             {% endblock %}
         </div>
         {% include 'component/footer/main_footer.html' %}
-        {% for file in IMPORT_JS | unique %}
+        {% for file in IMPORT_JS | unique %} {# import necessary JS files #}
             {% if file[:4] == "http" %}
             <script src="{{ file }}"></script>    
             {% else %}

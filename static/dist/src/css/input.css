@@ -1,13 +1,15 @@
 @import "tailwindcss";
 
-@theme {
+/* @theme {
     @import "./sections/theme.css";
-}
+} */
 @layer base {
     @import "./sections/base.css";
 }
 
 
 @import "./sections/utilities.css";
-@import "./sections/styling.css";
-@import "./sections/components.css";
+@import "./sections/links.css";
+@import "./sections/layout.css";
+@import "./sections/containers.css";
+@import "./sections/misc.css";

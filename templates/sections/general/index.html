@@ -15,6 +15,7 @@
 {% block content %}
     <div class="focus_center min-h-screen">
         <div class="flex flex-wrap items-center justify-center mb-2">
+            {# split each word and apply random rotation/offset based on index #}
             {% for char in "We're All Adults Here".split(" ") %}
                 <h1 class="p-0 mx-2 dotted_underline {{ get_offset(loop.index)|trim }}">{{ char }}</h1>
             {% endfor %}

@@ -2,9 +2,9 @@ from werkzeug.exceptions import HTTPException
 
 class JokeError(HTTPException):
     code = 418
-    description = "I'm a teapot, not a coffee machine."
+    desc = "I'm a teapot, not a coffee machine."
 
-    def __init__(self, custom_code, description=None):
+    def __init__(self, custom_code, description=desc):
         super().__init__(description or self.description)
         self.custom_code = custom_code
 

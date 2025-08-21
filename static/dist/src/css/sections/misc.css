@@ -1,0 +1,20 @@
+/* Misc styling changes not large enough to be put in their own file */
+
+.flex p {
+    @apply m-0;
+}
+
+.recipe_temperature {
+    @apply font-bold subtle-text-highlight-red-300;
+}
+.recipe_timescale {
+    @apply font-bold subtle-text-highlight-teal-300;
+}
+.recipe_measurement {
+    @apply font-bold subtle-text-highlight-lime-300;
+}
+
+img.prep_image {
+    @apply w-8 m-0 p-0 border-0 solid-shadow-blank;
+}
+

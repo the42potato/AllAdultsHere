@@ -38,7 +38,7 @@
         </div>
         <div class="flex flex-col mx-auto w-full items-center gap-3">
             {% for card in data.cards %}
-                {% set color_index = (loop.index0 + data.title|length ) % 10 %}
+                {% set color_index = (loop.index0 + data.title|length ) % 10 %} {# "random" color for each card #}
                 <div class="index_card w-fit min-w-1/3 {{ gen_index_card_color(color_index)|trim }}">
                     <h5>{{ card.title }}</h5>
                     <h6>{{ card.subheading }}</h6>

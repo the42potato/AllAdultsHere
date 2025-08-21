@@ -1,0 +1,115 @@
+/* Styling classes for <a> tags */
+
+a.buttonlink {
+    @apply bg-teal-300 px-2.5 py-1.5 md:px-2 md:py-1 text-sm md:text-base border-2 border-teal-600 solid-shadow-sm-tr-teal-400 rounded-sm;
+    transition: box-shadow 0.1s ease-in-out, background-color 0.15s ease-in-out, transform 0.15s ease-in-out;
+}
+a.buttonlink:hover {
+    @apply bg-lime-300 border-lime-500 solid-shadow-sm-bl-lime-400 decoration-transparent;
+}
+
+a.booklink {
+    @apply relative flex flex-col m-0 p-0 px-0.5 pb-1 pt-1.5 no-underline mb-1.5 rounded-t-xs;
+}
+a.booklink::before {
+    @apply absolute h-3 w-1.5 left-1.5 -top-0.5 bg-red-600;
+    content: "";
+    clip-path: polygon(100% 0, 100% 100%, 80% 100%, 50% 65%, 20% 100%, 0 100%, 0 0);
+    transition: height 0.25s ease-in-out, clip-path 0.25s ease-in-out, background-color 0.25s ease-in-out;
+}
+a.booklink::after {
+    @apply absolute h-1.5 -left-1 -bottom-1.5 w-[135%] bg-amber-900 border-t-2 border-amber-950;
+    content: "";
+}
+a.booklink p {
+    @apply text-xs text-vertical p-0 m-0 px-1 pt-1 my-0.5 rounded-sm;
+}
+a.booklink:hover::before {
+    @apply h-5 bg-red-400;
+    clip-path: polygon(100% 0, 100% 100%, 80% 100%, 50% 85%, 20% 100%, 0 100%, 0 0);
+}
+a.booklink:hover p {
+    @apply bg-white;
+}
+
+a.booklink_teal {
+    @apply bg-teal-400 border-teal-500;
+}
+a.booklink_teal:hover {
+    @apply bg-teal-300
+}
+a.booklink_teal p {
+    @apply bg-teal-100;
+}
+a.booklink_amber {
+    @apply bg-amber-400 border-amber-500;
+}
+a.booklink_amber:hover {
+    @apply bg-amber-300
+}
+a.booklink_amber p {
+    @apply bg-amber-100;
+}
+a.booklink_gray {
+    @apply bg-gray-400 border-gray-500;
+}
+a.booklink_gray:hover {
+    @apply bg-gray-300
+}
+a.booklink_gray p {
+    @apply bg-gray-100;
+}
+a.booklink_red {
+    @apply bg-red-400 border-red-500;
+}
+a.booklink_red:hover {
+    @apply bg-red-300
+}
+a.booklink_red p {
+    @apply bg-red-100;
+}
+a.booklink_sky {
+    @apply bg-sky-400 border-sky-500;
+}
+a.booklink_sky:hover {
+    @apply bg-sky-300
+}
+a.booklink_sky p {
+    @apply bg-sky-100;
+}
+a.booklink_violet {
+    @apply bg-violet-400 border-violet-500;
+}
+a.booklink_violet:hover {
+    @apply bg-violet-300
+}
+a.booklink_violet p {
+    @apply bg-violet-100;
+}
+a.booklink_lime {
+    @apply bg-lime-400 border-lime-500;
+}
+a.booklink_lime:hover {
+    @apply bg-lime-300
+}
+a.booklink_lime p {
+    @apply bg-lime-100;
+}
+a.booklink_rose {
+    @apply bg-rose-400 border-rose-500;
+}
+a.booklink_rose:hover {
+    @apply bg-rose-300
+}
+a.booklink_rose p {
+    @apply bg-rose-100;
+}
+a.booklink_fuchsia {
+    @apply bg-fuchsia-400 border-fuchsia-500;
+}
+a.booklink_fuchsia:hover {
+    @apply bg-fuchsia-300
+}
+a.booklink_fuchsia p {
+    @apply bg-fuchsia-100;
+}

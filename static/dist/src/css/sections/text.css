@@ -1,0 +1,9 @@
+/* Styling classes for <h1>-<h6>, <p>, <ul>, and <ol> */
+
+h1.dotted_underline, h2.dotted_underline, h3.dotted_underline, h4.dotted_underline, h5.dotted_underline, h6.dotted_underline {
+    @apply underline decoration-dotted underline-offset-6 decoration-5
+}
+
+p.clear_formatting {
+    @apply mx-2 my-0.5;
+}

@@ -19,6 +19,7 @@ async function copy_to_clipboard(content) {
 function copyFormChecks(elmt, copyUnchecked = false){
     let form = elmt.closest("form"); // closest form will always be the one element is contained inside
     let uncheckedLabels = []
+    query = copyUnchecked ? 'input[type="checkbox"]:not(:checked)' : 'input[type="checkbox"]:checked'
 
     form.querySelectorAll('input[type="checkbox"]:not(:checked)').forEach(cb => {
         const label = form.querySelector(`label[for="${cb.id}"]`);
@@ -65,7 +66,7 @@ document.addEventListener("click", e => {
     if (action) {
         // if a valid action is found, run its corresponding function
         const action_map = new Map([
-            ["copy-form", () => copyFormChecks(element)],
+            ["copy-form", () => copyFormChecks(element, true)],
             ["footer-character", () => setElementTimer(element, 20)]
         ])
         selected_action = action_map.get(action);

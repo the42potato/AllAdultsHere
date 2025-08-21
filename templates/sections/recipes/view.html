@@ -2,6 +2,7 @@
 {% set page_title = data.title %}
 {% set ACTIVE_FOOTERS = ACTIVE_FOOTERS + ["recipe_footer"] %}
 
+{# prints a single number (if integer) or a range (if array) #}
 {% macro print_scale(scale) %}
     {% if not scale %}
         N/A
@@ -12,6 +13,7 @@
     {% endif %}
 {% endmacro %}
 
+{# print a "list" -- either a string or concatenated array #}
 {% macro print_list(list) %}
     {% if not list %}
         N/A
@@ -22,6 +24,7 @@
     {% endif %}
 {% endmacro %}
 
+{# builds a list of page links #}
 {% macro print_link_list(list) %}
     {% if not list %}
         N/A
@@ -34,10 +37,12 @@
     {% endif %}
 {% endmacro %}
 
+{# creates icon for prep types #}
 {% macro print_prep_image(prep) %}
     <img class="prep_image" src="{{ url_for('static', filename='dist/src/icons/recipes/' ~ prep ~ '.ico') }}">
 {% endmacro %}
 
+{# creates color for prep type widgets #}
 {% macro get_prep_coloring(prep) %}
     {% if prep == "oven" or prep == "grill" or prep == "crock-pot" %}
         widget_red
@@ -48,10 +53,11 @@
     {% endif %}
 {% endmacro %}
 
+{# creates prep type widget #}
 {% macro print_prep(prep) %}
     <div
         {% if prep == 'oven' %}
-            title="why do they call it oven when you ove-in the cold food ove-out hot eat the food??"
+            title="why do they call it oven when you ove-in the cold food ove-out hot eat the food??" 
         {% endif %}
         class="flex flex-row items-center justify-center flex-wrap widget_container px-1 py-0.5 {{ get_prep_coloring(prep)|trim }}">
         {{ print_prep_image(prep)|trim }}
@@ -59,6 +65,7 @@
     </div>
 {% endmacro %}
 
+{# formats text based on flags #}
 {% macro format(part) %}
     {% set text = part.text if part is mapping and 'text' in part else part %}
     {% if part is mapping %}
@@ -101,6 +108,7 @@
     {{ text|safe }}
 {% endmacro %}
 
+{# formats ingredient for addition to ingredients list #}
 {% macro build_ingredient(id, ingredient) %}
     {% set rendered_text = ingredient.item %}
     {% if ingredient.amount %}
@@ -168,6 +176,7 @@
                     </div>
                 </div>
                 <div class="flex flex-col items-center justify-center gap-0.5">
+                    {# create prep type widgets #}
                     {% if data.prep_type is iterable and data.prep_type is not string %}
                         {% for item in data.prep_type %}
                             {{ print_prep(item) }}

@@ -1,3 +1,5 @@
+/* Base element styling without classes */
+
 html {
     @apply min-h-full font-merienda;
 }

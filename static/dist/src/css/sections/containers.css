@@ -1,0 +1,142 @@
+/* Styling classes for container <div> tags and their contents */
+
+/* Faded container with horizontal lines */
+div.index_card {
+    @apply relative border-2 rounded-sm p-4 z-0 solid-shadow-sm-br-gray-400;
+}
+div.index_card h1, div.index_card h2, div.index_card h3, div.index_card h4, div.index_card h5, div.index_card h6 {
+    @apply m-0 pt-1;
+}
+div.index_card_red {
+    @apply border-red-300 striped-background-red-100;
+}
+div.index_card_teal {
+    @apply border-teal-300 striped-background-teal-100;
+}
+div.index_card_amber {
+    @apply border-amber-300 striped-background-amber-100;
+}
+div.index_card_lime {
+    @apply border-lime-300 striped-background-lime-100;
+}
+div.index_card_sky {
+    @apply border-sky-300 striped-background-sky-100;
+}
+div.index_card_violet {
+    @apply border-violet-300 striped-background-violet-100;
+}
+div.index_card_fuchsia {
+    @apply border-fuchsia-300 striped-background-fuchsia-100;
+}
+div.index_card_rose {
+    @apply border-rose-300 striped-background-rose-100;
+}
+div.index_card_gray {
+    @apply border-gray-300 striped-background-gray-100;
+}
+
+/* Banner container with cutout on right, used in recipe pages */
+div.bookmark_header {
+    @apply w-5/6 md:w-fit lg:w-3/5 xl:w-fit mb-4 lg:mb-6;
+    filter: drop-shadow(0 3px 0px var(--color-red-900));
+}
+div.bookmark_header div.bookmark_shape {
+    @apply text-center solid-text-shadow-b-red-300 bg-red-400 text-black pr-10 md:pr-14 py-2 pt-3;
+    clip-path: polygon(
+        0 0,
+        100% 0,
+        90% 50%,
+        100% 100%,
+        0 100%
+    );
+}
+div.bookmark_header p {
+    @apply mx-2 my-0.5;
+}
+
+/* used within widgets */
+div.info_container {
+    @apply flex flex-col w-full px-1 items-center justify-center py-1;
+}
+p.info_label {
+    @apply m-0 p-0 px-2 text-center font-permanent-marker;
+}
+p.info_content {
+    @apply m-0 p-0 px-1 text-center text-sm;
+}
+a.info_content {
+    @apply text-sm;
+}
+a.info_content, a.info_content:visited, a.subtle_link, a.subtle_link:visited {
+    @apply bg-transparent font-bold text-teal-800;
+}
+a.info_content:hover, a.subtle_link:hover {
+    @apply subtle-text-highlight-teal-400;
+}
+
+/* harsh borders, strong colors, meant to contain pertinent information */
+div.widget_container {
+    @apply w-fit border-2 border-gray-500 bg-gray-100 rounded-md solid-shadow-sm-b-gray-400;
+}
+div.widget_pastel_orange {
+    @apply bg-orange-100 border-orange-300 solid-shadow-sm-b-orange-300
+}
+div.widget_pastel_yellow {
+    @apply bg-yellow-100 border-yellow-300 solid-shadow-sm-b-yellow-300
+}
+div.widget_pastel_green {
+    @apply bg-green-100 border-green-300 solid-shadow-sm-b-green-300
+}
+div.widget_red {
+    @apply border-red-500 bg-red-100 solid-shadow-sm-b-red-400;
+}
+div.widget_teal {
+    @apply border-teal-500 bg-teal-100 solid-shadow-sm-b-teal-400;
+}
+div.widget_amber {
+    @apply border-amber-500 bg-amber-100 solid-shadow-sm-b-amber-400;
+}
+div.widget_lime {
+    @apply border-lime-500 bg-lime-100 solid-shadow-sm-b-lime-400;
+}
+div.widget_sky {
+    @apply border-sky-500 bg-sky-100 solid-shadow-sm-b-sky-400;
+}
+div.widget_violet {
+    @apply border-violet-500 bg-violet-100 solid-shadow-sm-b-violet-400;
+}
+div.widget_fuchsia {
+    @apply border-fuchsia-300 bg-fuchsia-100 solid-shadow-sm-b-fuchsia-300;
+}
+div.widget_rose {
+    @apply border-rose-500 bg-rose-100 solid-shadow-sm-b-rose-400;
+}
+div.widget_gray {
+    @apply border-gray-500 bg-gray-100 solid-shadow-sm-b-gray-400;
+}
+
+/* Adds two offset boxes behind element. Used on error pages */
+div.blocky_container {
+    @apply relative md:max-w-4/5 -rotate-3 z-0;
+}
+div.blocky_container img {
+    @apply solid-shadow-sm-bl-gray-400;
+}
+div.blocky_container::before, div.blocky_container::after {
+    @apply absolute -z-10 w-3/4 h-1/2 opacity-80;
+    content: "";
+}
+div.blocky_container::before {
+    @apply top-0 left-0 bg-teal-200 -rotate-34 solid-shadow-sm-l-teal-400 border-2 border-teal-300;
+}
+div.blocky_container::after {
+    @apply bottom-0 right-0 bg-lime-200 rotate-25 solid-shadow-sm-br-lime-400 border-2 border-lime-300;
+}
+
+div.focus_center {
+  @apply flex flex-1 flex-col items-center justify-center;
+}
+
+div.page_border {
+    @apply mx-4 md:mx-6;
+}

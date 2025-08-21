@@ -8,10 +8,12 @@ from werkzeug.exceptions import HTTPException
 from util import validate_json_schema, get_json_file_based_on_date
 from errors import raise_joke_http_error, JokeError
 from renders import render_validated_json_template, render_http_error, render_recipe_page
+from fixed import fixed_bp
 
 
 app = Flask(__name__)
 app.template_folder = 'templates'
+app.register_blueprint(fixed_bp)
 boot_date = datetime.now()
 
 # create global config data on boot
