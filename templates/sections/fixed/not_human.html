@@ -1,0 +1,6 @@
+{% extends 'structure/base.html'%}
+{% set page_title = "Not Human" %}
+{% block content %}
+    <div class="focus_center h-full w-full bg-center bg-contain bg-no-repeat bg-black border-b-gray-700 border-b-4" style="background-image: url('{{ url_for('static', filename='dist/src/images/fixed/captcha/symptom.webp') }}')">
+    </div>
+{% endblock %}

@@ -6,6 +6,6 @@ fixed_bp = Blueprint("Fixed Pages", __name__)
 def password_strength():
     return render_template('/sections/fixed/password_strength.html')
 
-@fixed_bp.route('/styling_preview')
+@fixed_bp.route('/styling')
 def styling_preview():
     return render_template('/sections/fixed/styling.html')

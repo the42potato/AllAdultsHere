@@ -18,3 +18,8 @@ img.prep_image {
     @apply w-8 m-0 p-0 border-0 solid-shadow-blank;
 }
 
+hr.rule_drawn {
+    @apply h-2 border-0 opacity-50;
+    background: url("data:image/svg+xml;utf8,\<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 12'>\<path d='M0 6 Q 10 4, 20 6 T 40 6 T 60 6 T 80 6 T 100 6' \stroke='black' stroke-width='2' fill='none' stroke-linecap='round'/>\</svg>") repeat-x;
+}
+

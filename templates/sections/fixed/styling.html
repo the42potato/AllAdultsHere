@@ -1,19 +1,131 @@
 {% extends 'structure/navigation.html'%}
 {% set page_title = "Styling" %}
+
+{% macro section_container_style() %}
+    flex flex-row flex-wrap justify-center items-center gap-6 py-4
+{% endmacro %}
+
+{% macro section_item_style() %}
+    flex flex-col items-center gap-2
+{% endmacro %}
+
+{% macro section_item_header_style() %}
+    underline italic
+{% endmacro %}
+
 {% block content %}
     <div class="flex flex-col justify-center items-center gap-2 mx-4 md:mx-6">
         <p class="text-center">Welcome to the closest thing this site has to a dev page.</p>
-        <h2 class="text-center">Defaults</h2>
-        <div class="flex flex-row flex-wrap justify-center items-center gap-4">
+        <h2 class="text-center">Lists</h2>
+        <div class="{{ section_container_style() }}">
+            <div class="{{ section_item_style() }}">
+                <h6 class="{{ section_item_header_style() }}">Ordered List</h6>
+                <ol>
+                    <li>Ordered List</li>
+                    <li>Ordered List</li>
+                </ol>
+            </div>
+            <div class="{{ section_item_style() }}">
+                <h6 class="{{ section_item_header_style() }}">Unordered List</h6>
+                <ul>
+                    <li>Unordered List</li>
+                    <li>Unordered List</li>
+                </ul>
+            </div>
+            <div class="{{ section_item_style() }}">
+                <h6 class="{{ section_item_header_style() }}">Definition List</h6>
+                <dl>
+                    <dt>Title</dt>
+                    <dd>Description</dd>
+                </dl>
+            </div>
+        </div>
+        <h2 class="text-center">Containers</h2>
+        <div class="{{ section_container_style() }}">
+            <div class="widget_container widget_lime px-2 flex flex-row">
+                <div class="info_container">
+                    <p class="info_label">Info Label</p>
+                    <p class="info_content">Info Content</p>
+                </div>
+                <div class="info_container border-l-2">
+                    <p class="info_label">Info Label</p>
+                    <a href="https://google.com" target="_blank" class="info_content">Info Link</a>
+                </div>
+            </div>
+            <div class="blocky_container">
+                <img class="w-36 bg-teal-100" src="{{ url_for('static', filename='dist/src/icons/site_icon.ico') }}">
+            </div>
+            <div class="bookmark_header">
+                <hgroup class="bookmark_shape">
+                    <h6>Bookmark Header</h6>
+                    <p>Subheading</p>
+                </hgroup>
+            </div>
+        </div>
+        <div class="grid grid-cols-3 place-items-center gap-2">
+            <div class="widget_container p-1 widget_red">
+                <p>Red Widget</p>
+            </div>
+            <div class="widget_container p-1 widget_red">
+                <p>Teal Widget</p>
+            </div>
+            <div class="widget_container p-1 widget_amber">
+                <p>Amber Widget</p>
+            </div>
+            <div class="widget_container p-1 widget_lime">
+                <p>Lime Widget</p>
+            </div>
+            <div class="widget_container p-1 widget_sky">
+                <p>Sky Widget</p>
+            </div>
+            <div class="widget_container p-1 widget_violet">
+                <p>Violet Widget</p>
+            </div>
+            <div class="widget_container p-1 widget_fuchsia">
+                <p>Fuchsia Widget</p>
+            </div>
+            <div class="widget_container p-1 widget_rose">
+                <p>Rose Widget</p>
+            </div>
+            <div class="widget_container p-1 widget_gray">
+                <p>Gray Widget</p>
+            </div>
+            <div class="index_card p-1 index_card_red">
+                <p>Red Index Card</p>
+            </div>
+            <div class="index_card p-1 index_card_teal">
+                <p>Teal Index Card</p>
+            </div>
+            <div class="index_card p-1 index_card_amber">
+                <p>Amber Index Card</p>
+            </div>
+            <div class="index_card p-1 index_card_lime">
+                <p>Lime Index Card</p>
+            </div>
+            <div class="index_card p-1 index_card_sky">
+                <p>Sky Index Card</p>
+            </div>
+            <div class="index_card p-1 index_card_violet">
+                <p>Violet Index Card</p>
+            </div>
+            <div class="index_card p-1 index_card_fuchsia">
+                <p>Fuchsia Index Card</p>
+            </div>
+            <div class="index_card p-1 index_card_rose">
+                <p>Rose Index Card</p>
+            </div>
+            <div class="index_card p-1 index_card_gray">
+                <p>Gray Index Card</p>
+            </div>
+        </div>
+        <h2>Links</h2>
+        <div class="{{ section_container_style() }}">
             <a class="w-fit" href="https://google.com" target="_blank">Link</a>
-            <ol>
-                <li>Organized List</li>
-                <li>Organized List</li>
-            </ol>
-            <ul>
-                <li>Unorganized List</li>
-                <li>Unorganized List</li>
-            </ul>
+            <a href="https://google.com" target="_blank" class="buttonlink">"Button" Link</a>
+            <a href="https://google.com" target="_blank" class="booklink booklink_teal"><p>"Book" Link</p></a>
+        </div>
+        <h2>Inputs</h2>
+        <div class="{{ section_container_style() }}">
             <button>Button</button>
             <input type="button" value="Input Button">
             <input type="text" placeholder="Text Input">
@@ -24,38 +136,15 @@
             <label for="check_preview">Checkbox Input
                 <input type="checkbox" id="check_preview" name="check_preview">
             </label>
+        </div>
+        <h2 class="text-center">Misc.</h2>
+        <div class="{{ section_container_style() }}">
+            <kbd>KBD</kbd>
+            <blockquote>
+                Blockquote
+                <cite>Citation</cite>
+            </blockquote>
             <img class="w-36 bg-teal-100" src="{{ url_for('static', filename='dist/src/icons/site_icon.ico') }}">
-        </div>
-        <h2 class="text-center">Containers</h2>
-        <div class="flex flex-row justify-center items-center gap-4">
-            <div class="widget_container widget_lime px-2 flex flex-row">
-                <p class="px-2 py-1">Widget container</p>
-                <div class="info_container border-l-2">
-                    <p class="info_label">Info Label</p>
-                    <p class="info_content">Info Content</p>
-                </div>
-                <div class="info_container border-l-2">
-                    <p class="info_label">Info Label</p>
-                    <a href="https://google.com" target="_blank" class="info_content">Info Link</a>
-                </div>
-            </div>
-            <div class="index_card index_card_fuchsia max-w-1/2">
-                <p>Index Card</p>
-                <p>Lorem Ipsum Dolar Set Amet Lorem Ipsum Dolar Set Amet Lorem Ipsum Dolar Set Amet Lorem Ipsum Dolar Set Amet Lorem Ipsum Dolar Set Amet Lorem Ipsum Dolar Set Amet</p>
-            </div>
-            <div class="blocky_container">
-                <img class="w-36 bg-teal-100" src="{{ url_for('static', filename='dist/src/icons/site_icon.ico') }}">
-            </div>
-            <div class="bookmark_header">
-                <div class="bookmark_shape">
-                    <h6>OOO Bookmark Header</h6>
-                </div>
-            </div>
-        </div>
-        <h2>Links</h2>
-        <div class="flex flex-row justify-center items-center gap-4">
-            <a href="https://google.com" target="_blank" class="subtle_link">Subtle link</a>
-            <a href="https://google.com" target="_blank" class="buttonlink">"Button" Link</a>
         </div>
     </div>
 {% endblock %}

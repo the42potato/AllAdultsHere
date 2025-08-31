@@ -44,15 +44,14 @@ q {
     @apply italic;
 }
 
-a, a:visited {
-    @apply bg-teal-300 text-black font-normal underline px-0.5 -mx-0.5 decoration-black;
-    box-shadow: inset 0 0 0 0 var(--color-red-500);
-    transition: background-color 0.2s ease-in-out, text-decoration 0.3s ease-in-out, text-shadow 0.15s ease-in-out;
+a, a:visited { 
+    @apply text-black font-bold underline decoration-black text-teal-800;
+    transition: text-decoration 0.3s ease-in-out, text-shadow 0.15s ease-in-out;
 }
 a:hover {
-    @apply bg-lime-300 font-medium no-underline decoration-transparent;
+    @apply no-underline decoration-transparent subtle-text-highlight-teal-400;
 }
-a:focus, input:focus {
+a:focus, input:focus, select:focus, select:open {
     @apply outline-none outline-2 outline-offset-0;
 }
 
@@ -77,6 +76,12 @@ ul li::marker {
 ol li::marker {
     @apply font-black;
     content: counter(list-item) " : ";
+}
+dt {
+    @apply font-bold;
+}
+dd {
+    @apply indent-4;
 }
 
 img {
@@ -106,10 +111,21 @@ button:active, input[type=button]:active {
     @apply solid-shadow-blank;
     transform: translateY(1px);
 }
-input[type=text], input[type=number] {
+select, input[type=text], input[type=number] {
     @apply border-2 m-1 mb-1.5 py-0.5 px-1 rounded-sm bg-gray-50 border-gray-400 solid-shadow-sm-b-gray-300 text-teal-900 caret-teal-600;
     transition: background-color 0.25s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
-input[type=number]:hover, input[type=number]:focus, input[type=text]:hover, input[type=text]:focus {
+select:hover, select:open, input[type=number]:hover, input[type=number]:focus, input[type=text]:hover, input[type=text]:focus {
     @apply bg-teal-50 border-teal-500 solid-shadow-sm-b-teal-400;
+}
+select:open {
+    @apply bg-teal-100;
+}
+
+blockquote {
+    @apply border-1 border-l-4 bg-teal-50 border-teal-400 pl-2 pr-1.5 py-0.5 italic my-2 rounded-r-md;
+}
+
+kbd {
+    @apply font-mono font-bold text-white text-sm border-2 border-teal-500 rounded-sm bg-teal-700 solid-shadow-sm-b-teal-900 px-1.5 py-0.5;
 }

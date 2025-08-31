@@ -1,5 +1,5 @@
 from jsonschema import validate, ValidationError
-from flask import render_template, abort, current_app
+from flask import render_template, abort, current_app, request, redirect, make_response
 import random
 import json
 import os
@@ -17,6 +17,28 @@ def render_validated_json_template(template_path, data, schema, additional_data=
     except ValidationError as e:
         print(e)
         abort(500, current_app.global_config["ERRORS"]["messages"]["invalid_json_schema"])
+
+def render_human_validator(validation_cookie, reroute):
+    answer = request.args.get("valid_resp", "").lower()
+    input = request.args.get("input_id", "") or -1
+    pass_flag = False
+    print(f"input: {input}, answer: {answer}")
+    match int(input):
+        case 1: # Grand Covenant
+            if str(answer) == "no":
+                pass_flag = True
+        case 2: # Gom Jabbar
+            pass_flag = True
+        case _: # Colorblindness
+            if answer == "bruc3":
+                pass_flag = True
+    if pass_flag:
+        resp = make_response(redirect(str(reroute)))
+        resp.set_cookie(validation_cookie, "T", max_age=3600 * 6)
+        return resp
+    elif answer:
+        return render_template('/sections/fixed/not_human.html')
+    return render_template('/sections/general/captcha.html')
 
 def render_http_error(err, is_custom = False):
     filter_index = err.description.find('.')

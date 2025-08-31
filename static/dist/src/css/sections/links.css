@@ -32,6 +32,13 @@ a.booklink:hover p {
     @apply bg-white;
 }
 
+a.booklink.angled_book_left {
+    transform: rotate(-5deg) translateX(2px) translateY(-0.5px)
+}
+a.booklink.angled_book_left::after {
+    transform: rotate(5deg) translateY(0.5px);
+}
+
 a.booklink_teal {
     @apply bg-teal-400 border-teal-500;
 }

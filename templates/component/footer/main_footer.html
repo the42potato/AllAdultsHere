@@ -19,6 +19,13 @@
     {{ "booklink_" ~ color }}
 {% endmacro %}
 
+{# applies a tilt to the booklink if it is the last one, or the last one before cutoff for smaller screens #}
+{% macro set_angled_book(loop_data) %}
+    {% if loop_data.index == FOOTER_LINK_MAX or loop_data.last %}
+        angled_book_left
+    {% endif %}
+{% endmacro %}
+
 <div class="footer">
     <div class="flex flex-col md:flex-row justify-center">
         <div class="footer_container flex-initial">
@@ -57,13 +64,13 @@
                     <div class="flex flex-row px-2 flex-1 flex-wrap">
                         {% for item in PAGELINKS %}
                             {% if loop.index <= FOOTER_LINK_MAX %}
-                                {% if loop.index == FOOTER_LINK_CUTOFF and loop.index < FOOTER_LINK_MAX and PAGELINKS|length > FOOTER_LINK_CUTOFF %}
+                                {% if loop.index == FOOTER_LINK_CUTOFF and loop.index <= FOOTER_LINK_MAX and PAGELINKS|length > FOOTER_LINK_CUTOFF %}
                                     <div class='flex md:hidden lg:flex flex-row'>
                                 {% endif %}
                                 {% set color_index = (loop.index ) % 8 %}
                                 <div class="flex flex-col h-full items-center">
                                     <div class="flex-1"></div>
-                                    <a href="{{ item.link }}" class="booklink {{ get_booklink_color(color_index)|trim }}">
+                                    <a href="{{ item.link }}" class="booklink {{set_angled_book(loop)}} {{ get_booklink_color(color_index)|trim }}">
                                         <p>{{ item.shorthand }}</p>
                                     </a>
                                 </div>
@@ -73,7 +80,7 @@
                                 </div>
                         {% endif %}
                         <div class="flex flex-col flex-1 h-full justify-end items-center">
-                            <img data-click-action="footer-character" data-timer-status="10" class="h-16 mb-0.5" src="{{ url_for('static', filename='dist/src/images/qr_codes/site_link_alt.svg') }}">
+                            <img data-click-action="footer-character" data-timer-status="10" class="h-16 mb-0.5" src="{{ url_for('static', filename='/dist/src/images/standin/1x1.webp') }}">
                         </div>
                     </div>
                 </div>
@@ -89,7 +96,7 @@
                     <img class="w-16 mx-2 md:w-30 solid-shadow-sm-bl-teal-500" src="{{ url_for('static', filename='dist/src/images/qr_codes/site_link_alt.svg') }}">
                 {% else %}
                 <!-- TODO need actual site link QR code -->
-                    <img class="w-32 md:w-22 lg:w-30 mx-2 solid-shadow-sm-bl-teal-500" src="{{ url_for('static', filename='dist/src/images/qr_codes/site_link.svg') }}">
+                    <img class="w-32 md:w-22 lg:w-30 mx-2 solid-shadow-sm-bl-teal-500" src="{{ url_for('static', filename='/dist/src/images/standin/1x1.webp') }}">
                 {% endif %}
             </div>
         </div>

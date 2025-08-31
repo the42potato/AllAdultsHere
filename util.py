@@ -1,10 +1,9 @@
-from flask import render_template, current_app, abort
+from flask import current_app
 import json
 import os
 import math
-from datetime import date, datetime, timedelta
+from datetime import date, datetime
 from jsonschema import validate, ValidationError
-
 
 def validate_json_schema(data, schema):
     try:

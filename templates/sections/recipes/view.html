@@ -125,12 +125,12 @@
 
 {% block content %}
     <div class="md:flex-initial min-w-2/5 w-fit bookmark_header">
-        <div class="bookmark_shape">
+        <hgroup class="bookmark_shape">
             <h2 class="py-0 dotted_underline">{{ data.title }}</h2>
             <p class="mt-0 font-permanent-marker">
                 {{ data.meal_type | join(', ') }}
             </p>
-        </div>
+        </hgroup>
     </div>
     <div class="flex flex-col mx-3 lg:flex-row items-start gap-3">
         <div class="w-full lg:w-fit flex-initial lg:min-w-1/3 index_card index_card_teal">
@@ -227,8 +227,6 @@
         </div>
     </div>
     <div class="flex flex-1 flex-row items-center justify-center pt-6 pb-4">
-        <div class="widget_container">
-            <a class="buttonlink" href="{{ url_for('recipe_review', recipe_name=additional_data.recipe_name) }}">Rate this Recipe!</a>
-        </div>
+        <a class="buttonlink" href="{{ url_for('recipe_review', recipe_name=additional_data.recipe_name) }}">Rate this Recipe!</a>
     </div>
 {% endblock %}

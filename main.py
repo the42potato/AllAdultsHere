@@ -1,4 +1,4 @@
-from flask import Flask, render_template, send_from_directory, request, abort
+from flask import Flask, render_template, send_from_directory, request
 import json
 import os
 import glob
@@ -7,7 +7,7 @@ from datetime import datetime
 from werkzeug.exceptions import HTTPException
 from util import validate_json_schema, get_json_file_based_on_date
 from errors import raise_joke_http_error, JokeError
-from renders import render_validated_json_template, render_http_error, render_recipe_page
+from renders import render_validated_json_template, render_http_error, render_recipe_page, render_human_validator
 from fixed import fixed_bp
 
 
@@ -129,7 +129,13 @@ def submit_recipe_review(recipe_name):
 @app.route('/sex_positions')
 def sex_positions():
     sex_positions_file = os.path.join(app.static_folder, 'dist', 'src', 'json', 'static', 'sex_positions.json')
-    return render_validated_json_template('/sections/general/index_card_list.html', sex_positions_file, cardlist_schema)
+
+    cookie = request.cookies.get('sex_pos_validator')
+    print(f"COOKIE : {cookie}")
+    if cookie == "T":
+        return render_validated_json_template('/sections/general/index_card_list.html', sex_positions_file, cardlist_schema)
+    else:
+        return render_human_validator('sex_pos_validator', request.path)
 
 @app.errorhandler(JokeError)
 def handle_joke_error(e):
