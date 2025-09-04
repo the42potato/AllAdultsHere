@@ -1,5 +1,5 @@
 <nav>
-    <div class="navbar">
+    <div class="navbar book_navbar">
         {% for item in PAGELINKS %}
             {% if loop.index <= NAV_LINK_MAX %}
             <a class="navlink" href="{{ item.link }}">{{ item.label }}</a>
