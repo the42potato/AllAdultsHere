@@ -31,6 +31,13 @@ function copyFormChecks(elmt, copyUnchecked = false){
     copy_to_clipboard(uncheckedLabels.join("\n"))
 }
 
+//TODO make this return RGB from OKLCH values
+function copyElementBgColor(elmt) {
+    const style = window.getComputedStyle(elmt);
+    const bgColor = style.backgroundColor;
+    copy_to_clipboard(bgColor);
+}
+
 /**
  * Changes the data-timer-status of an element
  * @param {EventTarget} element - the element to apply the change to
@@ -67,7 +74,8 @@ document.addEventListener("click", e => {
         // if a valid action is found, run its corresponding function
         const action_map = new Map([
             ["copy-form", () => copyFormChecks(element, true)],
-            ["footer-character", () => setElementTimer(element, 20)]
+            ["footer-character", () => setElementTimer(element, 20)],
+            ["copy-tw-bg-color", () => copyElementBgColor(element)]
         ])
         selected_action = action_map.get(action);
         if (selected_action) {

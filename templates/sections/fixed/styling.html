@@ -13,6 +13,21 @@
     underline italic
 {% endmacro %}
 
+{% macro build_navbar(style) %}
+    <div class="navbar {{ style }} ">
+        <a class="navlink">Link</a>
+        <a class="navlink">Link</a>
+    <div class="navbar_dropdown">
+        <a>Drp</a>
+        <div class="navbar_dropdown_container">
+            <div class="navbar_dropdown_content">
+                <a class="navlink">Link</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endmacro %}
+
 {% block content %}
     <div class="flex flex-col justify-center items-center gap-2 mx-4 md:mx-6">
         <p class="text-center">Welcome to the closest thing this site has to a dev page.</p>
@@ -139,22 +154,9 @@
         </div>
         <h2>Navbars</h2>
             <div class="{{ section_container_style() }}">
-                <div class="navbar base_navbar">
-                    <a class="navlink">Link</a>
-                    <a class="navlink">Link</a>
-                </div>
-                <div class="navbar bar_navbar">
-                    <a class="navlink">Link</a>
-                    <a class="navlink">Link</a>
-                </div>
-                <div class="navbar book_navbar_old">
-                    <a class="navlink">Link</a>
-                    <a class="navlink">Link</a>
-                </div>
-                <div class="navbar book_navbar">
-                    <a class="navlink">Link</a>
-                    <a class="navlink">Link</a>
-                </div>
+                {{ build_navbar("base_navbar")|trim }}
+                {{ build_navbar("bar_navbar")|trim }}
+                {{ build_navbar("book_navbar")|trim }}
             </div>
         <h2 class="text-center">Misc.</h2>
         <div class="{{ section_container_style() }}">
