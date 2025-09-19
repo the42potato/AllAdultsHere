@@ -26,17 +26,19 @@
         <a class="buttonlink" href="/recipe_substitutions">Substitutions Guide</a>
     </div>
     <div class="focus_center">
-        <h2 class="text-center dotted_underline mb-2">Recipes</h2>
-        <div class="flex flex-row gap-3 py-0.5 text-sm">
-            <p class="text-green-950">{{ recipes|length }} recipes loaded.</p>
-            {% if invalid_count > 0 %} {# display num recipes that don't match schema #}
-                <p class="text-red-950">{{ invalid_count }} recipe(s) invalid.</p>
-            {% endif %}
-        </div>
-        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 w-fit mx-auto place-items-center gap-8 p-4">
-            {% for recipe in recipes %}
-                <a class="buttonlink w-fit text-center" href="{{ recipe.link }}">{{ recipe.data.title }}</a>
-            {% endfor %}
-        </div>
+            <h2 class="text-center dotted_underline mb-2">Recipes</h2>
+            <div class="flex flex-row gap-3 py-0.5 text-sm justify-center">
+                <p class="text-green-950">{{ recipes|length }} recipes loaded.</p>
+                {% if invalid_count > 0 %} {# display num recipes that don't match schema #}
+                    <p class="text-red-950">{{ invalid_count }} recipe(s) invalid.</p>
+                {% endif %}
+            </div>
+            <div class="spotlight_container">
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 w-fit mx-auto place-items-center gap-8 p-4">
+                    {% for recipe in recipes %}
+                        <a class="buttonlink w-fit text-center" href="{{ recipe.link }}">{{ recipe.data.title }}</a>
+                    {% endfor %}
+                </div>
+            </div>
     </div>
 {% endblock %}

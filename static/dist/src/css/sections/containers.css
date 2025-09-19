@@ -124,6 +124,10 @@ div.blocky_container::after {
     @apply bottom-0 right-0 bg-lime-200 rotate-25 solid-shadow-sm-br-lime-400 border-2 border-lime-300;
 }
 
+div.spotlight_container {
+    @apply bg-gray-50 border-6 border-double border-teal-200 rounded-md solid-shadow-sm-b-teal-100 py-2 my-2;
+}
+
 div.focus_center {
   @apply flex flex-1 flex-col items-center justify-center;
 }

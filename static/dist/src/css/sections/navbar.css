@@ -109,7 +109,7 @@ div.book_navbar::before {
 }
 div.book_navbar::after {
     @apply absolute w-2 -right-1.5 h-[calc(100%+1.4rem)] border-2 border-x-0 border-amber-800;
-    background-image: linear-gradient(to bottom, var(--color-amber-950) 0rem, var(--color-amber-950) 0.46rem, var(--color-amber-800) 0.46rem, var(--color-amber-700) 0.595rem, #00000000 0.595rem, #00000000 2.8rem, var(--color-amber-800) 2.8rem, var(--color-amber-800) 2.935rem, var(--color-amber-950) 2.935rem);
+    background-image: linear-gradient(to bottom, var(--color-amber-950) 0rem, var(--color-amber-950) 0.46rem, var(--color-amber-800) 0.46rem, var(--color-amber-800) 0.595rem, #00000000 0.595rem, #00000000 2.8rem, var(--color-amber-800) 2.8rem, var(--color-amber-800) 2.935rem, var(--color-amber-950) 2.935rem);
     /* background-image: linear-gradient(to bottom, var(--color-amber-950) 0%, var(--color-amber-950) 17%, #00000000 17%, #00000000 83%, var(--color-amber-950) 83%);   0.135    */
 }
 div.book_navbar div.navbar_dropdown_content {
