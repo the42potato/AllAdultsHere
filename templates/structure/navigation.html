@@ -1,6 +1,8 @@
 {% extends 'structure/base.html'%}
 {% block layout %}
     {% include 'component/navbar.html' %}
-    {% block content %}
-    {% endblock %}
+    <div class="flex flex-col flex-1">
+        {% block content %}
+        {% endblock %}
+    </div>
 {% endblock %}

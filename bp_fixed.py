@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, current_app
 
-fixed_bp = Blueprint("Fixed Pages", __name__)
+fixed_bp = Blueprint("fixed_bp", __name__)
 
 @fixed_bp.route('/password_strength')
 def password_strength():

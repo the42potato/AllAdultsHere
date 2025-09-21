@@ -51,7 +51,7 @@
                         {% if RECIPE_OF_THE_DAY is none %}
                             <p>None</p>
                         {% else %}
-                            <a class="bg-transparent text-sm decoration-teal-200 text-teal-200" href="{{ url_for('recipe_detail', recipe_name=RECIPE_OF_THE_DAY.link) }}">{{ RECIPE_OF_THE_DAY.display_text }}</a>
+                            <a class="bg-transparent text-sm decoration-teal-200 text-teal-200" href="{{ url_for('generated_bp.recipe_detail', recipe_name=RECIPE_OF_THE_DAY.link) }}">{{ RECIPE_OF_THE_DAY.display_text }}</a>
                         {% endif %}
                     </div>
                 </div>
