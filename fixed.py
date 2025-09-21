@@ -9,3 +9,7 @@ def password_strength():
 @fixed_bp.route('/styling')
 def styling_preview():
     return render_template('/sections/fixed/styling.html')
+
+@fixed_bp.route('/re4_gems')
+def gem_calculator():
+    return render_template('/sections/fixed/re_gems.html')

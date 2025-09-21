@@ -1,0 +1,18 @@
+{% extends 'structure/navigation.html'%}
+{% set page_title = "Resident Evil 4 Gems" %}
+{% set IMPORT_JS = IMPORT_JS + ["res_ev_treasure"] %}
+
+{% block content %}
+    <div>
+        <div>
+            <h1>Optimal Setups</h1>
+            <p>The optimal gems for each treasure</p>
+            <div id="optimal_gems"></div>
+        </div>
+        <div>
+            <h1>Gem Calculator</h1>
+            <p>Calculate the best use of your gems and treasures</p>
+            <div id="gem_calculator"></div>
+        </div>
+    </div>
+{% endblock %}
