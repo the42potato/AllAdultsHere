@@ -4,7 +4,7 @@
 {% block content %}
 <div class="focus_center">
     <h1 class="text-red-950 solid-text-shadow-b-red-700 mb-10">Prove Your Humanity.</h1>
-    <form class="index_card px-4 py-2 index_card_red flex flex-col gap-2 justify-center items-center">
+    <form class="index_card px-4 py-2 index_card_red flex flex-col gap-2 justify-center items-center mx-2">
         {% set contentIndex = range(0, ( 1 + 1 )) | random %}
         <input type="hidden" name="input_id" value="{{ contentIndex }}">
         {# TODO make flask backend able to tell which. currently only works with dots or dots AND asimov #}
