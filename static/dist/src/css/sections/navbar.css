@@ -1,0 +1,132 @@
+div.navbar, div.navbar_dropdown_content {
+    @apply relative flex items-center justify-center gap-6 w-fit;
+}
+div.navbar {
+    @apply flex-row mb-6 mt-3 mx-auto py-2 px-6 min-w-82;
+}
+div.navbar_dropdown {
+    @apply relative inline-block h-full text-sm;
+    filter: none;
+    box-shadow: none;
+}
+div.navbar_dropdown_container {
+    @apply absolute top-7 -right-4 max-h-0 overflow-hidden opacity-0;
+    transition: max-height 0.25s ease-in-out, opacity 0.15s ease-in-out;
+}
+div.navbar_dropdown:hover div.navbar_dropdown_container {
+    @apply overflow-visible opacity-100;
+    max-height: 5000px;
+}
+div.navbar a {
+    @apply cursor-default;
+}
+div.navbar a:hover {
+    @apply subtle-text-highlight-white;
+}
+div.navbar a[href] {
+    @apply cursor-pointer;
+}
+div.navbar_dropdown > a {
+    @apply text-black font-bold italic decoration-black;
+}
+div.navbar_dropdown > a::after {
+    content: " ⤵";
+}
+div.navbar_dropdown_content {
+    @apply flex-col py-2.5 md:py-2 px-4 w-44;
+}
+div.navbar a.navlink {
+    @apply px-1 decoration-black border-t-2 border-b-2 border-transparent;
+}
+div.navbar a.navlink:hover {
+    @apply border-teal-700 subtle-text-highlight-teal-600 no-underline decoration-transparent;
+}
+div.navbar img.nav_img {
+    @apply border-0 my-0 h-6;
+    filter: drop-shadow(0 0 1px var(--color-teal-300));
+    transition: filter 0.2s ease-in-out;
+}
+div.navbar img.nav_img:hover {
+    filter: drop-shadow(0px 1px 3px var(--color-teal-400));
+}
+
+div.base_navbar, div.base_navbar div.navbar_dropdown_content {
+    @apply border-2 rounded-sm bg-teal-50 border-teal-500 solid-shadow-sm-b-teal-400;
+}
+
+div.bar_navbar, div.bar_navbar div.navbar_dropdown_content {
+    @apply relative border-2 rounded-sm border-amber-600 bg-amber-50 solid-shadow-sm-b-amber-600;
+}
+div.bar_navbar {
+    @apply px-10;
+}
+div.bar_navbar::before, div.bar_navbar::after {
+    @apply absolute w-4 h-[135%] bg-amber-400 rounded-sm border-2 border-amber-500 solid-shadow-sm-b-amber-500;
+    transition: left 0.15s ease-in-out, right 0.15s ease-in-out, width 0.3s ease-in-out, border-radius 0.25s ease-in-out, background-color 0.15s ease-in-out;
+    content: "";
+}
+div.bar_navbar::before {
+    @apply left-3;
+}
+div.bar_navbar::after {
+    @apply right-3;
+}
+div.bar_navbar:hover::before, div.bar_navbar:hover::after {
+    @apply w-7 bg-yellow-400;
+}
+div.bar_navbar:hover::before {
+    @apply -left-1 rounded-l-xl;
+}
+div.bar_navbar:hover::after {
+    @apply -right-1 rounded-r-xl;
+}
+div.bar_navbar a.navlink {
+    @apply text-orange-700 decoration-orange-700;
+}
+div.bar_navbar a.navlink:hover {
+    @apply border-orange-700 subtle-text-highlight-orange-400 no-underline decoration-transparent;
+}
+div.bar_navbar div.navbar_dropdown_content::before {
+    @apply absolute w-3 left-3 h-[calc(100%+0.5rem)] bg-yellow-400 border-2 border-amber-500 solid-shadow-sm-b-amber-500 rounded-sm;
+    content: "";
+    transition: width 0.15s ease-in-out, left 0.2s ease-in-out;
+}
+div.bar_navbar div.navbar_dropdown_content:hover::before {
+    @apply w-5 -left-1 rounded-l-xl;
+}
+
+div.book_navbar {
+    @apply bg-teal-100 rounded-l-sm py-1 border-2 border-r-0 border-amber-800;
+    background-image: linear-gradient(to bottom, var(--color-teal-100) 0%, var(--color-teal-200) 10%, var(--color-teal-100) 20%, var(--color-teal-200) 30%, var(--color-teal-100) 40%, var(--color-teal-200) 50%, var(--color-teal-100) 60%, var(--color-teal-200) 70%, var(--color-teal-100) 80%, var(--color-teal-200) 90%, var(--color-teal-100) 100%);
+    box-shadow: inset 2.5px 2.5px 1.5px var(--color-teal-500);
+}
+div.book_navbar::before, div.book_navbar::after {
+    @apply absolute -z-10;
+    content: "";
+}
+div.book_navbar::before {
+    @apply absolute right-0 rounded-l-md bg-amber-950 h-[calc(100%+1.4rem)] w-[calc(100%+0.55rem)] border-2 border-amber-800 border-r-0;
+}
+div.book_navbar::after {
+    @apply absolute w-2 -right-1.5 h-[calc(100%+1.4rem)] border-2 border-x-0 border-amber-800;
+    background-image: linear-gradient(to bottom, var(--color-amber-950) 0rem, var(--color-amber-950) 0.46rem, var(--color-amber-800) 0.46rem, var(--color-amber-800) 0.595rem, #00000000 0.595rem, #00000000 2.8rem, var(--color-amber-800) 2.8rem, var(--color-amber-800) 2.935rem, var(--color-amber-950) 2.935rem);
+    /* background-image: linear-gradient(to bottom, var(--color-amber-950) 0%, var(--color-amber-950) 17%, #00000000 17%, #00000000 83%, var(--color-amber-950) 83%);   0.135    */
+}
+div.book_navbar div.navbar_dropdown_content {
+    @apply relative bg-amber-900 rounded-sm border-2 border-orange-900 solid-shadow-sm-b-amber-900 z-10;
+}
+div.book_navbar div.navbar_dropdown_content a {
+    @apply text-white;
+}
+div.book_navbar div.navbar_dropdown_content a:hover {
+    @apply border-white subtle-text-highlight-teal-500;
+}
+div.book_navbar div.navbar_dropdown_content::before {
+    @apply absolute left-1 -top-1 h-[calc(100%+1rem)] w-3 bg-red-700;
+    content: "";
+    clip-path: polygon(100% 0, 100% 100%, 50% 90%, 0 100%, 0 0);
+    box-shadow: 2px 2px 0px var(--color-amber-900);
+}
+div.book_navbar:hover div.navbar_dropdown_content::before {
+    @apply solid-shadow-sm-b-amber-900;
+}
