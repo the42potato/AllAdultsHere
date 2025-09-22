@@ -1,0 +1,103 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Unnamed Souls Help",
+    "type": "object",
+    "required": ["game", "softcaps"],
+    "properties": {
+        "game": {
+            "type": "string"
+        },
+        "progress_map": {
+            "type": "string"
+        },
+        "title_note": {
+            "type": "string"
+        },
+        "softcaps": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "required": ["name", "type", "caps"],
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "type": "string",
+                        "enum": ["health", "stamina", "damage", "magic", "other"]
+                    },
+                    "caps": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "description": {
+                                    "type": "string"
+                                },
+                                "caps": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "integer",
+                                        "minimum": 1,
+                                        "maximum": 99
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "notable_items": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "required": ["type", "name", "description", "area", "how_to_get"],
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "enum": ["key_item", "shop_unlock", "equipment", "ring", "other"]
+                    },
+                    "is_dlc": {
+                        "type": "boolean"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "description": {
+                        "type": "string"
+                    },
+                    "area": {
+                        "type": "string"
+                    },
+                    "how_to_get": {
+                        "type": "string"
+                    },
+                    "notes": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "boss_tips": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "boss": {
+                        "type": "string"
+                    },
+                    "tips": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

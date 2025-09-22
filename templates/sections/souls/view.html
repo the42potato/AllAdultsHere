@@ -1,0 +1,115 @@
+{% extends 'structure/navigation.html'%}
+{% set page_title = data.title %}
+
+
+{% macro get_progression_map(map_name) %}
+    {% if not map_name %}
+        /dist/src/images/standin/1x2.webp
+    {% else %}
+        /dist/src/images/souls_maps/{{map_name}}.svg
+    {% endif %}
+{% endmacro %}
+
+{% macro get_item_type_color(type) %}
+    {% if type == "shop_unlock" %}
+        amber
+    {% elif type == "key_item" %}
+        teal
+    {% elif type == "ring" %}
+        rose
+    {% elif type == "equipment" %}
+        lime
+    {% else %}
+        gray
+    {% endif %}
+{% endmacro %}
+
+{% macro get_cap_type_color(type) %}
+    {% if type == "health" %}
+        bg-red-300
+    {% elif type == "stamina" %}
+        bg-lime-300
+    {% elif type == "damage" %}
+        bg-teal-300
+    {% elif type == "magic" %}
+        bg-purple-300
+    {% endif %}
+{% endmacro %}
+
+{% block content %}
+    <div>
+        <h1 class="text-center underline decoration-3 pb-6">{{ data.game }} - {{ data.title_note | default("A Guide") }}</h1>
+    </div>
+    <div class="flex flex-col md:flex-row justify-center items-center gap-4 w-fit mx-auto p-4 widget_container widget_gray">
+        <div class="index_card index_card_gray">
+            <h3 class="text-center underline p-0 pb-0.5">Stat Caps</h3>
+            <div class="grid grid-cols-2 w-fit items-center">
+                {% for cap in data.softcaps %}
+                    <div class="h-full content-center text-center py-0.5 px-1 {% if not loop.last %}border-b-2{% endif %}">|<span class="font-bold underline px-0.5 {{ get_cap_type_color(cap.type)|trim }}">{{ cap.name }}</span>|</div>
+                    <div class="h-full content-center py-0.5 px-1 {% if not loop.last %}border-b-2{% endif %}">
+                        {% for o_cap in cap.caps %}
+                            <div>
+                                <span class="font-bold">{{ o_cap.description }}: </span>
+                                {% for cap_levels in o_cap.caps %}
+                                    <span>{{ cap_levels }}{% if not loop.last %},{% endif %}</span>
+                                {% endfor %}
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="index_card index_card_teal h-fit">
+            <h3 class="text-center underline p-0 pb-0.5">Progression Map</h3>
+            <img class="w-100" src="{{ url_for('static', filename=get_progression_map(data.progress_map)|trim) }}">
+        </div>
+    </div>
+    <hr class="rule_double mt-6">
+    <div class="flex flex-col items-center md:px-4">
+        <h3 class="text-center">Notable Item Locations</h3>
+        <div class="flex flex-row text-center widget_container widget_gray my-2 mt-3">
+            {% set item_types = ["key_item", "shop_unlock", "ring", "equipment", "other"] %}
+            {% for type in item_types %}
+                <div class="w-35 py-1 {{ 'bg-' + get_item_type_color(type)|trim + '-200' }} {% if not loop.last %}border-r-2{% endif %}">
+                    <p>{{ type.replace('_', ' ').capitalize() }}</p>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="spotlight_container w-fit px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-center items-center gap-4">
+            {% for item in data.notable_items|sort(attribute="name") %}
+                <div class="index_card {{ 'index_card_' + get_item_type_color(item.type)|trim }} max-w-100">
+                    <h4 class="underline decoration-2 pb-2">{{ item.name }}</h4>
+                    <p class="font-black">> <span class="text-sm font-normal italic">{{ item.description }}</span></p>
+                    <p class="pt-1"><span class="font-bold underline">Located In:</span> {{ item.area }}</p>
+                    <p class="indent-4 italic text-sm">{{ item.how_to_get }}</p>
+                    {% if item.notes %}
+                        <p class="font-bold underline pt-1">Notes:</p>
+                        <ul class="text-sm">
+                            {% for note in item.notes %}
+                                <li>{{ note }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% if data.boss_tips %}
+        <hr class="rule_double mt-6 mb-4">
+        <div class="flex flex-col items-center md:px-4">
+            <h3 class="text-center">Boss Tips</h3>
+            <div class="spotlight_container w-fit px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-center items-center gap-4">
+                {% for boss in data.boss_tips|sort(attribute="boss") %}
+                    <div class="index_card index_card_red max-w-100">
+                        <h4>{{ boss.boss }}</h4>
+                        <ul>
+                            {% for tip in boss.tips %}
+                                <li>{{ tip }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    {% endif %}
+{% endblock %}

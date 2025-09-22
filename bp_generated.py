@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, current_app, request
+from flask import Blueprint, render_template, current_app, request, abort
 import os
 import glob
 import json
@@ -13,9 +13,11 @@ def on_load(setup_state):
     app = setup_state.app
     recipes_schema_path = os.path.join(app.static_folder, 'dist', 'src', 'json', 'schema', 'recipes.json')
     cardlist_schema_path = os.path.join(app.static_folder, 'dist', 'src', 'json', 'schema', 'cardlist.json')
-    with open(recipes_schema_path) as r, open(cardlist_schema_path) as c:
+    souls_schema_path = os.path.join(app.static_folder, 'dist', 'src', 'json', 'schema', 'souls.json')
+    with open(recipes_schema_path) as r, open(cardlist_schema_path) as c, open(souls_schema_path) as s:
             generated_bp.recipe_schema = json.load(r)
             generated_bp.cardlist_schema = json.load(c)
+            generated_bp.souls_schema = json.load(s)
 
 @generated_bp.route('/recipes')
 def recipes():
@@ -80,3 +82,22 @@ def sex_positions():
         return render_validated_json_template('/sections/general/index_card_list.html', sex_positions_file, generated_bp.cardlist_schema)
     else:
         return render_human_validator('sex_pos_validator', request.path)
+    
+@generated_bp.route('/souls')
+def souls_help_list():
+    abort(503, "This section is currently under development. Please check back later.")
+
+@generated_bp.route('/souls/<string:game_name>')
+def souls_help(game_name):
+    souls_file = os.path.join(current_app.static_folder, 'dist', 'src', 'json', 'souls', game_name + ".json")
+
+    if not os.path.exists(souls_file):
+        abort(404, current_app.global_config["ERRORS"]["messages"]["page_data_not_found"])
+    
+    with open(souls_file, 'r') as file:
+        game_help = json.load(file)
+
+    if game_help:
+        return render_validated_json_template('/sections/souls/view.html', game_help, generated_bp.souls_schema)
+    else:
+        abort(404, current_app.global_config["ERRORS"]["messages"]["page_data_not_found"])

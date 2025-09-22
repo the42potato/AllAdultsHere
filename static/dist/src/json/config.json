@@ -99,7 +99,7 @@
             }
         },
         "messages": {
-            "recipe_not_found": "The requested recipe was not found on the server.",
+            "page_data_not_found": "The requested page data was not found on the server.",
             "invalid_json_schema": "The specified source content is invalid.",
             "unimplemented": "This page or feature is under construction."
         }
