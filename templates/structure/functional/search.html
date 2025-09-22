@@ -1,0 +1,27 @@
+{% extends 'structure/navigation.html'%}
+{% set page_title = results.tab_text + " - Browse" %}
+{% if results.footers %}
+    {% set ACTIVE_FOOTERS = ACTIVE_FOOTERS + results.footers %}
+{% endif %}
+
+{% block content %}
+    {% for header in results.headers %}
+        {% include 'component/search_headers/' + header + '.html' %}
+    {% endfor %}
+    <div class="focus_center">
+        <h2 class="text-center dotted_underline mb-2">{{ results.title }}</h2>
+        <div class="flex flex-row gap-3 py-0.5 text-sm justify-center">
+            <p class="text-green-950">{{ results.links|length }} page(s) loaded.</p>
+            {% if invalid_count > 0 %} {# display num recipes that don't match schema #}
+                <p class="text-red-950">{{ invalid_count }} page(s) invalid.</p>
+            {% endif %}
+        </div>
+        <div class="spotlight_container">
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 w-fit mx-auto place-items-center gap-8 p-4">
+                {% for result in results.links %}
+                    <a class="buttonlink w-fit text-center" href="{{ result.link }}">{{ result.display_text }}</a>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

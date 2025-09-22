@@ -70,8 +70,8 @@
         <div class="flex flex-row text-center widget_container widget_gray my-2 mt-3">
             {% set item_types = ["key_item", "shop_unlock", "ring", "equipment", "other"] %}
             {% for type in item_types %}
-                <div class="w-35 py-1 {{ 'bg-' + get_item_type_color(type)|trim + '-200' }} {% if not loop.last %}border-r-2{% endif %}">
-                    <p>{{ type.replace('_', ' ').capitalize() }}</p>
+                <div class="w-35 py-1 {{ 'bg-' + get_item_type_color(type)|trim + '-200' }} {% if loop.index0 == 0 %}rounded-l-md{% endif %} {% if not loop.last %}border-r-2{% else %} rounded-r-md {% endif %}">
+                    <p class="font-bold">{{ type.replace('_', ' ').upper() }}</p>
                 </div>
             {% endfor %}
         </div>
