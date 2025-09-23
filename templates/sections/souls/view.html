@@ -61,7 +61,7 @@
                     <div class="h-full content-center text-center py-1 px-1 {% if not loop.last %}border-b-1{% endif %}">|<span class="font-bold underline px-0.5 {{ get_cap_type_color(cap.type)|trim }}">{{ cap.name }}</span>|</div>
                     <div class="h-full content-center py-1 px-1 {% if not loop.last %}border-b-1{% endif %}">
                         {% for o_cap in cap.caps %}
-                            <div>
+                            <div class="text-sm">
                                 <span class="font-bold">{{ o_cap.description }}: </span>
                                 {% for cap_levels in o_cap.caps %}
                                     <span>{{ cap_levels }}{% if not loop.last %},{% endif %}</span>

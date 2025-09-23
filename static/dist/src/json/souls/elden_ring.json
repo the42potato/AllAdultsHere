@@ -1,0 +1,119 @@
+{
+    "game": "Elden Ring",
+    "progression_chart": "elden_ring_progression",
+    "title_note": "A Tarnished's Guide",
+    "softcaps": [
+        {
+            "name": "Vigor",
+            "type": "health",
+            "caps": [
+                {
+                    "description": "Health",
+                    "caps": [40, 60]
+                }
+            ]
+        },
+        {
+            "name": "Endurance",
+            "type": "stamina",
+            "caps": [
+                {
+                    "description": "Stamina",
+                    "caps": [50]
+                },
+                {
+                    "description": "Equip Load",
+                    "caps": [25, 60]
+                }
+            ]
+        },
+        {
+            "name": "Mind",
+            "type": "stamina",
+            "caps": [
+                {
+                    "description": "Focus",
+                    "caps": [55, 60]
+                }
+            ]
+        },
+        {
+            "name": "Strength",
+            "type": "damage",
+            "caps": [
+                {
+                    "description": "Melee Dmg",
+                    "caps": [20, 55, 80]
+                }
+            ]
+        },
+        {
+            "name": "Dexterity",
+            "type": "damage",
+            "caps": [
+                {
+                    "description": "Melee Dmg",
+                    "caps": [20, 55, 80]
+                },
+                {
+                    "description": "Casting Speed",
+                    "caps": [70]
+                }
+            ]
+        },
+        {
+            "name": "Intelligence",
+            "type": "magic",
+            "caps": [
+                {
+                    "description": "Melee Dmg",
+                    "caps": [20, 50, 80]
+                },
+                {
+                    "description": "Spell Dmg - Sin. Scale",
+                    "caps": [60, 80]
+                },
+                {
+                    "description": "Spell Dmg - Hyb. Scale",
+                    "caps": [30, 45]
+                }
+            ]
+        },
+        {
+            "name": "Faith",
+            "type": "magic",
+            "caps": [
+                {
+                    "description": "Melee Dmg",
+                    "caps": [20, 50, 80]
+                },
+                {
+                    "description": "Spell Dmg - Sin. Scale",
+                    "caps": [60, 80]
+                },
+                {
+                    "description": "Spell Dmg - Hyb. Scale",
+                    "caps": [30, 45]
+                }
+            ]
+        },
+        {
+            "name": "Arcane",
+            "type": "magic",
+            "caps": [
+                {
+                    "description": "Melee Dmg",
+                    "caps": [20, 50, 80]
+                },
+                {
+                    "description": "Spell Dmg",
+                    "caps": [30, 45]
+                },
+                {
+                    "description": "Discovery",
+                    "caps": [99]
+                }
+            ]
+        }
+    ]
+}
