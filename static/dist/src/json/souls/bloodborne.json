@@ -408,7 +408,11 @@
             "name": "Clockwise Metamorphosis",
             "description": "Raises maximum health",
             "area": "Forbidden Woods / Nightmare Frontier / Ptheumeru Ihyll Root Chalice",
-            "how_to_get": "I is found behind a locked gate after the Shadows of Yharnam. II is found in a cave across the Nightmare Frontier's stone bridge. III is found randomly in the Ptheumeru Ihyll Root Chalice.",
+            "how_to_get": [
+                "I is found behind a locked gate after the Shadows of Yharnam.",
+                "II is found in a cave across the Nightmare Frontier's stone bridge.",
+                "III is found randomly in the Ptheumeru Ihyll Root Chalice."
+            ],
             "notes": [
                 "I raises max health by 5%",
                 "II raises max health by 10%",
@@ -418,14 +422,426 @@
         {
             "type": "ring",
             "name": "Anti-Clockwise Metamorphosis",
-            "description": "Raises maximum health",
+            "description": "Raises maximum stamina",
             "area": "Forbidden Woods / Lecture Hall / Lower Ailing Loran Chalice",
-            "how_to_get": "I is found after a group of Kin in the Forbidden Woods. II is found by speaking with Patches in his room. III is found in the Lower Ailing Loran Chalice.",
+            "how_to_get": [
+                "I is found after a group of Kin in the Forbidden Woods.",
+                "II is found by speaking with Patches in his room.",
+                "III is found in the Lower Ailing Loran Chalice."
+            ],
             "notes": [
                 "I raises max stamina by 10%",
                 "II raises max stamina by 15%",
                 "III raises max stamina by 20%"
             ]
+        },
+        {
+            "type": "ring",
+            "name": "Arcane Lake",
+            "description": "Reduces Arcane damage",
+            "area": "Yahar'Gul / Byrgenwerth / Isz Root Chalice",
+            "how_to_get": [
+                "I is found on a corpse near some slugs.",
+                "II is found near a Brainsucker.",
+                "III is found randomly in the Isz Root Chalice"
+            ],
+            "notes": [
+                "I reduces Arcane damage by 5%",
+                "II reduces Arcane damage by 7%",
+                "III reduces Arcane damage by 10%"
+            ]
+        },
+        {
+            "type": "ring",
+            "name": "Beast",
+            "description": "Boosts the effect of Beast Blood Pellets",
+            "area": "Healing Church Workshop / Forbidden Woods / Lower Ailing Loran Root Chalice",
+            "how_to_get": [
+                "I is dropped by the Beast-Possessed Soul at the end of the shortcut to Cathedral Ward.",
+                "II is dropped by the Suspicious Beggar.",
+                "III is found randomly in the Lower Ailing Loran Root Chalice"
+            ],
+            "notes": [
+                "I boosts transformation by 20",
+                "II boosts transformation by 50",
+                "III boosts transformation by 100"
+            ]
+        },
+        {
+            "type": "ring",
+            "name": "Blood Rapture",
+            "description": "Visceral Attacks restore Health",
+            "area": "Forbidden Woods / Cursed and Defiled Root Chalice / Cathedral Ward",
+            "how_to_get": [
+                "I is dropped by the Shadows of Yharnam.",
+                "II is found randomly in the Cursed and Defiled Root Chalice.",
+                "III is dropped by the Bloody Crow of Cainhurst at the end of Eileen's quest."
+            ],
+            "notes": [
+                "I restores 200 HP",
+                "II restores 250 HP",
+                "III restores 300 HP"
+            ]
+        },
+        {
+            "type": "ring",
+            "name": "Clawmark",
+            "description": "Boosts Visceral Attack damage",
+            "area": "Yahar'Gul / Central Yharnam / Lower Ailing Loran Root Chalice",
+            "how_to_get": [
+                "I is dropped from one of the three NPC hunters.",
+                "II is dropped by Gilbert after defeating Rom.",
+                "III is found randomly in the Lower Ailing Loran Root Chalice."
+            ],
+            "notes": [
+                "I boosts damage by 10%",
+                "II boosts damage by 20%",
+                "III boosts damage by 30%"
+            ]
+        },
+        {
+            "type": "ring",
+            "name": "Clear Deep Sea",
+            "description": "Raises poison resistence",
+            "area": "Forbidden Woods / Nightmare Frontier / Lower Ailing Loran Root Chalice",
+            "how_to_get": [
+                "I is found behind a large gravestone.",
+                "II is found behind a rock thrower on top of a hill.",
+                "III is found randomly in the Lower Ailing Loran Root Chalice."
+            ],
+            "notes": [
+                "I raises resistence by 100",
+                "II raises resistence by 200",
+                "III raises resistence by 300"
+            ]
+        },
+        {
+            "type": "ring",
+            "name": "Communion",
+            "description": "Raises maximum blood vials",
+            "area": "Cathedral Ward / Lecture Hall / Iosefka's Clinic / Upper Cathedral Ward / Pthumeru Ihyll Root Chalice",
+            "how_to_get": [
+                "I is found on the way to the Healing Church Workshop.",
+                "II is found in a chest.",
+                "III is found in a chest.",
+                "IV is dropped by the Celestial Emissary.",
+                "V is found randomly in the Pthumeru Ihyll Root Chalice."
+            ],
+            "notes": [
+                "I raises max vials by 1",
+                "II raises max vials by 2",
+                "III raises max vials by 3",
+                "IV raises max vials by 4",
+                "V raises max vials by 5"
+            ]
+        },
+        {
+            "type": "ring",
+            "name": "Deep Sea",
+            "description": "Raises frenzy resistence",
+            "area": "Lower Hintertomb Root Chalice / Forbidden Woods / Isz Root Chalice",
+            "how_to_get": [
+                "I is found randomly in the Lower Hintertomb Root Chalice.",
+                "II is found near two viper pits.",
+                "III is found randomly in the Isz Root Chalice."
+            ],
+            "notes": [
+                "I raises resistence by 100",
+                "II raises resistence by 200",
+                "III raises resistence by 300"
+            ]
+        },
+        {
+            "type": "ring",
+            "name": "Dissipating Lake",
+            "description": "Reduces bolt damage",
+            "area": "Forbidden Woods / Ailing Loran Root Chalice / Lower Ailing Loran Root Chalice",
+            "how_to_get": [
+                "I is found under some roots in the mud section.",
+                "II is found randomly in the Ailing Loran Root Chalice.",
+                "III is found randomly in the Lower Ailing Loran Root Chalice."
+            ],
+            "notes": [
+                "I reduces bolt damage by 5%",
+                "II reduces bolt damage by 7%",
+                "III reduces bolt damage by 10%"
+            ]
+        },
+        {
+            "type": "ring",
+            "name": "Eye",
+            "description": "Raises discovery",
+            "area": "Nightmare of Mensis / Byrgenwerth / Isz Root Chalice",
+            "how_to_get": [
+                "I is found near the Mergo's Loft: Base lamp.",
+                "II is dropped by Master Willem.",
+                "III is found randomly in the Isz Root Chalice."
+            ],
+            "notes": [
+                "I raises discovery by 50",
+                "II raises discovery by 70",
+                "III raises discovery by 100"
+            ]
+        },
+        {
+            "type": "ring",
+            "name": "Fading Lake",
+            "description": "Reduces fire damage",
+            "area": "Nightmare Frontier / Ailing Loran Root Chalice / Lower Ailing Loran Root Chalice",
+            "how_to_get": [
+                "I is on a narrow cliff near the Bell-Ringing Woman.",
+                "II is found randomly in the Ailing Loran Root Chalice.",
+                "III is found randomly in the Lower Ailing Loran Root Chalice."
+            ],
+            "notes": [
+                "I reduces fire damage by 5%",
+                "II reduces fire damage by 7%",
+                "III reduces fire damage by 10%"
+            ]
+        },
+        {
+            "type": "ring",
+            "name": "Formless Oedon",
+            "description": "Raises maximum bullets",
+            "area": "Iosefka's Clinic / Lower Pthumeru Root Chalice / Cathedral Ward / Healing Church Workshop / Pthumeru Ihyll Root Chalice",
+            "how_to_get": [
+                "I is dropped by a Kin if Gascoigne's Daughter was sent to the clinic.",
+                "II is found randomly in the Lower Pthumeru Root Chalice.",
+                "III is dropped by the Chapel Dweller.",
+                "IV is found in a secret passage halfway up the elevator ride.",
+                "V is found randomly in the Pthumeru Ihyll Root Chalice."
+            ],
+            "notes": [
+                "I raises max bullets by 1",
+                "II raises max bullets by 2",
+                "III raises max bullets by 3",
+                "IV raises max bullets by 4",
+                "V raises max bullets by 5"
+            ]
+        },
+        {
+            "type": "ring",
+            "name": "Great Deep Sea",
+            "description": "Raises all resistences",
+            "area": "Lower Hintertomb Root Chalice / Nightmare Frontier / Isz Root Chalice",
+            "how_to_get": [
+                "I is found randomly in the Lower Hintertomb Root Chalice.",
+                "II is found in a narrow passage of the poison swamp.",
+                "III is found randomly in the Isz Root Chalice."
+            ],
+            "notes": [
+                "I raises resistences by 50",
+                "II raises resistences by 100",
+                "III raises resistences by 150"
+            ]
+        },
+        {
+            "type": "ring",
+            "name": "Great Lake",
+            "description": "Reduces all damage types",
+            "area": "Lower Hintertomb Root Chalice / Upper Cathedral Ward / Isz Root Chalice",
+            "how_to_get": [
+                "I is found randomly in the Lower Hintertomb Root Chalice.",
+                "II is found at the top of some stairs after the lamp, on the right.",
+                "III is found randomly in the Isz Root Chalice."
+            ],
+            "notes": [
+                "I reduces damage by 3%",
+                "II reduces damage by 4%",
+                "III reduces damage by 5%"
+            ]
+        },
+        {
+            "type": "ring",
+            "name": "Guidance",
+            "description": "Boosts rally potential",
+            "area": "Research Hall / Hunter's Nightmare",
+            "how_to_get": [
+                "I is dropped by a Carrion Crow at the top of the research hall.",
+                "II is dropped by Ludwig."
+            ],
+            "notes": [
+                "I boosts rally by 10%",
+                "II boosts rally by 20%"
+            ]
+        },
+        {
+            "type": "ring",
+            "name": "Heir",
+            "description": "Raises blood echoes gained from Visceral Attacks",
+            "area": "Central Yharnam / Yahar'Gul / Pthumeru Ihyll Root Chalice",
+            "how_to_get": [
+                "I is dropped by Henryk.",
+                "II is found on a corpse in a room with a wheelchair, troll, and werewolf.",
+                "III is found randomy in the Pthumeru Ihyll Root Chalice."
+            ],
+            "notes": [
+                "I boosts echoes by 20%",
+                "II boosts echoes by 40%",
+                "III boosts echoes by 60%"
+            ]
+        },
+        {
+            "type": "ring",
+            "name": "Lake",
+            "description": "Reduces physical damage",
+            "area": "Hemwick Charnel Lake / Cursed and Defiled Root Chalice / Pthumeru Ihyll Root Chalice",
+            "how_to_get": [
+                "I is found at the edge of a collapsed bridge, surrounded by dogs.",
+                "II is found randomly in the Cursed and Defiled Root Chalice.",
+                "III is found randomly in the Pthumeru Ihyll Root Chalice."
+            ],
+            "notes": [
+                "I reduces physical damage by 3%",
+                "II reduces physical damage by 5%",
+                "III reduces physical damage by 7%"
+            ]
+        },
+        {
+            "type": "ring",
+            "name": "Moon",
+            "description": "Raises blood echoes dropped from enemies",
+            "area": "Yahar'Gul's Hypogean Gaol / Nightmare of Mensis / Nightmare of Mensis",
+            "how_to_get": [
+                "I is downstairs of the lamp, guarded by two Kidnappers.",
+                "II is found in Micolash's boss room.",
+                "III is given by the Brain of Mensis after Making Contact."
+            ],
+            "notes": [
+                "I boosts echoes by 10%",
+                "II boosts echoes by 20%",
+                "III boosts echoes by 30%"
+            ]
+        },
+        {
+            "type": "ring",
+            "name": "Oedon Writhe",
+            "description": "Visceral Attacks grant bullets",
+            "area": "Yahar'Gul's Hypogean Gaol / Iosefka's Clinic / Pthumeru Ihyll Root Chalice",
+            "how_to_get": [
+                "I is dropped by Adella.",
+                "II is dropped by Iosefka if Rom has not yet been killed.",
+                "III is found randomly in the Ptheumeru Ihyll Root Chalice."
+            ],
+            "notes": [
+                "I gives 1 bullet",
+                "II gives 2 bullets",
+                "III gives 3 bullets"
+            ]
+        },
+        {
+            "type": "ring",
+            "name": "Stunning Deep Sea",
+            "description": "Raises rapid poison resistence",
+            "area": "Lower Hintertomb Root Chalice / Nightmare Frontier / Lower Ailing Loran Root Chalice",
+            "how_to_get": [
+                "I is found randomly in the Lower Hintertomb Root Chalice.",
+                "II is found after a jump in the area where two NPC hunters invade.",
+                "III is found randomly in the Lower Ailing Loran Root Chalice."
+            ],
+            "notes": [
+                "I raises resistence by 100",
+                "II raises resistence by 200",
+                "III raises resistence by 300"
+            ]
+        },
+        {
+            "type": "ring",
+            "is_dlc": true,
+            "name": "Beast's Embrace",
+            "description": "Raises beasthood when using the Beast Claw",
+            "area": "Hunter's Nightmare",
+            "how_to_get": "Dropped by Laurence"
+        },
+        {
+            "type": "ring",
+            "name": "Corruption",
+            "description": "Continually heals 1 HP when near death. Blood Dregs can drop.",
+            "area": "Cainhurst Castle",
+            "how_to_get": "Join the Vilebloods"
+        },
+        {
+            "type": "ring",
+            "name": "Hunter",
+            "description": "Increases stamina recovery speed by 10%. Co-op may become PvP.",
+            "area": "Cathedral Ward",
+            "how_to_get": "Complete Eileen's questline."
+        },
+        {
+            "type": "ring",
+            "name": "Impurity",
+            "description": "Raises max health by 2% in Co-op. Vermin can drop.",
+            "area": "Forbidden Woods",
+            "how_to_get": "Join the League"
+        },
+        {
+            "type": "ring",
+            "is_dlc": true,
+            "name": "Milkweed",
+            "description": "Raises discovery by 10. Transforms user into a Lampwood.",
+            "area": "Cathedral Ward",
+            "how_to_get": "Complete Saint Adeline's questline.",
+            "notes": [
+                "Unlocks the Kos Parasite's true potential."
+            ]
+        },
+        {
+            "type": "ring",
+            "name": "Radiance",
+            "description": "Raises health recovered from blood vials by 2%.",
+            "area": "Cathedral Ward",
+            "how_to_get": "Complete Alfred's Questline and loot it from his corpse."
+        },
+        {
+            "type": "key_item",
+            "name": "Third Umbilical Cord",
+            "description": "Partial umbilical cord of an infant Great One.",
+            "area": "Abandoned Old Workshop / Iosefka's Clinic / Cathedral Ward / Nightmare of Mensis",
+            "how_to_get": [
+                "One is found on the rune altar of the Abandoned Old Workshop.",
+                "One is dropped from Imposter Iosefka after killing Rom.",
+                "One is dropped from Arianna's infant after killing Rom.",
+                "One is dropped by Mergo's Wet Nurse."
+            ]
+        },
+        {
+            "type": "key_item",
+            "name": "Cainhurst Summons",
+            "description": "A summons to Cainhurst Castle. It bears your name.",
+            "area": "Iosefka's Clinic",
+            "how_to_get": "Found in a room in the back of the clinic."
+        },
+        {
+            "type": "key_item",
+            "name": "Eye of a Blood-Drunk Hunter",
+            "description": "Curse the fiends...",
+            "area": "Hunter's Dream",
+            "how_to_get": "Given by messengers after killing Vicar Amelia."
+        },
+        {
+            "type": "key_item",
+            "name": "Tonsil Stone",
+            "description": "Oh Amygdala...",
+            "area": "Cathedral Ward",
+            "how_to_get": [
+                "Obtained from Patches at an NPC door after entering the Forbidden Woods.",
+                "The easiest spot to find him is at Gilbert's window, by the Central Yharnam Lamp.",
+                "Another easy spot is behind the house on the way to the Hemwick Charnel Lake shortcut elevator."
+            ]
+        },
+        {
+            "type": "key_item",
+            "name": "Small Hair Ornament",
+            "description": "A small hair ornament.",
+            "area": "Abandoned Old Workshop",
+            "how_to_get": "Found on a shelf next to the storage area."
+        },
+        {
+            "type": "key_item",
+            "name": "Upper Cathedral Key",
+            "description": "A key to the Upper Cathedral Ward.",
+            "area": "Yahar'Gul",
+            "how_to_get": "Found on a corpse in a caged room."
         }
     ],
     "boss_tips": [

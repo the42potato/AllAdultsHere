@@ -71,7 +71,13 @@
                         "type": "string"
                     },
                     "how_to_get": {
-                        "type": "string"
+                        "oneOf": [
+                            { "type": "string" },
+                            { 
+                                "type": "array",
+                                "items": { "type": "string" }
+                            }
+                        ]
                     },
                     "notes": {
                         "type": "array",

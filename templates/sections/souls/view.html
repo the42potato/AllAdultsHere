@@ -36,11 +36,24 @@
     {% endif %}
 {% endmacro %}
 
+{% macro build_how_to_get(htg) %}
+    {% if htg is string %}
+        <p class="indent-4 italic text-sm">{{ htg }}</p>
+    {% elif htg is iterable and htg is not string %}
+        <ul class="indent-4 italic text-sm list-disc pl-6">
+            {% for step in htg %}
+                <li>{{ step }}</li>
+            {% endfor %}
+        </ul>
+
+    {% endif %}
+{% endmacro %}
+
 {% block content %}
     <div>
         <h1 class="text-center underline decoration-3 pb-6">{{ data.game }} - {{ data.title_note | default("A Guide") }}</h1>
     </div>
-    <div class="flex flex-col md:flex-row justify-center items-center gap-4 w-fit mx-auto p-4 widget_container widget_gray">
+    <div class="flex flex-col md:flex-row justify-center items-center gap-4 mx-auto w-11/12 md:w-5/6">
         <div class="index_card index_card_gray">
             <h3 class="text-center underline p-0 pb-0.5">Stat Caps</h3>
             <div class="grid grid-cols-2 w-fit items-center">
@@ -59,9 +72,9 @@
                 {% endfor %}
             </div>
         </div>
-        <div class="index_card index_card_teal h-fit">
+        <div class="index_card index_card_teal flex flex-col items-center flex-1">
             <h3 class="text-center underline p-0 pb-0.5">Progression Map</h3>
-            <img class="w-100" src="{{ url_for('static', filename=get_progression_map(data.progress_map)|trim) }}">
+            <img class="w-125" src="{{ url_for('static', filename=get_progression_map(data.progress_map)|trim) }}">
         </div>
     </div>
     <hr class="rule_double mt-6">
@@ -81,7 +94,7 @@
                     <h4 class="underline decoration-2 pb-2">{{ item.name }}</h4>
                     <p class="font-black">> <span class="text-sm font-normal italic">{{ item.description }}</span></p>
                     <p class="pt-1"><span class="font-bold underline">Located In:</span> {{ item.area }}</p>
-                    <p class="indent-4 italic text-sm">{{ item.how_to_get }}</p>
+                    {{ build_how_to_get(item.how_to_get) }}
                     {% if item.notes %}
                         <p class="font-bold underline pt-1">Notes:</p>
                         <ul class="text-sm">
