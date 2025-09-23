@@ -3,10 +3,11 @@
         {% block styles %}
             <link rel="stylesheet" href="{{ url_for('static', filename='dist/src/css/output.css') }}">
         {% endblock %}
-        <meta charset="UTF-8">
         <link rel="icon" href="{{ url_for('static', filename='dist/src/icons/site_icon.ico') }}", type="image/vnd.microsoft.icon">
-        <meta name="author" content="Noah Matlik">
+        <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="{{ META.author }}">
+        <meta name="description" content="{{ page_description | default(META.description) }}">
         {% include 'component/google_fonts.html' %}
         <title>{{ page_title | default('We\'re All Adults Here') }}</title>
     </head>
