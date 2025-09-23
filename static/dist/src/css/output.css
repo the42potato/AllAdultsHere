@@ -749,6 +749,9 @@
   .gap-0\.5 {
     gap: calc(var(--spacing) * 0.5);
   }
+  .gap-1 {
+    gap: calc(var(--spacing) * 1);
+  }
   .gap-2 {
     gap: calc(var(--spacing) * 2);
   }
@@ -1830,6 +1833,13 @@
   }
   .solid-text-shadow-br-teal-500 {
     text-shadow: 2.5px 2.5px 0px var(--color-teal-500);
+  }
+  .hover\:bg-white {
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--color-white);
+      }
+    }
   }
   .hover\:solid-shadow-sm-b-teal-600 {
     &:hover {

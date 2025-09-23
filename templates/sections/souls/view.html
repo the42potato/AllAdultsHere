@@ -80,12 +80,10 @@
     <hr class="rule_double mt-6">
     <div class="flex flex-col items-center md:px-4">
         <h3 class="text-center">Notable Item Locations</h3>
-        <div class="flex flex-row text-center widget_container widget_gray my-2 mt-3">
+        <div class="flex flex-row text-center widget_container widget_gray my-2 mt-3 px-2 py-1 gap-2">
             {% set item_types = ["key_item", "shop_unlock", "ring", "equipment", "other"] %}
             {% for type in item_types %}
-                <div class="w-35 py-1 {{ 'bg-' + get_item_type_color(type)|trim + '-200' }} {% if loop.index0 == 0 %}rounded-l-md{% endif %} {% if not loop.last %}border-r-2{% else %} rounded-r-md {% endif %}">
-                    <p class="font-bold">{{ type.replace('_', ' ').upper() }}</p>
-                </div>
+                <button class="{{ 'bg-' + get_item_type_color(type)|trim + '-200' }} hover:bg-white" type="submit">{{ type.replace('_', ' ').upper() }}</button>
             {% endfor %}
         </div>
         <div class="spotlight_container w-fit px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-center items-center gap-4">
