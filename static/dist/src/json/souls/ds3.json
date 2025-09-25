@@ -1,0 +1,121 @@
+{
+    "game": "Dark Souls 3",
+    "progression_chart": "ds3_progression",
+    "title_note": "An Ashen Guide",
+    "softcaps": [
+        {
+            "name": "Vigor",
+            "type": "health",
+            "caps": [
+                {
+                    "description": "Health",
+                    "caps": [27, 50]
+                }
+            ]
+        },
+        {
+            "name": "Attunement",
+            "type": "stamina",
+            "caps": [
+                {
+                    "description": "Focus",
+                    "caps": [35]
+                },
+                {
+                    "description": "Spell Slots",
+                    "caps": [99]
+                }
+            ]
+        },
+        {
+            "name": "Endurance",
+            "type": "stamina",
+            "caps": [
+                {
+                    "description": "Stamina",
+                    "caps": [40]
+                }
+            ]
+        },
+        {
+            "name": "Vitality",
+            "type": "stamina",
+            "caps": [
+                {
+                    "description": "Physical Defense",
+                    "caps": [40]
+                },
+                {
+                    "description": "Poison Resistence",
+                    "caps": [30, 40, 60]
+                },
+                {
+                    "description": "Equip Load",
+                    "caps": [99]
+                }
+            ]
+        },
+        {
+            "name": "Strength",
+            "type": "damage",
+            "caps": [
+                {
+                    "description": "Melee Dmg",
+                    "caps": [40, 60]
+                }
+            ]
+        },
+        {
+            "name": "Dexterity",
+            "type": "damage",
+            "caps": [
+                {
+                    "description": "Melee Dmg",
+                    "caps": [40, 60]
+                }
+            ]
+        },
+        {
+            "name": "Intelligence",
+            "type": "magic",
+            "caps": [
+                {
+                    "description": "Melee Dmg",
+                    "caps": [40, 60]
+                },
+                {
+                    "description": "Spell Dmg",
+                    "caps": [40, 60]
+                }
+            ]
+        },
+        {
+            "name": "Faith",
+            "type": "magic",
+            "caps": [
+                {
+                    "description": "Melee Dmg",
+                    "caps": [40, 60]
+                },
+                {
+                    "description": "Spell Dmg",
+                    "caps": [40, 60]
+                }
+            ]
+        },
+        {
+            "name": "Luck",
+            "type": "magic",
+            "caps": [
+                {
+                    "description": "Melee Dmg",
+                    "caps": [50]
+                },
+                {
+                    "description": "Discovery",
+                    "caps": [99]
+                }
+            ]
+        }
+    ]
+}

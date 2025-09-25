@@ -102,14 +102,15 @@ input:focus::placeholder {
 
 button, input[type=button] {
     @apply border-2 border-gray-600 rounded-sm px-2 my-0.5 bg-teal-50 solid-shadow-sm-b-gray-300;
-    transition: background-color 0.12s ease-in-out;
+    transition: background-color 0.12s ease-in-out, box-shadow 0.12s ease-in-out;
 }
 button:hover, input[type=button]:hover {
     @apply bg-lime-50;
 }
-button:active, input[type=button]:active {
+button:active, input[type=button]:active, button:disabled, input[type=button]:disabled {
     @apply solid-shadow-blank;
     transform: translateY(1px);
+    box-shadow: 0px -1px 0px 1.25px var(--color-gray-300)
 }
 select, input[type=text], input[type=number] {
     @apply border-2 m-1 mb-1.5 py-0.5 px-1 rounded-sm bg-gray-50 border-gray-400 solid-shadow-sm-b-gray-300 text-teal-900 caret-teal-600;

@@ -1,0 +1,79 @@
+{
+    "game": "Lies of P",
+    "progression_chart": "lies_of_p_progression",
+    "title_note": "Gemini's Guide",
+    "softcaps": [
+        {
+            "name": "Vitality",
+            "type": "health",
+            "caps": [
+                {
+                    "description": "Health",
+                    "caps": [40, 60]
+                },
+                {
+                    "description": "Guard Regain",
+                    "caps": [40, 60]
+                }
+            ]
+        },
+        {
+            "name": "Vigor",
+            "type": "stamina",
+            "caps": [
+                {
+                    "description": "Stamina",
+                    "caps": [20, 40]
+                }
+            ]
+        },
+        {
+            "name": "Capacity",
+            "type": "stamina",
+            "caps": [
+                {
+                    "description": "Carry Weight",
+                    "caps": [20, 40]
+                },
+                {
+                    "description": "Legion",
+                    "caps": [20, 40]
+                }
+            ]
+        },
+        {
+            "name": "Motivity",
+            "type": "damage",
+            "caps": [
+                {
+                    "description": "Melee Dmg",
+                    "caps": [40, 50]
+                }
+            ]
+        },
+        {
+            "name": "Technique",
+            "type": "damage",
+            "caps": [
+                {
+                    "description": "Melee Dmg",
+                    "caps": [40, 50]
+                }
+            ]
+        },
+        {
+            "name": "Advance",
+            "type": "magic",
+            "caps": [
+                {
+                    "description": "Elemental Dmg",
+                    "caps": [40, 50]
+                },
+                {
+                    "description": "Legion",
+                    "caps": [30]
+                }
+            ]
+        }
+    ]
+}

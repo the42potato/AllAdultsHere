@@ -22,4 +22,8 @@ hr.rule_drawn {
     @apply h-2 border-0 opacity-50;
     background: url("data:image/svg+xml;utf8,\<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 12'>\<path d='M0 6 Q 10 4, 20 6 T 40 6 T 60 6 T 80 6 T 100 6' \stroke='black' stroke-width='2' fill='none' stroke-linecap='round'/>\</svg>") repeat-x;
 }
-
+hr.rule_double {
+    @apply h-2 border-y-2 border-red-500 w-11/12 mx-auto opacity-50;
+    border-image: linear-gradient(to right, #00000000 0%, var(--color-black) 40%, var(--color-black) 60%, #00000000 100%) 1;
+    border-image-slice: 1;
+}

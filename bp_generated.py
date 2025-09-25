@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, current_app, request
+from flask import Blueprint, render_template, current_app, request, abort
 import os
 import glob
 import json
@@ -13,9 +13,11 @@ def on_load(setup_state):
     app = setup_state.app
     recipes_schema_path = os.path.join(app.static_folder, 'dist', 'src', 'json', 'schema', 'recipes.json')
     cardlist_schema_path = os.path.join(app.static_folder, 'dist', 'src', 'json', 'schema', 'cardlist.json')
-    with open(recipes_schema_path) as r, open(cardlist_schema_path) as c:
+    souls_schema_path = os.path.join(app.static_folder, 'dist', 'src', 'json', 'schema', 'souls.json')
+    with open(recipes_schema_path) as r, open(cardlist_schema_path) as c, open(souls_schema_path) as s:
             generated_bp.recipe_schema = json.load(r)
             generated_bp.cardlist_schema = json.load(c)
+            generated_bp.souls_schema = json.load(s)
 
 @generated_bp.route('/recipes')
 def recipes():
@@ -25,7 +27,13 @@ def recipes():
     search_query = request.args.get("query", "").lower()
     selected_meals = request.args.getlist("meal")
 
-    recipes_data = []
+    recipes_data = {
+        "title": "Recipes",
+        "headers": ["recipes"],
+        "footers": ["recipe_footer"],
+        "tab_text": "Soulslikes",
+        "links": []
+    }
     invalid_file_cnt = 0
     recipe_files = glob.glob(os.path.join(recipes_folder_path, '*.json')) # get full paths to all JSON files in the recipes folder
     for recipe_file in recipe_files:
@@ -33,25 +41,25 @@ def recipes():
         with open(recipe_file) as f:
             recipe = json.load(f)
             if validate_json_schema(recipe, generated_bp.recipe_schema): # if recipe matches schema, build data for use on page
-                title = recipe.get("title", "").lower()
+                title = recipe.get("title", "")
                 recipe_meals = recipe.get("meal_type", [])
                 if isinstance(recipe_meals, str):
                     recipe_meals = [recipe_meals.lower()]
                 else:
                     recipe_meals = [m.lower() for m in recipe_meals]
 
-                title_match = search_query in title if search_query else True
+                title_match = search_query in title.lower() if search_query else True
                 meals_match = all(meal in recipe_meals for meal in selected_meals) if selected_meals else True
 
                 if title_match and meals_match:
-                    recipes_data.append(
-                        {"link": f"recipes/{recipe_link}", "data": recipe}
-                        )
+                    recipes_data['links'].append(
+                        {"link": f"recipes/{recipe_link}", "display_text": title}
+                    )
             else:
                 invalid_file_cnt += 1
                 print(f"❌ {f}: Invalid file schema")
 
-    return render_template('/sections/recipes/browse.html', recipes=recipes_data, invalid_count=invalid_file_cnt)
+    return render_template('/structure/functional/search.html', results=recipes_data, invalid_count=invalid_file_cnt)
 
 @generated_bp.route('/recipe_substitutions')
 def recipe_substitutions():
@@ -80,3 +88,45 @@ def sex_positions():
         return render_validated_json_template('/sections/general/index_card_list.html', sex_positions_file, generated_bp.cardlist_schema)
     else:
         return render_human_validator('sex_pos_validator', request.path)
+    
+@generated_bp.route('/souls')
+def souls_help_list():
+    souls_folder_path = os.path.join(current_app.static_folder, 'dist', 'src', 'json', 'souls')
+
+    games_data = {
+        "title": "Soulslike Guides",
+        "tab_text": "Soulslikes",
+        "links": []
+    }
+    invalid_file_cnt = 0
+    game_files = glob.glob(os.path.join(souls_folder_path, '*.json')) # get full paths to all JSON files in the recipes folder
+    for game_file in game_files:
+        game_link = os.path.splitext(os.path.basename(game_file))[0] # link used within site
+        with open(game_file) as f:
+            game = json.load(f)
+            if validate_json_schema(game, generated_bp.souls_schema): # if recipe matches schema, build data for use on page
+                games_data["links"].append(
+                    {"link": f"souls/{game_link}", "display_text": game.get("game", "")}
+                )
+            else:
+                invalid_file_cnt += 1
+                print(f"❌ {f}: Invalid file schema")
+
+    return render_template('/structure/functional/search.html', results=games_data, invalid_count=invalid_file_cnt)
+
+@generated_bp.route('/souls/<string:game_name>')
+def souls_help(game_name):
+    souls_file = os.path.join(current_app.static_folder, 'dist', 'src', 'json', 'souls', game_name + ".json")
+
+    if not os.path.exists(souls_file):
+        abort(404, current_app.global_config["ERRORS"]["messages"]["page_data_not_found"])
+    
+    with open(souls_file, 'r') as file:
+        game_help = json.load(file)
+        game_help["page_id"] = game_name
+        game_help["item_tab"] = request.args.get("item_type", "key_item")
+
+    if game_help:
+        return render_validated_json_template('/sections/souls/view.html', game_help, generated_bp.souls_schema)
+    else:
+        abort(404, current_app.global_config["ERRORS"]["messages"]["page_data_not_found"])
