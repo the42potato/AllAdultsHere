@@ -13,14 +13,18 @@
 {% macro get_item_type_color(type) %}
     {% if type == "shop_unlock" %}
         amber
-    {% elif type == "key_item" %}
+    {% elif type == "key_items" %}
         teal
-    {% elif type == "ring" %}
+    {% elif type == "rings" %}
         rose
     {% elif type == "equipment" %}
         lime
+    {% elif type == "materials" %}
+        sky
+    {% elif type == "spells" %}
+        fuchsia
     {% else %}
-        gray
+        violet
     {% endif %}
 {% endmacro %}
 
@@ -49,6 +53,14 @@
     {% endif %}
 {% endmacro %}
 
+{% macro get_button_style(type) %}
+    {% if type == data.item_tab %}
+        bg-gray-200
+    {% else %}
+        {{ 'bg-' + get_item_type_color(type)|trim + '-200' }}
+    {% endif %}
+{% endmacro %}
+
 {% block content %}
     <div>
         <h1 class="text-center underline decoration-3 pb-6">{{ data.game }} - {{ data.title_note | default("A Guide") }}</h1>
@@ -72,55 +84,78 @@
                 {% endfor %}
             </div>
         </div>
-        <div class="index_card index_card_teal flex flex-col items-center flex-1">
-            <h3 class="text-center underline p-0 pb-0.5">Progression Map</h3>
-            <img class="w-125" src="{{ url_for('static', filename=get_progression_map(data.progress_map)|trim) }}">
+        <div class="index_card index_card_gray flex flex-col items-center min-w-80 gap-2">
+            <h3 class="underline p-0">Jump To</h3>
+            <a href="#item_locs">Item Locations</a>
+            <a href="#boss_tips">Boss Tips</a>
         </div>
+    </div>
+    <div class="index_card index_card_teal flex flex-col items-center flex-1 w-fit max-w-11/12 mt-4 mx-auto">
+        <h3 class="text-center underline p-0 pb-0.5">Progression Maps</h3>
+        <img class="w-125" src="{{ url_for('static', filename=get_progression_map(data.progress_map)|trim) }}">
     </div>
     <hr class="rule_double mt-6">
     <div class="flex flex-col items-center md:px-4">
-        <h3 class="text-center">Notable Item Locations</h3>
+        <h3 class="text-center" id="item_locs">Notable Item Locations</h3>
         <div class="flex flex-row text-center widget_container widget_gray my-2 mt-3 px-2 py-1 gap-2">
-            {% set item_types = ["key_item", "shop_unlock", "ring", "equipment", "other"] %}
-            {% for type in item_types %}
-                <button class="{{ 'bg-' + get_item_type_color(type)|trim + '-200' }} hover:bg-white" type="submit">{{ type.replace('_', ' ').upper() }}</button>
-            {% endfor %}
+            <form method="get" action="{{ url_for('generated_bp.souls_help', game_name=data.page_id) }}#item_locs">
+                {% set item_types = ["key_items", "shop_unlock", "equipment", "spells", "rings", "materials", "other"] %}
+                {% for type in item_types %}
+                    <button {% if type == data.item_tab %}disabled{% endif %} class="{{ get_button_style(type)|trim }} hover:bg-white" type="submit" name="item_type" value="{{ type }}">{{ type.replace('_', ' ').upper() }}</button>
+                {% endfor %}
+            </form>
         </div>
-        <div class="spotlight_container w-fit px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-center items-center gap-4">
-            {% for item in data.notable_items|sort(attribute="name") %}
-                <div class="index_card {{ 'index_card_' + get_item_type_color(item.type)|trim }} max-w-100">
-                    <h4 class="underline decoration-2 pb-2">{{ item.name }}</h4>
-                    <p class="font-black">> <span class="text-sm font-normal italic">{{ item.description }}</span></p>
-                    <p class="pt-1"><span class="font-bold underline">Located In:</span> {{ item.area }}</p>
-                    {{ build_how_to_get(item.how_to_get) }}
-                    {% if item.notes %}
-                        <p class="font-bold underline pt-1">Notes:</p>
-                        <ul class="text-sm">
-                            {% for note in item.notes %}
-                                <li>{{ note }}</li>
-                            {% endfor %}
-                        </ul>
-                    {% endif %}
-                </div>
-            {% endfor %}
-        </div>
+        {% set notable_items = data.notable_items|selectattr("type", "equalto", data.item_tab)|sort(attribute="name") %}
+        {% if notable_items %}
+            <div class="spotlight_container w-fit px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-center items-center gap-4">
+                {% for item in notable_items %}
+                    <div class="relative index_card {{ 'index_card_' + get_item_type_color(item.type)|trim }} max-w-100">
+                        {% if item.is_dlc %}
+                            <img title="DLC Content" class="w-10 h-10 absolute -top-2 -right-2 rounded-xl border-2 bg-white border-black solid-shadow-sm-b-gray-500" src="{{ url_for('static', filename='/dist/src/images/fixed/souls/dlc.webp') }}">
+                        {% endif %}
+                        <h4 class="underline decoration-2 pb-2 pr-8">{{ item.name }}</h4>
+                        <p class="font-black">> <span class="text-sm font-normal italic">{{ item.description }}</span></p>
+                        <p class="pt-1"><span class="font-bold underline">Located In:</span> {{ item.area }}</p>
+                        {{ build_how_to_get(item.how_to_get) }}
+                        {% if item.notes %}
+                            <p class="font-bold underline pt-1">Notes:</p>
+                            <ul class="text-sm">
+                                {% for note in item.notes %}
+                                    <li>{{ note }}</li>
+                                {% endfor %}
+                            </ul>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <div class="spotlight_container">
+                <h4 class="text-center">No items to display.</h4>
+            </div>
+        {% endif %}
     </div>
     {% if data.boss_tips %}
         <hr class="rule_double mt-6 mb-4">
         <div class="flex flex-col items-center md:px-4">
-            <h3 class="text-center">Boss Tips</h3>
-            <div class="spotlight_container w-fit px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-center items-center gap-4">
-                {% for boss in data.boss_tips|sort(attribute="boss") %}
-                    <div class="index_card index_card_red max-w-100">
-                        <h4>{{ boss.boss }}</h4>
-                        <ul>
-                            {% for tip in boss.tips %}
-                                <li>{{ tip }}</li>
-                            {% endfor %}
-                        </ul>
-                    </div>
-                {% endfor %}
-            </div>
+            <h3 class="text-center" id="boss_tips">Boss Tips</h3>
+            {% if data.boss_tips %}
+                <div class="spotlight_container w-fit px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-center items-center gap-4">
+                    {% for boss in data.boss_tips|sort(attribute="boss") %}
+                        <div class="index_card index_card_red max-w-100">
+                            <h4>{{ boss.boss }}</h4>
+                            <ul>
+                                {% for tip in boss.tips %}
+                                    <li>{{ tip }}</li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% else %}
+                <div class="spotlight_container">
+                    <h4 class="text-center">No items to display.</h4>
+                </div>
+            {% endif %}
         </div>
     {% endif %}
 {% endblock %}

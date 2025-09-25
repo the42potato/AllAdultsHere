@@ -56,7 +56,7 @@
                 "properties": {
                     "type": {
                         "type": "string",
-                        "enum": ["key_item", "shop_unlock", "equipment", "ring", "other"]
+                        "enum": ["key_items", "shop_unlock", "equipment", "spells", "rings", "materials", "other"]
                     },
                     "is_dlc": {
                         "type": "boolean"

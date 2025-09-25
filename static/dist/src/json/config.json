@@ -16,6 +16,11 @@
             "shorthand": "Sex Ed"
         },
         {
+            "link": "/souls",
+            "label": "Soulslike Help",
+            "shorthand": "Soulslk"
+        },
+        {
             "link": "/password_strength",
             "label": "Password Tester",
             "shorthand": "P5wrds"

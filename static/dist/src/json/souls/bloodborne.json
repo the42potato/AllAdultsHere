@@ -404,7 +404,7 @@
             "how_to_get": "Purchase at any time."
         },
         {
-            "type": "ring",
+            "type": "rings",
             "name": "Clockwise Metamorphosis",
             "description": "Raises maximum health",
             "area": "Forbidden Woods / Nightmare Frontier / Ptheumeru Ihyll Root Chalice",
@@ -420,7 +420,7 @@
             ]
         },
         {
-            "type": "ring",
+            "type": "rings",
             "name": "Anti-Clockwise Metamorphosis",
             "description": "Raises maximum stamina",
             "area": "Forbidden Woods / Lecture Hall / Lower Ailing Loran Chalice",
@@ -436,7 +436,7 @@
             ]
         },
         {
-            "type": "ring",
+            "type": "rings",
             "name": "Arcane Lake",
             "description": "Reduces Arcane damage",
             "area": "Yahar'Gul / Byrgenwerth / Isz Root Chalice",
@@ -452,7 +452,7 @@
             ]
         },
         {
-            "type": "ring",
+            "type": "rings",
             "name": "Beast",
             "description": "Boosts the effect of Beast Blood Pellets",
             "area": "Healing Church Workshop / Forbidden Woods / Lower Ailing Loran Root Chalice",
@@ -468,7 +468,7 @@
             ]
         },
         {
-            "type": "ring",
+            "type": "rings",
             "name": "Blood Rapture",
             "description": "Visceral Attacks restore Health",
             "area": "Forbidden Woods / Cursed and Defiled Root Chalice / Cathedral Ward",
@@ -484,7 +484,7 @@
             ]
         },
         {
-            "type": "ring",
+            "type": "rings",
             "name": "Clawmark",
             "description": "Boosts Visceral Attack damage",
             "area": "Yahar'Gul / Central Yharnam / Lower Ailing Loran Root Chalice",
@@ -500,7 +500,7 @@
             ]
         },
         {
-            "type": "ring",
+            "type": "rings",
             "name": "Clear Deep Sea",
             "description": "Raises poison resistence",
             "area": "Forbidden Woods / Nightmare Frontier / Lower Ailing Loran Root Chalice",
@@ -516,7 +516,7 @@
             ]
         },
         {
-            "type": "ring",
+            "type": "rings",
             "name": "Communion",
             "description": "Raises maximum blood vials",
             "area": "Cathedral Ward / Lecture Hall / Iosefka's Clinic / Upper Cathedral Ward / Pthumeru Ihyll Root Chalice",
@@ -536,7 +536,7 @@
             ]
         },
         {
-            "type": "ring",
+            "type": "rings",
             "name": "Deep Sea",
             "description": "Raises frenzy resistence",
             "area": "Lower Hintertomb Root Chalice / Forbidden Woods / Isz Root Chalice",
@@ -552,7 +552,7 @@
             ]
         },
         {
-            "type": "ring",
+            "type": "rings",
             "name": "Dissipating Lake",
             "description": "Reduces bolt damage",
             "area": "Forbidden Woods / Ailing Loran Root Chalice / Lower Ailing Loran Root Chalice",
@@ -568,14 +568,15 @@
             ]
         },
         {
-            "type": "ring",
+            "type": "rings",
             "name": "Eye",
             "description": "Raises discovery",
-            "area": "Nightmare of Mensis / Byrgenwerth / Isz Root Chalice",
+            "area": "Nightmare of Mensis / Byrgenwerth / Isz Root Chalice / Pthumerian Labrinth",
             "how_to_get": [
                 "I is found near the Mergo's Loft: Base lamp.",
                 "II is dropped by Master Willem.",
-                "III is found randomly in the Isz Root Chalice."
+                "III is found randomly in the Isz Root Chalice.",
+                "IV is found in the first Layer One Sub-Dungeon of Glyph p2tbyrh2. Requires the Pthumeru Chalice."
             ],
             "notes": [
                 "I raises discovery by 50",
@@ -584,7 +585,7 @@
             ]
         },
         {
-            "type": "ring",
+            "type": "rings",
             "name": "Fading Lake",
             "description": "Reduces fire damage",
             "area": "Nightmare Frontier / Ailing Loran Root Chalice / Lower Ailing Loran Root Chalice",
@@ -600,7 +601,7 @@
             ]
         },
         {
-            "type": "ring",
+            "type": "rings",
             "name": "Formless Oedon",
             "description": "Raises maximum bullets",
             "area": "Iosefka's Clinic / Lower Pthumeru Root Chalice / Cathedral Ward / Healing Church Workshop / Pthumeru Ihyll Root Chalice",
@@ -620,7 +621,7 @@
             ]
         },
         {
-            "type": "ring",
+            "type": "rings",
             "name": "Great Deep Sea",
             "description": "Raises all resistences",
             "area": "Lower Hintertomb Root Chalice / Nightmare Frontier / Isz Root Chalice",
@@ -636,7 +637,7 @@
             ]
         },
         {
-            "type": "ring",
+            "type": "rings",
             "name": "Great Lake",
             "description": "Reduces all damage types",
             "area": "Lower Hintertomb Root Chalice / Upper Cathedral Ward / Isz Root Chalice",
@@ -652,7 +653,7 @@
             ]
         },
         {
-            "type": "ring",
+            "type": "rings",
             "name": "Guidance",
             "description": "Boosts rally potential",
             "area": "Research Hall / Hunter's Nightmare",
@@ -666,7 +667,7 @@
             ]
         },
         {
-            "type": "ring",
+            "type": "rings",
             "name": "Heir",
             "description": "Raises blood echoes gained from Visceral Attacks",
             "area": "Central Yharnam / Yahar'Gul / Pthumeru Ihyll Root Chalice",
@@ -682,7 +683,7 @@
             ]
         },
         {
-            "type": "ring",
+            "type": "rings",
             "name": "Lake",
             "description": "Reduces physical damage",
             "area": "Hemwick Charnel Lake / Cursed and Defiled Root Chalice / Pthumeru Ihyll Root Chalice",
@@ -698,7 +699,7 @@
             ]
         },
         {
-            "type": "ring",
+            "type": "rings",
             "name": "Moon",
             "description": "Raises blood echoes dropped from enemies",
             "area": "Yahar'Gul's Hypogean Gaol / Nightmare of Mensis / Nightmare of Mensis",
@@ -714,7 +715,7 @@
             ]
         },
         {
-            "type": "ring",
+            "type": "rings",
             "name": "Oedon Writhe",
             "description": "Visceral Attacks grant bullets",
             "area": "Yahar'Gul's Hypogean Gaol / Iosefka's Clinic / Pthumeru Ihyll Root Chalice",
@@ -730,7 +731,7 @@
             ]
         },
         {
-            "type": "ring",
+            "type": "rings",
             "name": "Stunning Deep Sea",
             "description": "Raises rapid poison resistence",
             "area": "Lower Hintertomb Root Chalice / Nightmare Frontier / Lower Ailing Loran Root Chalice",
@@ -746,7 +747,7 @@
             ]
         },
         {
-            "type": "ring",
+            "type": "rings",
             "is_dlc": true,
             "name": "Beast's Embrace",
             "description": "Raises beasthood when using the Beast Claw",
@@ -754,28 +755,28 @@
             "how_to_get": "Dropped by Laurence"
         },
         {
-            "type": "ring",
+            "type": "rings",
             "name": "Corruption",
             "description": "Continually heals 1 HP when near death. Blood Dregs can drop.",
             "area": "Cainhurst Castle",
             "how_to_get": "Join the Vilebloods"
         },
         {
-            "type": "ring",
+            "type": "rings",
             "name": "Hunter",
             "description": "Increases stamina recovery speed by 10%. Co-op may become PvP.",
             "area": "Cathedral Ward",
             "how_to_get": "Complete Eileen's questline."
         },
         {
-            "type": "ring",
+            "type": "rings",
             "name": "Impurity",
             "description": "Raises max health by 2% in Co-op. Vermin can drop.",
             "area": "Forbidden Woods",
             "how_to_get": "Join the League"
         },
         {
-            "type": "ring",
+            "type": "rings",
             "is_dlc": true,
             "name": "Milkweed",
             "description": "Raises discovery by 10. Transforms user into a Lampwood.",
@@ -786,14 +787,14 @@
             ]
         },
         {
-            "type": "ring",
+            "type": "rings",
             "name": "Radiance",
             "description": "Raises health recovered from blood vials by 2%.",
             "area": "Cathedral Ward",
             "how_to_get": "Complete Alfred's Questline and loot it from his corpse."
         },
         {
-            "type": "key_item",
+            "type": "key_items",
             "name": "Third Umbilical Cord",
             "description": "Partial umbilical cord of an infant Great One.",
             "area": "Abandoned Old Workshop / Iosefka's Clinic / Cathedral Ward / Nightmare of Mensis",
@@ -805,21 +806,21 @@
             ]
         },
         {
-            "type": "key_item",
+            "type": "key_items",
             "name": "Cainhurst Summons",
             "description": "A summons to Cainhurst Castle. It bears your name.",
             "area": "Iosefka's Clinic",
             "how_to_get": "Found in a room in the back of the clinic."
         },
         {
-            "type": "key_item",
+            "type": "key_items",
             "name": "Eye of a Blood-Drunk Hunter",
             "description": "Curse the fiends...",
             "area": "Hunter's Dream",
             "how_to_get": "Given by messengers after killing Vicar Amelia."
         },
         {
-            "type": "key_item",
+            "type": "key_items",
             "name": "Tonsil Stone",
             "description": "Oh Amygdala...",
             "area": "Cathedral Ward",
@@ -830,18 +831,475 @@
             ]
         },
         {
-            "type": "key_item",
+            "type": "key_items",
             "name": "Small Hair Ornament",
             "description": "A small hair ornament.",
             "area": "Abandoned Old Workshop",
             "how_to_get": "Found on a shelf next to the storage area."
         },
         {
-            "type": "key_item",
+            "type": "key_items",
             "name": "Upper Cathedral Key",
             "description": "A key to the Upper Cathedral Ward.",
             "area": "Yahar'Gul",
             "how_to_get": "Found on a corpse in a caged room."
+        },
+        {
+            "type": "equipment",
+            "is_dlc": true,
+            "name": "Amygdalan Arm",
+            "description": "The dead arm of an Amygdala Great One.",
+            "area": "Hunter's Nightmare",
+            "how_to_get": "Found in the cave to the right after leaving the two-story house."
+        },
+        {
+            "type": "equipment",
+            "name": "Beast Claw",
+            "description": "Composed of beast bones.",
+            "area": "Ailing Loran Chalice",
+            "how_to_get": "Layer 2 treasure room, before the layer's first lantern."
+        },
+        {
+            "type": "equipment",
+            "is_dlc": true,
+            "name": "Beasthunter Saif",
+            "description": "---",
+            "area": "Hunter's Nightmare",
+            "how_to_get": "Following the Old Hunter surrounded by crows. Up the ladder, then left and down. Beware the ambush."
+        },
+        {
+            "type": "equipment",
+            "is_dlc": true,
+            "name": "Beast Cutter",
+            "description": "---",
+            "area": "Hunter's Nightmare",
+            "how_to_get": "Down the right path when leaving the nightmare cathedral.",
+            "notes": [
+                "Serrated (+20%) in both states."
+            ]
+        },
+        {
+            "type": "equipment",
+            "name": "Blade of Mercy",
+            "description": "Eileen's weapon of choice.",
+            "area": "Hunter's Dream",
+            "how_to_get": "Purchase after obtaining the Crow Hunter Badge."
+        },
+        {
+            "type": "equipment",
+            "is_dlc": true,
+            "name": "Bloodletter",
+            "description": "---",
+            "area": "Hunter's Nightmare",
+            "how_to_get": "Kill Brador in his cell."
+        },
+        {
+            "type": "equipment",
+            "is_dlc": true,
+            "name": "Boom Hammer",
+            "description": "---",
+            "area": "Hunter's Nightmare",
+            "how_to_get": "Inside the two-floor house, on the first floor. Beware explosion."
+        },
+        {
+            "type": "equipment",
+            "name": "Burial Blade",
+            "description": "---",
+            "area": "Hunter's Dream",
+            "how_to_get": "Purchase after defeating Gehrman."
+        },
+        {
+            "type": "equipment",
+            "name": "Chikage",
+            "description": "---",
+            "area": "Hunter's Dream",
+            "how_to_get": "Purchase after obtaining the Cainhurst Badge."
+        },
+        {
+            "type": "equipment",
+            "is_dlc": true,
+            "name": "Church Pick",
+            "description": "---",
+            "area": "Hunter's Nightmare",
+            "how_to_get": "Dropped by a hunter hiding in a locked cell following the Underground Corpse Pile. Key is in the Research Hall.",
+            "notes": [
+                "Righteous (+20%) in both states."
+            ]
+        },
+        {
+            "type": "equipment",
+            "is_dlc": true,
+            "name": "Holy Moonlight Sword",
+            "description": "---",
+            "area": "Hunter's Nightmare",
+            "how_to_get": "Defeat Ludwig.",
+            "notes": [
+                "Righteous (+50%) in both states."
+            ]
+        },
+        {
+            "type": "equipment",
+            "name": "Hunter Axe",
+            "description": "---",
+            "area": "Hunter's Dream",
+            "how_to_get": [
+                "Starter weapon option.",
+                "Purchase after obtaining the Saw Hunter Badge."
+            ]
+        },
+        {
+            "type": "equipment",
+            "name": "Kirkhammer",
+            "description": "---",
+            "area": "Hunter's Dream",
+            "how_to_get": "Purchase after obtaining the Sword Hunter Badge.",
+            "notes": [
+                "Righteous (+50%) in base state."
+            ]
+        },
+        {
+            "type": "equipment",
+            "is_dlc": true,
+            "name": "Kos Parasite",
+            "description": "---",
+            "area": "Fishing Hamlet",
+            "how_to_get": "Kill the Orphan of Kos."
+        },
+        {
+            "type": "equipment",
+            "name": "Logarius' Wheel",
+            "description": "---",
+            "area": "Hunter's Dream",
+            "how_to_get": "Purchase after obtaining the Wheel Hunter Badge.",
+            "notes": [
+                "Righteous (+30%) in both states."
+            ]
+        },
+        {
+            "type": "equipment",
+            "name": "Ludwig's Holy Blade",
+            "description": "---",
+            "area": "Hunter's Dream",
+            "how_to_get": "Purchase after obtaining the Radiant Sword Hunter Badge.",
+            "notes": [
+                "Righteous (+50%) in both states."
+            ]
+        },
+        {
+            "type": "equipment",
+            "name": "Rakuyo",
+            "is_dlc": true,
+            "description": "---",
+            "area": "Fishing Hamlet",
+            "how_to_get": "Kill the two Shark Giants in the well.",
+            "notes": [
+                "Good Luck."
+            ]
+        },
+        {
+            "type": "equipment",
+            "name": "Reiterpallasch",
+            "description": "---",
+            "area": "Cainhurst Castle",
+            "how_to_get": "Found in a chest in the foyer."
+        },
+        {
+            "type": "equipment",
+            "name": "Rifle Spear",
+            "description": "---",
+            "area": "Hunter's Dream",
+            "how_to_get": "Purchase after obtaining the Powder Keg Hunter Badge."
+        },
+        {
+            "type": "equipment",
+            "name": "Saw Cleaver",
+            "description": "---",
+            "area": "Hunter's Dream",
+            "how_to_get": [
+                "Starter weapon option.",
+                "Purchase after obtaining the Saw Hunter Badge."
+            ],
+            "notes": [
+                "Serrated (+20%) in transformed state."
+            ]
+        },
+        {
+            "type": "equipment",
+            "name": "Saw Spear",
+            "description": "---",
+            "area": "Central Yharnam",
+            "how_to_get": [
+                "Found on one of the hanging corpses in the sewers.",
+                "Purchase after obtaining the Saw Hunter Badge."
+            ],
+            "notes": [
+                "Serrated (+20%) in both states."
+            ]
+        },
+        {
+            "type": "equipment",
+            "is_dlc": true,
+            "name": "Simon's Bowblade",
+            "description": "---",
+            "area": "Fishing Hamlet",
+            "how_to_get": "Found on Simon's corpse by the Lighthouse Hut lantern."
+        },
+        {
+            "type": "equipment",
+            "name": "Stake Driver",
+            "description": "---",
+            "area": "Hunter's Dream",
+            "how_to_get": "Purchase after obtaining the Powder Keg Hunter Badge."
+        },
+        {
+            "type": "equipment",
+            "name": "Threaded Cane",
+            "description": "---",
+            "area": "Hunter's Dream",
+            "how_to_get": [
+                "Starter weapon option.",
+                "Purchase after obtaining the Saw Hunter Badge."
+            ],
+            "notes": [
+                "Righteous (+20%) in normal state.",
+                "Serrated (+20%) in transformed state."
+            ]
+        },
+        {
+            "type": "equipment",
+            "name": "Tontrius",
+            "description": "---",
+            "area": "",
+            "how_to_get": [
+                "Found on a body in the Hypogean Gaol, at the end of the road.",
+                "Purchase after obtaining the Spark Hunter Badge."
+            ],
+            "notes": [
+                "Deals bolt damage."
+            ]
+        },
+        {
+            "type": "equipment",
+            "is_dlc": true,
+            "name": "Whirlygig Saw",
+            "description": "---",
+            "area": "Hunter's Nightmare",
+            "how_to_get": "In the blood river, near the Nightmare Church lamp.",
+            "notes": [
+                "Serrated (+20%) in transformed state."
+            ]
+        },
+        {
+            "type": "spells",
+            "is_dlc": true,
+            "name": "Accursed Brew",
+            "description": "---",
+            "area": "Fishing Hamlet",
+            "how_to_get": "Defeat the Orphan of Kos or equip the Milkweed Rune. Then, speak to the NPC in the hamlet entrance."
+        },
+        {
+            "type": "spells",
+            "name": "Beast Roar",
+            "description": "---",
+            "area": "Forbidden Woods",
+            "how_to_get": "In a house near the dog cages."
+        },
+        {
+            "type": "spells",
+            "is_dlc": true,
+            "name": "Blacksky Eye",
+            "description": "---",
+            "area": "Research Hall",
+            "how_to_get": "Located on the balcony."
+        },
+        {
+            "type": "spells",
+            "name": "Empty Phantasm Shell",
+            "description": "---",
+            "area": "Byrgenwerth",
+            "how_to_get": "In a chest near the Lunarium entrance."
+        },
+        {
+            "type": "spells",
+            "name": "Executioner's Gloves",
+            "description": "---",
+            "area": "Cainhurst Castle",
+            "how_to_get": "Found in a chest in a secret room of the library."
+        },
+        {
+            "type": "spells",
+            "name": "Old Hunter Bone",
+            "description": "---",
+            "area": "Old Abandoned Workshop",
+            "how_to_get": "Found next to the mirror of the DLC headstone."
+        },
+        {
+            "type": "spells",
+            "name": "Tiny Tontrius",
+            "description": "---",
+            "area": "Yahar'Gul",
+            "how_to_get": "Found in a chest near the locked cell containing the key to Upper Cathedral Ward."
+        },
+        {
+            "type": "spells",
+            "name": "Choir Bell",
+            "description": "---",
+            "area": "Mergo's Loft Middle",
+            "how_to_get": "Found in the side area following Micolash's boss room. Beware frenzy."
+        },
+        {
+            "type": "spells",
+            "name": "Augur of Ebrietas",
+            "description": "---",
+            "area": "Lecture Building",
+            "how_to_get": "Found on the first floor, in a chest in the locked lecture room."
+        },
+        {
+            "type": "spells",
+            "name": "Madaras Whistle",
+            "description": "---",
+            "area": "Forbidden Woods",
+            "how_to_get": "Defeat the Younger Madaras Twin. The NPC will only appear after killing Valtr or crushing five Vermin."
+        },
+        {
+            "type": "spells",
+            "name": "Messenger's Gift",
+            "description": "---",
+            "area": "Nightmare Frontier",
+            "how_to_get": "Found on a corpse."
+        },
+        {
+            "type": "spells",
+            "name": "A Call Beyond",
+            "description": "---",
+            "area": "Upper Cathedral Ward",
+            "how_to_get": "Found through the broken window in Lumenflower Gardens."
+        },
+        {
+            "type": "equipment",
+            "name": "Cannon",
+            "description": "---",
+            "area": "Forbidden Woods",
+            "how_to_get": "Found in the windmill's rafters."
+        },
+        {
+            "type": "equipment",
+            "is_dlc": true,
+            "name": "Church Cannon",
+            "description": "---",
+            "area": "Hunter's Nightmare",
+            "how_to_get": "In a chest below the elevator to the Research Hall."
+        },
+        {
+            "type": "equipment",
+            "name": "Evelyn",
+            "description": "---",
+            "area": "Hunter's Dream",
+            "how_to_get": "Purchase after obtaining the Cainhurst Badge."
+        },
+        {
+            "type": "equipment",
+            "is_dlc": true,
+            "name": "Fist of Gratia",
+            "description": "---",
+            "area": "Hunter's Nightmare",
+            "how_to_get": "Found in a locked cell on the way to the Research Hall."
+        },
+        {
+            "type": "equipment",
+            "name": "Flamesprayer",
+            "description": "---",
+            "area": "Central Yharnam / Hunter's Dream",
+            "how_to_get": [
+                "Obtained from Gilbert after entering the Cathedral Ward.",
+                "Purchase after obtaining the Radiant Sword Hunter Badge."
+            ]
+        },
+        {
+            "type": "equipment",
+            "is_dlc": true,
+            "name": "Gatling Gun",
+            "description": "---",
+            "area": "Hunter's Nightmare",
+            "how_to_get": "In a cave outside the two-story house. Dropped by a hunter wielding it."
+        },
+        {
+            "type": "equipment",
+            "name": "Hunter Blunderbuss",
+            "description": "---",
+            "area": "Hunter's Dream",
+            "how_to_get": [
+                "Starter weapon option.",
+                "Purchase after obtaining the Saw Hunter Badge."
+            ]
+        },
+        {
+            "type": "equipment",
+            "name": "Hunter Pistol",
+            "description": "---",
+            "area": "Hunter's Dream",
+            "how_to_get": [
+                "Starter weapon option.",
+                "Purchase after obtaining the Saw Hunter Badge."
+            ]
+        },
+        {
+            "type": "equipment",
+            "name": "Hunter's Torch",
+            "description": "---",
+            "area": "Old Yharnam",
+            "how_to_get": "Found on the rooftops to the right of the starting area."
+        },
+        {
+            "type": "equipment",
+            "is_dlc": true,
+            "name": "Loch Shield",
+            "description": "---",
+            "area": "Research Hall",
+            "how_to_get": "Obtainable after raising the stairs."
+        },
+        {
+            "type": "equipment",
+            "name": "Ludwig's Rifle",
+            "description": "---",
+            "area": "Hunter's Dream",
+            "how_to_get": "Purchase after obtaining the Radiant Sword Hunter Badge."
+        },
+        {
+            "type": "equipment",
+            "is_dlc": true,
+            "name": "Piercing Rifle",
+            "description": "---",
+            "area": "Hunter's Dream",
+            "how_to_get": "Purchase after obtaining the Firing Hammer Badge."
+        },
+        {
+            "type": "equipment",
+            "name": "Repeating Pistol",
+            "description": "---",
+            "area": "Hunter's Dream",
+            "how_to_get": "Purchase after obtaining the Sword Hunter Badge."
+        },
+        {
+            "type": "equipment",
+            "name": "Rosmarinus",
+            "description": "---",
+            "area": "Hunter's Dream",
+            "how_to_get": "Purchase after obtaining the Eye Watcher Badge."
+        },
+        {
+            "type": "equipment",
+            "name": "Torch",
+            "description": "---",
+            "area": "Central Yharnam",
+            "how_to_get": "On a corpse next to the brute banging on a house door."
+        },
+        {
+            "type": "equipment",
+            "name": "Wooden Shield",
+            "description": "---",
+            "area": "Cathedral Ward",
+            "how_to_get": "On a corpse up the stairs from Oedon Chapel."
         }
     ],
     "boss_tips": [

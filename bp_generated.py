@@ -123,6 +123,8 @@ def souls_help(game_name):
     
     with open(souls_file, 'r') as file:
         game_help = json.load(file)
+        game_help["page_id"] = game_name
+        game_help["item_tab"] = request.args.get("item_type", "key_item")
 
     if game_help:
         return render_validated_json_template('/sections/souls/view.html', game_help, generated_bp.souls_schema)
