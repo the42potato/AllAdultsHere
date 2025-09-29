@@ -85,3 +85,8 @@
 @utility text-vertical {
     writing-mode: sideways-lr;
 }
+
+@utility pixel-image {
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+}

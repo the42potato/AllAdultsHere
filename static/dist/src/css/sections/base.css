@@ -85,7 +85,7 @@ dd {
 }
 
 img {
-    @apply border-2 rounded-sm my-1 border-gray-500;
+    @apply border-2 rounded-sm my-1 border-gray-500 object-fill;
 }
 
 hr {

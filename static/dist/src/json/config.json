@@ -47,7 +47,7 @@
                 ]
             },
             "401": {
-                "image": "unauthorized.webp",
+                "image": "keys.webp",
                 "splashes": [
                     "Get out."
                 ]
@@ -83,7 +83,7 @@
                 ]
             },
             "501": {
-                "image": "error.webp",
+                "image": "road_work.webp",
                 "splashes": [
                     "Under construction.",
                     "Coming soon!"

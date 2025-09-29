@@ -6,7 +6,7 @@
         <div class="flex flex-col md:flex-row flex-wrap items-center gap-3 w-full lg:w-2/3 px-4">
             <div class="flex flex-col max-w-1/2 justify-center items-center">
                 <div class="blocky_container">
-                    <img src="{{ url_for('static', filename='/dist/src/images/errors/' ~ error.image) }}">
+                    <img class="pixel-image w-120 aspect-square" src="{{ url_for('static', filename='/dist/src/images/errors/' ~ error.image) }}">
                 </div>
             </div>
             <div class="flex flex-1 flex-col items-center gap-2">
